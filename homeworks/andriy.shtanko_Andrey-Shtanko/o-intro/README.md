@@ -1,5 +1,5 @@
-node v19.0.0
+node v18.12.0
 
-/c/Users/usr/.nvm/versions/node/v19.0.0/bin/node
+/c/Users/Андрей/.nvm/versions/node/v18.12.0/bin/node
 
 npm v8.19.2
