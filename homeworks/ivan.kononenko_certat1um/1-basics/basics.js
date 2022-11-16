@@ -1,22 +1,22 @@
-const first_num = 5;
-const second_num = 12;
+const firstNum = 5;
+const secondNum = 12;
 
 let result;
 
-result = first_num + second_num;
+result = firstNum + secondNum;
 console.log(result);
 
-result = first_num - second_num;
+result = firstNum - secondNum;
 console.log(result);
 
-result = first_num * second_num;
+result = firstNum * secondNum;
 console.log(result);
 
-result = first_num / second_num;
+result = firstNum / secondNum;
 console.log(result);
 
-result = first_num % second_num;
+result = firstNum % secondNum;
 console.log(result);
 
-result = first_num ** second_num;
+result = firstNum ** secondNum;
 console.log(result);
