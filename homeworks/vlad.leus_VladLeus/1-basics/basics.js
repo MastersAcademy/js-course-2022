@@ -46,5 +46,5 @@ console.log(valueIsNull + Number(stringNum));
 // Type of check
 console.log(typeof undefVariable);
 console.log(typeof firstNum);
-console.log(typeof  firstString);
-console.log(typeof  firstNum.toString());
+console.log(typeof firstString);
+console.log(typeof firstNum.toString());
