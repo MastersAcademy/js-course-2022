@@ -1,14 +1,14 @@
 const number = 123;
 const valueOfPi = Math.PI;
 const stringNumber = '11';
-let string = 'Hello';
-let message = `${string} world!`;
+const string = 'Hello';
+const message = `${string} world!`;
 const isTrue = false;
 
 console.log(message); // Hello world!
 
 let sum = number + stringNumber;
-console.log(sum); // 12311
+console.log(sum); // '12311'
 sum = number + +stringNumber;
 console.log(sum); // 134
 console.log(true + true + true - false); // 3
@@ -29,9 +29,9 @@ div = 0 / 1;
 console.log(div); // 0
 console.log('6' / '2'); // 3
 
-console.log(isTrue == 0); // true
-console.log(valueOfPi != isTrue); // true
-let isGreater = 5 < 1;
+console.log(isTrue === 0); // false
+console.log(valueOfPi !== isTrue); // true
+const isGreater = 5 < 1;
 console.log(isGreater); // false
 
 let sqr = Number(stringNumber) ** 3;
