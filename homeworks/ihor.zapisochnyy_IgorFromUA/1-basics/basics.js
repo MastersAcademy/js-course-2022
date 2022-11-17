@@ -7,7 +7,7 @@ let result;
 
 // додавання
 result = firstNumber + secondNumber;
-console.log(firstNumber + ' додати ' + secondNumber + ' дорівнює ' + result);
+console.log(`${firstNumber} + ${secondNumber} = ${result}`);
 
 // віднімання
 result = firstNumber - secondNumber;
