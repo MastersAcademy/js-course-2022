@@ -18,7 +18,7 @@ const remainOfNumbers = firstNumber % secondNumber;
 // (thirdNumber % secondNumber); 
  
 // Output to the Console 
-console.log(sumAllNumbers); 
+console.log(sumAllNumbers);
 console.log(multAllNumbers); 
 console.log(divisAllNumbers); 
 console.log(remainOfNumbers); 
