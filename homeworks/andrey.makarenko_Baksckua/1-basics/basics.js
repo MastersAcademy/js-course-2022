@@ -1,20 +1,20 @@
 const firstVariable = 4;
 const secondVariable = 2;
 
-let аddition = firstVariable + secondVariable;
+const аddition = firstVariable + secondVariable;
 console.log(аddition);
 
-let subtraction = firstVariable - secondVariable;
+const subtraction = firstVariable - secondVariable;
 console.log(subtraction);
 
-let multiplication = firstVariable * secondVariable;
+const multiplication = firstVariable * secondVariable;
 console.log(multiplication);
 
-let division = firstVariable / secondVariable;
+const division = firstVariable / secondVariable;
 console.log(division);
 
-let remainderOfDivision = firstVariable % secondVariable;
+const remainderOfDivision = firstVariable % secondVariable;
 console.log(remainderOfDivision);
 
-let elevationToDegrees = firstVariable ** secondVariable;
+const elevationToDegrees = firstVariable ** secondVariable;
 console.log(elevationToDegrees);
