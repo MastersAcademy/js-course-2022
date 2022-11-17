@@ -2,13 +2,10 @@ const numberA = 10;
 const numberB = 2;
 const numberC = 5;
 
-let messageFirstPart;
-let messageSecondPart;
-
 console.log(numberA + numberB);
 
-messageFirstPart = "First";
-messageSecondPart = "HomeWork";
+const messageFirstPart = "First";
+const messageSecondPart = "HomeWork";
 
 console.log(messageFirstPart + messageSecondPart);
 console.log(`${messageFirstPart} ${messageSecondPart}`);
