@@ -8,10 +8,9 @@ const division = a / b;
 const remainder = b % 2;
 const exponentiation = a ** b;
 
-
-console.log( sum );
-console.log( subtraction );
-console.log( multiplication );
-console.log( division );
-console.log( remainder );
-console.log( exponentiation );
+console.log(sum);
+console.log(subtraction);
+console.log(multiplication);
+console.log(division);
+console.log(remainder);
+console.log(exponentiation);
