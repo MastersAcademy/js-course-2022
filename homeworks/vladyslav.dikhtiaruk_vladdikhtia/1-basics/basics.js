@@ -13,11 +13,10 @@ console.log(firstNumber % secondNumber);
 console.log(fourthNumber % (fourthNumber - thirdNumber - (secondNumber ** 2)));
 console.log((firstNumber ** secondNumber) - (secondNumber ** firstNumber));
 
-
 const firstStringNumber = '123';
 const secondStringNumber = '43';
-const fNumber = Number(firstStringNumber); //fNumber = 123;
-const sNumber = Number(secondStringNumber); //sNumber= 43;
+const fNumber = Number(firstStringNumber); //   fNumber = 123;
+const sNumber = Number(secondStringNumber); //  sNumber= 43;
 console.log(fNumber, typeof fNumber, fNumber + sNumber);
 
 const a = true;
