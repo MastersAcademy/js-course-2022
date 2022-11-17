@@ -1,50 +1,50 @@
 // Homework 1 - Basics, Mathematics
 
 // Creating some variables
-let firstNum = 34;
-let secNum = 12;
+let firstNumber = 34;
+let secondNumber = 12;
 const firstString = 'Hello';
-const secString = ' World!';
-let stringNum = '104';
+const secondString = ' World!';
+let stringNumber = '104';
 const isString = true;
 const valueIsNull = null;
-let undefVariable;
+let valueISUndefined;
 
 // Doing some mathematics
-console.log(firstNum + secNum);
-console.log(secNum - firstNum);
+console.log(firstNumber + secondNumber);
+console.log(secondNumber - firstNumber);
 
 // Here we expect string concat with 34104 as an answer
-console.log(firstNum + stringNum);
+console.log(firstNumber + stringNumber);
 
 // Backtick output type
-console.log(`Sum of ${firstNum} and ${secNum} is equal to ${firstNum + secNum}`);
+console.log(`Sum of ${firstNumber} and ${secondNumber} is equal to ${firstNumber + secondNumber}`);
 
 // Hello World!
-console.log(firstString + secString);
+console.log(firstString + secondString);
 
 // String concat
-console.log(String(firstNum) + stringNum);
+console.log(String(firstNumber) + stringNumber);
 
 // Let's change the value of variables to smaller for easier calculation of power or dividing
-firstNum = 10;
-secNum = 2;
-stringNum = '3';
-console.log(firstNum * (-secNum));
-console.log(firstNum / secNum);
-console.log(firstNum % stringNum);
-console.log(firstNum ** secNum);
+firstNumber = 10;
+secondNumber = 2;
+stringNumber = '3';
+console.log(firstNumber * (-secondNumber));
+console.log(firstNumber / secondNumber);
+console.log(firstNumber % stringNumber);
+console.log(firstNumber ** secondNumber);
 
 // Getting NaN output
-console.log(firstString * secNum);
-console.log(undefVariable + secNum);
+console.log(firstString * secondNumber);
+console.log(valueISUndefined + secondNumber);
 
 // Mathematics with boolean and null type
-console.log(isString + firstNum);
-console.log(valueIsNull + Number(stringNum));
+console.log(isString + firstNumber);
+console.log(valueIsNull + Number(stringNumber));
 
 // Type of check
-console.log(typeof undefVariable);
-console.log(typeof firstNum);
+console.log(typeof valueISUndefined);
+console.log(typeof firstNumber);
 console.log(typeof firstString);
-console.log(typeof firstNum.toString());
+console.log(typeof firstNumber.toString());
