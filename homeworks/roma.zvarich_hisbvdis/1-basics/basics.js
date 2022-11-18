@@ -1,3 +1,4 @@
+// Numbers
 const a = 1;
 const b = 2;
 
@@ -8,9 +9,19 @@ const division = a / b;
 const remainder = b % 2;
 const exponentiation = a ** b;
 
-console.log('Sum value is: ' + String(sum));
-console.log('Subtraction value is: ' + String(subtraction));
-console.log('Multiplication value is: ' + String(multiplication));
-console.log('Division value is: ' + String(division));
-console.log('Remainder value is: ' + String(remainder));
-console.log('Exponentiation value is: ' + String(exponentiation));
+console.log(sum);
+console.log(subtraction);
+console.log(multiplication);
+console.log(division);
+console.log(remainder);
+console.log(exponentiation);
+
+// Strings
+const index = 1;
+const firstName = 'Roma';
+const lastName = 'Zvarich';
+const age = 33;
+
+const bio = `${String(index)} ${firstName} ${lastName}: ${String(age)}`;
+
+console.log(bio);
