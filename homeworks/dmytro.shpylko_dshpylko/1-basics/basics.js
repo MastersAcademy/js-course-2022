@@ -8,10 +8,10 @@ const modulusResult = firstNumber % secondNumber;
 const exponentiationResult = firstNumber ** secondNumber;
 
 console.log({
-  additionResult,
-  subtractionResult,
-  multiplicationResult,
-  divisionResult,
-  modulusResult,
-  exponentiationResult,
+    additionResult,
+    subtractionResult,
+    multiplicationResult,
+    divisionResult,
+    modulusResult,
+    exponentiationResult,
 });
