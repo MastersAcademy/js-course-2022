@@ -12,7 +12,6 @@ const firstNumber = 10;
 const secondNumber = 5;
 const thirdNumber = '2';
 
-
 let addition = 0;
 let subtraction = 0;
 let multiplication = 0;
@@ -20,7 +19,6 @@ let division = 0;
 let remainderOfDivision = 0;
 let exponentiation = 0;
 let equation = 0;
-
 
 addition = firstNumber + secondNumber + thirdNumber;
 // ( 10 + 5 ) + строка '2' = 15 + строка '2' = строка '152'
@@ -62,7 +60,8 @@ exponentiation = secondNumber ** thirdNumber
 // 5 підноситься до степеня 2, так як строка '2' автоматично під капотом переведеться в число 2 = 25
 console.log(exponentiation);
 
-equation = secondNumber ** thirdNumber % firstNumber - thirdNumber + secondNumber * firstNumber / secondNumber;
+equation = secondNumber ** thirdNumber % firstNumber - thirdNumber
++ secondNumber * firstNumber / secondNumber;
 /* Приоритет операторів різний, тому в матиматичному вигляді це рівнянн буде таким:
 (5 ** 2 % 10) - 2 + (5 * 10 / 5) = 5 - 2 + 10 = 13 */
 console.log(equation);
