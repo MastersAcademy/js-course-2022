@@ -1,7 +1,7 @@
 const courseVendor = 'Masters Academy';
 let courseUsersInChat;
-let courseUsersMale = 33;
-let courseUsersFemale = 9;
+const courseUsersMale = 33;
+const courseUsersFemale = 9;
 
 courseUsersInChat = courseUsersFemale + courseUsersMale;
 console.log('Кількість користувачів у чаті курсу від ' + courseVendor + ' дорівнює: ' + courseUsersInChat);
