@@ -1,4 +1,4 @@
-//створення перемінних
+// Cтворення перемінних
 const year = 2022;
 const day = 18;
 const month = 'November';
@@ -15,7 +15,7 @@ const subtraction = year - day;
 console.log(subtraction);
 
 // Множення *
-const multiplication = year * day; 
+const multiplication = year * day;
 console.log(multiplication);
 
 // Ділення /
@@ -29,4 +29,3 @@ console.log(remainder);
 // Піднесення до степеня **
 const exponentiation = year ** day;
 console.log(exponentiation);
-
