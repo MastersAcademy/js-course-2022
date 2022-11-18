@@ -56,8 +56,11 @@ console.log(remainderOfDivision);
 exponentiation = firstNumber ** secondNumber;
 // 10 підноситься до степеня 10 = 100000
 console.log(exponentiation);
-exponentiation = secondNumber ** thirdNumber
-// 5 підноситься до степеня 2, так як строка '2' автоматично під капотом переведеться в число 2 = 25
+exponentiation = secondNumber ** thirdNumber;
+/*
+5 підноситься до степеня 2, так як строка '2' автоматично під капотом переведеться в число 2
+= 25
+*/
 console.log(exponentiation);
 
 equation = secondNumber ** thirdNumber % firstNumber - thirdNumber
