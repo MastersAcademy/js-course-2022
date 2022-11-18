@@ -3,20 +3,20 @@ const secondNumber = 7;
 
 console.log('*** Арефметичні операції над двома числами: 15 і 7 ***');
 
-let adding = firstNumber + secondNumber;
+const adding = firstNumber + secondNumber;
 console.log(`Додавання: ${adding}`);
 
-let subtraction = firstNumber - secondNumber;
+const subtraction = firstNumber - secondNumber;
 console.log(`Віднімання: ${subtraction}`);
 
-let multiplication = firstNumber * secondNumber;
+const multiplication = firstNumber * secondNumber;
 console.log(`Множення: ${multiplication}`);
 
-let division = (firstNumber / secondNumber).toFixed(2);
+const division = (firstNumber / secondNumber).toFixed(2);
 console.log(`Ділення: ${division}`);
 
-let remainderOfdivision = firstNumber % secondNumber;
+const remainderOfdivision = firstNumber % secondNumber;
 console.log(`Остача від ділення: ${remainderOfdivision}`);
 
-let exponentiation = firstNumber ** secondNumber;
+const exponentiation = firstNumber ** secondNumber;
 console.log(`Піднесення до степеня: ${exponentiation}`);
