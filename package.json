@@ -1,7 +1,7 @@
 {
     "name": "js-course-2022",
     "version": "21.0.0",
-    "description": "Репозиторій з курсу «Advanced Front-end» проекту Masters Academy",
+    "description": "Репозиторій з курсу «JavaScript Intensive» проекту Masters Academy",
     "scripts": {
         "lint": "lint-staged",
         "lint:all": "npm run lint:branch-name && npm run lint:css && npm run lint:js && npm run lint:ts && npm run lint:html",
