@@ -1,106 +1,61 @@
 const firstNumber = 15;
 const secondNumber = 17;
-
-var sum = firstNumber + secondNumber;
-console.log(
-    "First number = ",
-    firstNumber,
-    " Second number =",
-    secondNumber,
-    " Sum = ",
-    sum,
-    typeof sum
-);
-
-var difference = firstNumber - secondNumber;
-console.log(
-    "First number = ",
-    firstNumber,
-    " Second number =",
-    secondNumber,
-    " Difference = ",
-    difference,
-    typeof difference
-);
-
-var product = firstNumber * secondNumber;
-console.log(
-    "First number = ",
-    firstNumber,
-    " Second number =",
-    secondNumber,
-    " Product = ",
-    product,
-    typeof product
-);
-
-var fraction = firstNumber / secondNumber;
-console.log(
-    "First number = ",
-    firstNumber,
-    " Second number =",
-    secondNumber,
-    " Fraction = ",
-    fraction,
-    typeof fraction
-);
-
-var renOfDivision = firstNumber % secondNumber;
-console.log(
-    "First number = ",
-    firstNumber,
-    " Second number =",
-    secondNumber,
-    " Remainder of division = ",
-    renOfDivision,
-    typeof renOfDivision
-);
-
 const degree = 3;
-var expFirst = firstNumber ** degree;
-console.log(
-    "First number = ",
-    firstNumber,
-    " Degree =",
-    degree,
-    " Exponentiate = ",
-    expFirst,
-    typeof expFirst
-);
+const firstString = 'Hello ';
+const secondString = 'world ';
 
-var divByZero = firstNumber / 0;
-console.log(
-    "First number = ",
-    firstNumber,
+let sum;
+let difference;
+let product;
+let fraction;
+let renOfDivision;
+let expFirst;
+let divByZero; 
+let divByString; 
+let undef;
+let exampNull;
+let concat;
+let diffString;
 
-    " Division by zero = ",
-    divByZero,
-    typeof divByZero
-);
+sum = firstNumber + secondNumber;
+console.log('First number = ', firstNumber,
+' Second number =', secondNumber,' Sum = ', sum, typeof sum);
 
-var divByString = firstNumber / "ss";
-console.log(
-    "First number = ",
-    firstNumber,
+difference = firstNumber - secondNumber;
+console.log('First number = ', firstNumber,
+' Second number =', secondNumber, ' Difference = ', difference, typeof difference);
 
-    " Division by string = ",
-    divByString,
-    typeof divByString
-);
+product = firstNumber * secondNumber;
+console.log('First number = ', firstNumber,
+' Second number =', secondNumber,' Product = ', product, typeof product);
 
-var undef;
-console.log(" Undefinded = ", undef, typeof undef);
+fraction = firstNumber / secondNumber;
+console.log('First number = ', firstNumber,
+' Second number =', secondNumber, ' Fraction = ', fraction, typeof fraction);
 
-var exampNull = null;
-console.log(" null = ", exampNull, typeof exampNull);
+renOfDivision = firstNumber % secondNumber;
+console.log('First number = ', firstNumber,
+' Second number =', secondNumber, ' Remainder of division = ', renOfDivision, typeof renOfDivision);
 
-const firstString = "Hello ";
-const secondString = "world ";
+expFirst = firstNumber ** degree;
+console.log('First number = ', firstNumber,
+' Degree =', degree, ' Exponentiate = ', expFirst, typeof expFirst);
 
-let concat = firstString + secondString;
-console.log(" Concat = ", concat, typeof concat);
+divByZero = firstNumber / 0;
+console.log('First number = ', firstNumber, ' Division by zero = ', divByZero, typeof divByZero);
 
-let diff = firstString - secondString;
-console.log(" diff = ", diff, typeof diff);
+divByString = firstNumber / 'ss';
+console.log('First number = ',  firstNumber, ' Division by string = ', divByString, typeof divByString);
 
-console.log("undef:", typeof kjf)
+console.log(' Undefinded = ', undef, typeof undef);
+
+exampNull = null;
+console.log(' null = ', exampNull, typeof exampNull);
+
+concat = firstString + secondString;
+console.log(' Concat = ', concat, typeof concat);
+
+diffString = firstString - secondString;
+console.log(' diff = ', diffString, typeof diffString);
+
+console.log('undef:', typeof kjf);
