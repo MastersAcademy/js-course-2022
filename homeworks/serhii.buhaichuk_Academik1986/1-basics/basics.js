@@ -1,5 +1,3 @@
-"use strict"
-
 
 // Домашка № 1 MOC
 
@@ -9,27 +7,20 @@ const anyNum2 = 2;
 const addition = anyNum1 + anyNum2;
 console.log(addition);
 
-
 const subtraction = anyNum1 - anyNum2;
 console.log(subtraction);
-
 
 const division = anyNum1 / anyNum2;
 console.log(division);
 
-
 const multiplication = anyNum1 * anyNum2;
 console.log(multiplication);
 
-
-const exponentiation = anyNum1 ** anyNum2
+const exponentiation = anyNum1 ** anyNum2;
 console.log(exponentiation);
-
 
 const residue = anyNum1 % anyNum2;
 console.log(residue);
-
-
 
 // Трішки фантазії)
 const currentYear = 2022;
