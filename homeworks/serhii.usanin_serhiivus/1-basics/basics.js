@@ -44,7 +44,7 @@ divByZero = firstNumber / 0;
 console.log('First number = ', firstNumber, ' Division by zero = ', divByZero, typeof divByZero);
 
 divByString = firstNumber / 'ss';
-console.log('First number = ',  firstNumber, ' Division by string = ', divByString, typeof divByString);
+console.log('First number = ', firstNumber, ' Division by string = ', divByString, typeof divByString);
 
 console.log(' null = ', exampNull, typeof exampNull);
 
