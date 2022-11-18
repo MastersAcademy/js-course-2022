@@ -1,6 +1,3 @@
-
-// Домашка № 1 MOC
-
 const anyNum1 = 10;
 const anyNum2 = 2;
 
