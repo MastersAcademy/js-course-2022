@@ -42,7 +42,7 @@ console.log('Expecting: NaN', stringDivStringResult);
 
 // invalid operation
 const stringMultStringResult = stringVar * anotherStringVar;
-console.log('Expecting: NaN', stringDivStringResult);
+console.log('Expecting: NaN', stringMultStringResult);
 
 // implicit bool to number conversion. Is also the case for multiplication, division, power, modulus
 const boolFalseMinusNumResult = boolFalse - numConst;
@@ -52,6 +52,7 @@ console.log('Expecting: -3', boolFalseMinusNumResult);
 const boolTruePlusStringResult = boolTrue + stringVar;
 console.log('Expecting: truetest', boolTruePlusStringResult);
 
-// string concatenation using + operator
+// intetional string concatenation using + operator
+// eslint-disable-next-line
 const stringConcatStringResult = stringVar + ' ' + anotherStringVar;
 console.log('Expecting: test me (string value):', stringConcatStringResult);
