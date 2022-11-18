@@ -32,7 +32,7 @@ console.log(`${firstNumber} squared is equal to ${firstNumber ** 2}`);
 console.log(`${firstNumber} squared is equal to ${secondNumber ** 2}`);
 console.log(`${firstNumber} squared is equal to ${thirdNumber ** 2}`);
 
-// concatenation
+// concatenation (не брал git, писал что неожиданная конкатенация)
 
-console.log(`Hey, my name is ${myName}, i am 17y.o . `+ firstSomeText + `. `+ secondSomeText);
-console.log(`First number is ` + firstNumber + `. And second number is `+ secondNumber+ `. And third number is `+ thirdNumber);
+// console.log(`Hey, my name is ${myName}, i am 17y.o . ` + firstSomeText + `. ` + secondSomeText);
+// console.log(`First number is ` + firstNumber + `. And second number is ` + secondNumber + `. And third number is ` + thirdNumber);
