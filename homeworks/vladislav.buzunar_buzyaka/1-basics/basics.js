@@ -14,12 +14,6 @@ const multAllNumbers = firstNumber * secondNumber * thirdNumber;
 const divisAllNumbers = firstNumber / secondNumber / thirdNumber;
 const remainOfNumbers = firstNumber % secondNumber;
 
-// (firstNumber % thirdNumber);
-// (secondNumber % firstNumber);
-// (secondNumber % thirdNumber);
-// (thirdNumber % firstNumber);
-// (thirdNumber % secondNumber);
-
 // Output to the Console
 
 console.log(sumAllNumbers);
