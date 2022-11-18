@@ -29,5 +29,3 @@ const someNumOne = 50;
 const someNumTwo = 0;
 const getInfinity = someNumOne / someNumTwo;
 console.log(getInfinity);
-
-
