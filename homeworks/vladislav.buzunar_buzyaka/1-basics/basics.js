@@ -9,10 +9,10 @@ const secondSomeText = `I love JS`;
 
 // Actions numbers
 
-const sumAllNumbers = firstNumber+secondNumber+thirdNumber;
-const multAllNumbers = firstNumber*secondNumber*thirdNumber;
-const divisAllNumbers = firstNumber/secondNumber/thirdNumber;
-const remainOfNumbers = firstNumber%secondNumber;
+const sumAllNumbers = firstNumber + secondNumber + thirdNumber;
+const multAllNumbers = firstNumber * secondNumber * thirdNumber;
+const divisAllNumbers = firstNumber / secondNumber / thirdNumber;
+const remainOfNumbers = firstNumber % secondNumber;
 
 // (firstNumber % thirdNumber);
 // (secondNumber % firstNumber);
@@ -35,5 +35,5 @@ console.log(`${thirdNumber} squared is equal to ${Math.pow(thirdNumber, 2)}`); /
 
 // concatenation
 
-console.log(`Hey, my name is ${myName}, i am 17y.o . `+firstSomeText+'. '+secondSomeText);
-console.log(`First number is `  + firstNumber + `. And second number is `+ secondNumber+ `. And third number is `+thirdNumber);
+console.log(`Hey, my name is ${myName}, i am 17y.o . ` + firstSomeText + '. ' + secondSomeText);
+console.log(`First number is `  + firstNumber + `. And second number is ` + secondNumber + `. And third number is ` + thirdNumber);
