@@ -1,5 +1,7 @@
-// Variable numbers
- 
+ /** Variable
+ numbers**/
+
+
 const firstNumber = 7;
 const secondNumber = 2;
 const thirdNumber = 5;
