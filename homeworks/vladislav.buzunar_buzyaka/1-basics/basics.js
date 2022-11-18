@@ -1,5 +1,4 @@
- /** Variable
- numbers**/
+    // Variable numbers
 
 
 const firstNumber = 7;
