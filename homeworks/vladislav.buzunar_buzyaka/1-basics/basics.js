@@ -3,9 +3,9 @@
 const firstNumber = 7;
 const secondNumber = 2;
 const thirdNumber = 5;
-const myName = `Vlad`;
-const firstSomeText = `I love Masters Academy`;
-const secondSomeText = `I love JS`;
+// const myName = `Vlad`;
+// const firstSomeText = `I love Masters Academy`;
+// const secondSomeText = `I love JS`;
 
 // Actions numbers
 
@@ -35,4 +35,7 @@ console.log(`${firstNumber} squared is equal to ${thirdNumber ** 2}`);
 // concatenation (не брал git, писал что неожиданная конкатенация)
 
 // console.log(`Hey, my name is ${myName}, i am 17y.o . ` + firstSomeText + `. ` + secondSomeText);
-// console.log(`First number is ` + firstNumber + `. And second number is ` + secondNumber + `. And third number is ` + thirdNumber);
+/************************************************
+console.log(`First number is ` + firstNumber + `. And second number is ` + secondNumber + 
+`. And third number is ` + thirdNumber);
+*************************************************/
