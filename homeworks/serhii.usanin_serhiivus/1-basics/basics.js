@@ -4,42 +4,41 @@ const degree = 3;
 const firstString = 'Hello ';
 const secondString = 'world ';
 
-let sum;
-let difference;
-let product;
-let fraction;
-let renOfDivision;
-let expFirst;
-let divByZero; 
-let divByString; 
-let undef;
-let exampNull;
-let concat;
-let diffString;
+let sum = 0;
+let difference = 0;
+let product = 0;
+let fraction = 0;
+let renOfDivision = 0;
+let expFirst = 0;
+let divByZero = 0;
+let divByString = 0;
+const exampNull = null;
+let concat = '';
+let diffString = '';
 
 sum = firstNumber + secondNumber;
 console.log('First number = ', firstNumber,
-' Second number =', secondNumber,' Sum = ', sum, typeof sum);
+    ' Second number =', secondNumber, ' Sum = ', sum, typeof sum);
 
 difference = firstNumber - secondNumber;
 console.log('First number = ', firstNumber,
-' Second number =', secondNumber, ' Difference = ', difference, typeof difference);
+    ' Second number =', secondNumber, ' Difference = ', difference, typeof difference);
 
 product = firstNumber * secondNumber;
 console.log('First number = ', firstNumber,
-' Second number =', secondNumber,' Product = ', product, typeof product);
+    ' Second number =', secondNumber, ' Product = ', product, typeof product);
 
 fraction = firstNumber / secondNumber;
 console.log('First number = ', firstNumber,
-' Second number =', secondNumber, ' Fraction = ', fraction, typeof fraction);
+    ' Second number =', secondNumber, ' Fraction = ', fraction, typeof fraction);
 
 renOfDivision = firstNumber % secondNumber;
 console.log('First number = ', firstNumber,
-' Second number =', secondNumber, ' Remainder of division = ', renOfDivision, typeof renOfDivision);
+    ' Second number =', secondNumber, ' Remainder of division = ', renOfDivision, typeof renOfDivision);
 
 expFirst = firstNumber ** degree;
 console.log('First number = ', firstNumber,
-' Degree =', degree, ' Exponentiate = ', expFirst, typeof expFirst);
+    ' Degree =', degree, ' Exponentiate = ', expFirst, typeof expFirst);
 
 divByZero = firstNumber / 0;
 console.log('First number = ', firstNumber, ' Division by zero = ', divByZero, typeof divByZero);
@@ -47,9 +46,6 @@ console.log('First number = ', firstNumber, ' Division by zero = ', divByZero, t
 divByString = firstNumber / 'ss';
 console.log('First number = ',  firstNumber, ' Division by string = ', divByString, typeof divByString);
 
-console.log(' Undefinded = ', undef, typeof undef);
-
-exampNull = null;
 console.log(' null = ', exampNull, typeof exampNull);
 
 concat = firstString + secondString;
