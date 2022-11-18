@@ -11,7 +11,7 @@ const result2 = firstNumber / thirdNumber;
 const result3 = firstNumber / thirdNumber;
 
 // Додавання +
-console.log(firstName + " " + lastName);
+console.log(`${firstName} ${lastName}`);
 console.log(firstNumber + secondNumber);
 const firstNumberText = String(firstNumber);
 const secondNumberText = String(secondNumber);
