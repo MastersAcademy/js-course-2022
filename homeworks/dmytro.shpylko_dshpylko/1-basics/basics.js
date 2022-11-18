@@ -1,5 +1,5 @@
-const firstNumber = 5;
-const secondNumber = 3;
+const firstNumber = 5;    // I should write this comment just set up git
+const secondNumber = 3;   
 const additionResult = firstNumber + secondNumber;
 const subtractionResult = firstNumber - secondNumber;
 const multiplicationResult = firstNumber * secondNumber;
