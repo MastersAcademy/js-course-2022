@@ -38,14 +38,14 @@ console.log(result12, typeof result12);
 // Object
 
 const firstOject = null;
-const secondOject = '';
+const secondString2 = '';
 
-const result13 = (firstOject + secondOject);
-const result14 = (firstOject - secondOject);
-const result15 = (firstOject * secondOject);
-const result16 = (firstOject / secondOject);
-const result17 = (firstOject % secondOject);
-const result18 = (firstOject ** secondOject);
+const result13 = (firstOject + secondString2);
+const result14 = (firstOject - secondString2);
+const result15 = (firstOject * secondString2);
+const result16 = (firstOject / secondString2);
+const result17 = (firstOject % secondString2);
+const result18 = (firstOject ** secondString2);
 
 console.log(result13);
 console.log(result14);
