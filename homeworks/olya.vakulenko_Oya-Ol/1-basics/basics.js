@@ -12,7 +12,7 @@ console.log(`Result: ${thirdNumber / secondNumber}`);
 console.log(`Result: ${secondNumber % thirdNumber}`);
 console.log(`Result: ${firstNumber ** thirdNumber}`);
 
-const value = 10;
+let value = 10;
 
 value += 5;
 value -= 5;
