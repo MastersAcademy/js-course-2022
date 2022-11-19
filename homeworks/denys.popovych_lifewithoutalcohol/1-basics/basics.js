@@ -13,5 +13,5 @@ const number30 = forthNumber * (remainder - fraction / firstNumber); // 30
 
 console.log(`
     Next MA lesson will be on the ${number30 - remainder}rd of the ${multiplication / fraction}th month of ${sum + multiplication}
-    at ${sum - fraction} : ${number30} pm
+    at ${sum - fraction} : ${number30}
 `);
