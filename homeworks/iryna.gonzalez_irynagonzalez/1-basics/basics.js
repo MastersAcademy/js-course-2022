@@ -1,20 +1,20 @@
-let argument1 = 12;
-let argument2 = 2.5;
+const argument1 = 12;
+const argument2 = 2.5;
 
-let summ = (argument1 + argument2);
-console.log("sum="+ summ);
+const sum = (argument1 + argument2);
+console.log('sum='.concat(sum));
 
-let sub = (argument1 - argument2);
-console.log("sub="+ sub);
+const sub = (argument1 - argument2);
+console.log('sub='.concat(sub));
     
-let mul = (argument1 * argument2);
-console.log("mul="+ mul);
+const mul = (argument1 * argument2);
+console.log('mul='.concat(mul));
 
-let div = (argument1 / argument2);
-console.log("div=" + div);
+const div = (argument1 / argument2);
+console.log('div='.concat(div));
 
-let rem = (argument1 % argument2);
-console.log ("rem=" + rem);
+const rem = (argument1 % argument2);
+console.log ('rem='.concat(rem));
 
-let pow = (argument1 ** argument2);
-console.log("pow=" + pow);
+const pow = (argument1 ** argument2);
+console.log('pow='.concat(pow));
