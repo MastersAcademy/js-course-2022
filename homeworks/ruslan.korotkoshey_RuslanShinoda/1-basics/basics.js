@@ -63,8 +63,8 @@ exponentiation = secondNumber ** thirdNumber;
 */
 console.log(exponentiation);
 
-equation = (secondNumber ** thirdNumber) % firstNumber - thirdNumber
-+ (secondNumber * firstNumber) / secondNumber;
+equation = ((secondNumber ** thirdNumber) % firstNumber) - thirdNumber
++ ((secondNumber * firstNumber) / secondNumber);
 /* Приоритет операторів різний, тому в матиматичному вигляді це рівнянн буде таким:
 (5 ** 2 % 10) - 2 + (5 * 10 / 5) = 5 - 2 + 10 = 13 */
 console.log(equation);
