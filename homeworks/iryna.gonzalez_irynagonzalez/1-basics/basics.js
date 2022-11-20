@@ -5,16 +5,16 @@ const sum = (argument1 + argument2);
 console.log('sum='.concat(sum));
 
 const subtraction = (argument1 - argument2);
-console.log('sub='.concat(sub));
+console.log('subtraction='.concat(subtraction));
 
 const multiplication = (argument1 * argument2);
-console.log('mul='.concat(mul));
+console.log('multiplication='.concat(multiplication));
 
 const division = (argument1 / argument2);
-console.log('div='.concat(div));
+console.log('division='.concat(division));
 
 const remainderOfTheDivision = (argument1 % argument2);
-console.log('rem='.concat(rem));
+console.log('remainderOfTheDivision='.concat(remainderOfTheDivision));
 
 const raisingToPower = (argument1 ** argument2);
-console.log('pow='.concat(pow));
+console.log('raisingToPow='.concat(raisingToPower));
