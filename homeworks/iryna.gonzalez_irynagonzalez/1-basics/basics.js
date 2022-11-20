@@ -17,4 +17,4 @@ const remainderOfTheDivision = (argument1 % argument2);
 console.log('remainderOfTheDivision='.concat(remainderOfTheDivision));
 
 const raisingToPower = (argument1 ** argument2);
-console.log('raisingToPow='.concat(raisingToPower));
+console.log('raisingToPower='.concat(raisingToPower));
