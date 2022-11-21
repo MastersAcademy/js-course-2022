@@ -1,0 +1,3 @@
+ - node v16.14.2
+ - E:\Soft\IT\Support\nodejs\node.exe
+ - npm 8.5.0
