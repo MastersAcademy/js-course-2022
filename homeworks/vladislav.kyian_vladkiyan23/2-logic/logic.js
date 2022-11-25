@@ -26,6 +26,7 @@ switch (operation) {
         break;
     case '/':
         console.log(firstNumber / secondNumber);
+        break;
     default:
         console.log('Arithmetic not specified');
 }
