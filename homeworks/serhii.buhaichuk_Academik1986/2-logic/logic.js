@@ -33,31 +33,24 @@ const secondNumber2 = 4;
 const operator = '+';
 
 switch (operator) {
-
    case '+':
       console.log(firstNumber1 + secondNumber2);
       break;
-
    case '-':
       console.log(firstNumber1 - secondNumber2);
       break;
-
    case '*':
       console.log(firstNumber1 * secondNumber2);
       break;
-
    case '/':
       console.log(firstNumber1 / secondNumber2);
       break;
-
    case '%':
       console.log(firstNumber1 % secondNumber2);
       break;
-
    case '**':
       console.log(firstNumber1 ** secondNumber2);
       break;
-
    default:
       console.log(0);
       break;
