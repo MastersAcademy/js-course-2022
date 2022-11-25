@@ -5,43 +5,38 @@ const operation = '*';
 
 // If-else statement
 
-console.log("-------------if-else statement-------------")
-if (operation === '+'){
+console.log('-------------if-else statement-------------');
+if (operation === '+') {
     console.log(`${firstNumber} + ${secondNumber} = ${firstNumber + secondNumber}`);
-}
-else if (operation === '-'){
+} else if (operation === '-') {
     console.log(`${firstNumber} - ${secondNumber} = ${firstNumber - secondNumber}`);
-}
-else if (operation === '*'){
+} else if (operation === '*') {
     console.log(`${firstNumber} * ${secondNumber} = ${firstNumber * secondNumber}`);
-}
-else if (operation === '/'){
+} else if (operation === '/') {
     console.log(`${firstNumber} / ${secondNumber} = ${firstNumber / secondNumber}`);
-}
-else if (operation === '**'){
+} else if (operation === '**') {
     console.log(`${firstNumber} ** ${secondNumber} = ${firstNumber ** secondNumber}`);
-}
-else {
-    console.log('An incorrect operation input, try again please')
+} else {
+    console.log('An incorrect operation input, try again please');
 }
 
 // Switch-case statement
 
-console.log("-------------switch-case statement-------------")
+console.log('-------------switch-case statement-------------');
 switch (operation) {
-    case "+":
+    case '+':
         console.log(`${firstNumber} + ${secondNumber} = ${firstNumber + secondNumber}`);
         break;
-    case "-":
+    case '-':
         console.log(`${firstNumber} - ${secondNumber} = ${firstNumber - secondNumber}`);
         break;
-    case "*":
+    case '*':
         console.log(`${firstNumber} * ${secondNumber} = ${firstNumber * secondNumber}`);
         break;
-    case "/":
+    case '/':
         console.log(`${firstNumber} / ${secondNumber} = ${firstNumber / secondNumber}`);
         break;
-    case "**":
+    case '**':
         console.log(`${firstNumber} ** ${secondNumber} = ${firstNumber ** secondNumber}`);
         break;
     default:
