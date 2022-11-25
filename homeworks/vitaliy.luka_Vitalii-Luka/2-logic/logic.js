@@ -44,10 +44,10 @@ switch (operation) {
         console.log(`(switch) Division result: ${firstNumber / secondNumber}`);
         break;
     case '%':
-        console.log(`(switch) Division result: ${firstNumber % secondNumber}`);
+        console.log(`(switch) Remainder result: ${firstNumber % secondNumber}`);
         break;
     case '**':
-        console.log(`(switch) Division result: ${firstNumber ** secondNumber}`);
+        console.log(`(switch) Exponentiation result: ${firstNumber ** secondNumber}`);
         break;
     default:
         console.log('(switch) Something went wrong.....');
