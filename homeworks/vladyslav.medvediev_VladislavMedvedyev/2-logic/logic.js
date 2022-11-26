@@ -20,7 +20,7 @@ function calc() {
             console.log(firstNumber % secondNumber);
             break;
         default:
-            console.log("const operation is not valid");
+            console.log('const operation is not valid');
     }
 }
 
