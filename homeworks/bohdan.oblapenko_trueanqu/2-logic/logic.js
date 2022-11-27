@@ -6,16 +6,21 @@ const notSupportedMessage = `Operation '${operation}' is not yet supported, sorr
 
 console.log(`Calculating ${firstNumber} ${operation} ${secondNumber} using if statement:`);
 
-if (operation === '+')
+if (operation === '+') {
     console.log(firstNumber + secondNumber);
-else if (operation === '-')
+}
+else if (operation === '-') {
     console.log(firstNumber - secondNumber);
-else if (operation === '*')
+}
+else if (operation === '*') {
     console.log(firstNumber * secondNumber);
-else if (operation === '/')
+}
+else if (operation === '/') {
     console.log(firstNumber / secondNumber);
-else
+}
+else {
     console.log(notSupportedMessage);
+}
 
 console.log(`Calculating ${firstNumber} ${operation} ${secondNumber} using switch statement:`);  
 
