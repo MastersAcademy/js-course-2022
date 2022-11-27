@@ -8,21 +8,17 @@ console.log(`Calculating ${firstNumber} ${operation} ${secondNumber} using if st
 
 if (operation === '+') {
     console.log(firstNumber + secondNumber);
-}
-else if (operation === '-') {
+} else if (operation === '-') {
     console.log(firstNumber - secondNumber);
-}
-else if (operation === '*') {
+} else if (operation === '*') {
     console.log(firstNumber * secondNumber);
-}
-else if (operation === '/') {
+} else if (operation === '/') {
     console.log(firstNumber / secondNumber);
-}
-else {
+} else {
     console.log(notSupportedMessage);
 }
 
-console.log(`Calculating ${firstNumber} ${operation} ${secondNumber} using switch statement:`);  
+console.log(`Calculating ${firstNumber} ${operation} ${secondNumber} using switch statement:`);
 
 switch (operation) {
     case '+':
