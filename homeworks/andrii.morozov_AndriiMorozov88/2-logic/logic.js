@@ -26,7 +26,7 @@ if (operation === '*') {
 } else if (operation === '+') {
     console.log(firstNumber + secondNumber);
 } else if (operation === '-') {
-    console.log(firstNumber - secondNumber)
+    console.log(firstNumber - secondNumber);
 } else {
     console.log('No result');
 }
