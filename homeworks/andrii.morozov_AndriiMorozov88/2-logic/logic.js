@@ -1,6 +1,6 @@
 const firstNumber = 20;
 const secondNumber = 22;
-const operation = '/';
+const operation = '&';
 switch (operation) {
     case '*':
         console.log(firstNumber * secondNumber);
@@ -11,7 +11,22 @@ switch (operation) {
     case '-':
         console.log(firstNumber - secondNumber);
         break;
-    default:
+    case '/':
         console.log(firstNumber / secondNumber);
         break;
+    default:
+        console.log('No result');
+        break;
+}
+
+if (operation === '*') {
+    console.log(firstNumber * secondNumber);
+} else if (operation === '/') {
+    console.log(firstNumber / secondNumber);
+} else if (operation === '+') {
+    console.log(firstNumber + secondNumber);
+} else if (operation === '-') {
+    console.log(firstNumber - secondNumber)
+} else {
+    console.log('No result');
 }
