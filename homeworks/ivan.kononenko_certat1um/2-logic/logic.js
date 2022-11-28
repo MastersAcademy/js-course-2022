@@ -6,10 +6,14 @@ let result = null;
 
 // 1. if-else
 
-if(operation === '+') result = firstNumber + secondNumber;
-else if(operation === '-') result = firstNumber - secondNumber;
-else if(operation === '/') result = firstNumber / secondNumber;
-else if(operation === '*') result = firstNumber * secondNumber;
+if(operation === '+')
+    result = firstNumber + secondNumber;
+else if(operation === '-')
+    result = firstNumber - secondNumber;
+else if(operation === '/')
+    result = firstNumber / secondNumber;
+else if(operation === '*')
+    result = firstNumber * secondNumber;
 
 // 2. using сonditional (ternary) operator
 
