@@ -1,19 +1,19 @@
 const firstNumber = 20;
 const secondNumber = 22;
-const operation = "*";
+const operation = '*';
 
 const calculate = (a, b, operation) => {
     switch (operation) {
-        case "+":
+        case '+':
             console.log(a + b);
             break;
         case "-":
             console.log(a - b);
             break;
-        case "*":
+        case '*':
             console.log(a * b);
             break;
-        case "/":
+        case '/':
             console.log(a / b);
             break;
 
