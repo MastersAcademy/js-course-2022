@@ -2,12 +2,12 @@ const firstNumber = 20;
 const secondNumber = 22;
 const operation = '*';
 
-const calculate = (a, b, operation) => {
-    switch (operation) {
+const calculate = (a, b, operator) => {
+    switch (operator) {
         case '+':
             console.log(a + b);
             break;
-        case "-":
+        case '-':
             console.log(a - b);
             break;
         case '*':
