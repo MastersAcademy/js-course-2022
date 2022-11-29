@@ -37,4 +37,4 @@ const ifElseCalculate = (a, b, operator) => {
 };
 calculate(firstNumber, secondNumber, operation);
 
-ifElseCalculate(firstNumber, secondNumber, operation)
+ifElseCalculate(firstNumber, secondNumber, operation);
