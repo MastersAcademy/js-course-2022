@@ -18,7 +18,7 @@ const calculate = (a, b, operator) => {
             break;
 
         default:
-            console.log(`Wrong operator! Please change.`);
+            console.log('Wrong operator! Please change.');
             break;
     }
 };
