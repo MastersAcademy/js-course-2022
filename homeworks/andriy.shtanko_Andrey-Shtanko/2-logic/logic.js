@@ -26,16 +26,12 @@ const calculate = (a, b, operator) => {
 const ifElseCalculate = (a, b, operator) => { 
     if (operator === '+') {
         console.log(a + b);
-        return
     } else if (operator === '-') {
         console.log(a - b);
-        return
     } else if (operator === '*') {
         console.log(a * b);
-        return
     } else if (operator === '/') {
         console.log(a / b);
-        return
     } else { 
         console.log('Wrong operator! Please change.');
     }
