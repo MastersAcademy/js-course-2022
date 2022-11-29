@@ -22,8 +22,7 @@ const calculate = (a, b, operator) => {
             break;
     }
 };
-
-const ifElseCalculate = (a, b, operator) => { 
+const ifElseCalculate = (a, b, operator) => {
     if (operator === '+') {
         console.log(a + b);
     } else if (operator === '-') {
@@ -32,11 +31,10 @@ const ifElseCalculate = (a, b, operator) => {
         console.log(a * b);
     } else if (operator === '/') {
         console.log(a / b);
-    } else { 
+    } else {
         console.log('Wrong operator! Please change.');
     }
-}
-
+};
 calculate(firstNumber, secondNumber, operation);
 
 ifElseCalculate(firstNumber, secondNumber, operation)
