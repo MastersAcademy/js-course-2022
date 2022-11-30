@@ -12,30 +12,30 @@ const resultSubtract = 20 - 22;
 // If/else statement
 console.log(`If/else statement!!!`);
 // Multiplication
- if(operationMult === `*`) {
+ if (operationMult === `*`){
     console.log(`${firstNumber} ${operationMult} ${secondNumber} = ${resultMult}`);
-} else {
+} else{
     console.log(`Error...`);
 }
 
 // Division
- if(operationDivis === `/`) {
+ if (operationDivis === `/`){
     console.log(`${firstNumber} ${operationDivis} ${secondNumber} = ${resultDivis}`);
-} else {
+} else{
     console.log(`Error...`);
 }
 
 // Addition
- if(operationAddit === `+`) {
+ if (operationAddit === `+`){
     console.log(`${firstNumber} ${operationAddit} ${secondNumber} = ${resultAddit}`);
-} else {
+} else{
     console.log(`Error...`);
 }
 
 // Substraction
- if(operationSubtract === `-`) {
+ if (operationSubtract === `-`){
     console.log(`${firstNumber} ${operationSubtract} ${secondNumber} = ${resultSubtract}`);
-} else {
+} else{
     console.log(`Error...`);
 }
 
@@ -43,19 +43,19 @@ console.log(`If/else statement!!!`);
 const valueOperation = prompt(`Вкажіть оператор який ви би хотіли використувати... Доступні( "*" "/" "+" "-" )`);
 
 console.log(`Switch statement!!!`);
-switch(valueOperation) {
-    case `*` :
+switch (valueOperation){
+    case ` * `:
         console.log(`${firstNumber} ${operationMult} ${secondNumber} = ${resultMult}`);
-    break;                
-    case `/` :
+    break;
+    case ` / `:
         console.log(`${firstNumber} ${operationDivis} ${secondNumber} = ${resultDivis}`);
     break;
-    case `+` :
+    case ` + `:
         console.log(`${firstNumber} ${operationAddit} ${secondNumber} = ${resultAddit}`);
     break;
-    case `-` :
+    case ` - `:
         console.log(`${firstNumber} ${operationSubtract} ${secondNumber} = ${resultSubtract}`);
     break;
-    default :
+    default:
         console.log(`На жаль, такого не існує, введіть з списку доступних...`);
 }
