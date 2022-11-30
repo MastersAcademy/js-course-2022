@@ -2,16 +2,16 @@ const readline = require('readline');
 
 const rl = readline.createInterface(
     {
-        input: process.stdin,
-        output: process.stdout
+        input: process.stdin ,
+        output: process.stdout ,
     }
 );
 rl.question('Input firstNumbe: ', (first) => {
-    let firstNumber = first;
+    const firstNumber = first;
     rl.question('Input secondNumber: ', (second) => {
-        let secondNumber = second;
+        const secondNumber = second;
         rl.question('Operation: ', (oper) => {
-            let operation = oper;
+            const operation = oper;
             rl.close();
             console.log('Switch-Case:');
             switch (operation) {
@@ -42,7 +42,7 @@ rl.question('Input firstNumbe: ', (first) => {
                 console.log(Number(firstNumber) - Number(secondNumber));
             } else {
                 console.log('No result');
-            }   
+            } 
         });
     });
 });
