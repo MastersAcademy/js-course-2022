@@ -2,9 +2,9 @@ const readline = require('readline');
 
 const rl = readline.createInterface(
     {
-        input: process.stdin ,
-        output: process.stdout ,
-    }
+        input: process.stdin,
+        output: process.stdout,
+    },
 );
 rl.question('Input firstNumbe: ', (first) => {
     const firstNumber = first;
@@ -42,7 +42,7 @@ rl.question('Input firstNumbe: ', (first) => {
                 console.log(Number(firstNumber) - Number(secondNumber));
             } else {
                 console.log('No result');
-            } 
+            }
         });
     });
 });
