@@ -1,20 +1,17 @@
-/*const firstNumber = 20;
-const secondNumber = 22;
-const operation = '&';*/
-let firstNumber;
 const readline = require('readline');
+
 const rl = readline.createInterface(
     {
         input: process.stdin,
         output: process.stdout
     }
 );
-rl.question('Input firstNumbe: ', (data) => {
-    let firstNumber = data;
-    rl.question('Input secondNumber: ', (data) => {
-        let secondNumber = data;
-        rl.question('Operation: ', (data) => {
-            let operation = data;
+rl.question('Input firstNumbe: ', (first) => {
+    let firstNumber = first;
+    rl.question('Input secondNumber: ', (second) => {
+        let secondNumber = second;
+        rl.question('Operation: ', (oper) => {
+            let operation = oper;
             rl.close();
             console.log('Switch-Case:');
             switch (operation) {
