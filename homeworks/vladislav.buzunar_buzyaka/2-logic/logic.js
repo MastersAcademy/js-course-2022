@@ -40,7 +40,7 @@ if (operationSubtract === `-`) {
 }
 
 // Switch statement
-const valueOperation = prompt(`Вкажіть оператор який ви би хотіли використувати... Доступні( `*` `/` `+` `-` )`);
+const valueOperation = prompt(`Вкажіть оператор який ви би хотіли використувати... Доступні( "*" "/" "+" "-" )`);
 
 console.log(`Switch statement!!!`);
 
