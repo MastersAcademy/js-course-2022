@@ -11,52 +11,38 @@ const resultSubtract = 20 - 22;
 
 // If else statement
 console.log('If/else statement!!!');
-// Multiplication
+
 if (operationMult === '*') {
     console.log(`${firstNumber} ${operationMult} ${secondNumber} = ${resultMult}`);
-} else {
-    console.log('Error...');
-}
-
-// Division
-if (operationDivis === '/') {
+} else if(operationDivis === '/'){
     console.log(`${firstNumber} ${operationDivis} ${secondNumber} = ${resultDivis}`);
-} else {
-    console.log('Error...');
-}
-
-// Addition
-if (operationAddit === '+') {
+} else if(operationAddit === '+'){
     console.log(`${firstNumber} ${operationAddit} ${secondNumber} = ${resultAddit}`);
-} else {
-    console.log('Error...');
-}
-
-// Substraction
-if (operationSubtract === '-') {
+} else if(operationSubtract === '-'){
     console.log(`${firstNumber} ${operationSubtract} ${secondNumber} = ${resultSubtract}`);
 } else {
     console.log('Error...');
 }
 
 // Switch statement
-const valueOperation = prompt('Вкажіть оператор який ви би хотіли використувати... Доступні( "*" "/" "+" "-" )');
 
-console.log('Switch statement!!!');
+const firstUserNumber = prompt('Вкажіть число х : ');
+const secondUserNumber = prompt('Вкажіть число y : ');
+const valueOperation = prompt('Вкажіть оператор який ви би хотіли використувати між "х" та "y"... Доступні( "*" "/" "+" "-" )');
 
 switch (valueOperation) {
     case '*':
-        console.log(`${firstNumber} ${operationMult} ${secondNumber} = ${resultMult}`);
+        alert(`${firstUserNumber} ${operationMult} ${secondUserNumber} = ${firstUserNumber * secondUserNumber}`);
         break;
     case '/':
-        console.log(`${firstNumber} ${operationDivis} ${secondNumber} = ${resultDivis}`);
+        alert(`${firstUserNumber} ${operationDivis} ${secondUserNumber} = ${firstUserNumber / secondUserNumber}`);
         break;
     case '+':
-        console.log(`${firstNumber} ${operationAddit} ${secondNumber} = ${resultAddit}`);
+        alert(`${firstUserNumber} ${operationAddit} ${secondUserNumber} = ${firstUserNumber + secondUserNumber}`);
         break;
     case '-':
-        console.log(`${firstNumber} ${operationSubtract} ${secondNumber} = ${resultSubtract}`);
+        alert(`${firstUserNumber} ${operationSubtract} ${secondUserNumber} = ${firstUserNumber - secondUserNumber}`);
         break;
     default:
-        console.log('На жаль, такого не існує, введіть з списку доступних...');
+        alert('На жаль, такого не існує, введіть з списку доступних...');
 }
