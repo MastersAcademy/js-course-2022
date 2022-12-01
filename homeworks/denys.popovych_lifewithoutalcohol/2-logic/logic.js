@@ -1,6 +1,6 @@
-let firstNumber = '';
-let secondNumber = '';
-let operation = '*';
+const firstNumber = '';
+const secondNumber = '';
+const operation = '*';
 let valueIfCalc = '';
 let valueSwitchCalc = '';
 
@@ -48,25 +48,5 @@ function calculateBySwitchCase() {
     return valueSwitchCalc;
 }
 
-function onErr(err) {
-    console.log(err);
-    return 1;
-}
-const prompt = require('prompt');
-
-prompt.start();
-
-prompt.get(['firstNumber', 'secondNumber', 'operation'], (err, result) => {
-    if (err) {
-        return onErr(err);
-    }
-    firstNumber = result.firstNumber;
-    secondNumber = result.secondNumber;
-    operation = result.operation;
-    calculateByIfElse();
-    calculateBySwitchCase();
-    return {
-        valueIfCalc,
-        valueSwitchCalc,
-    };
-});
+calculateByIfElse();
+calculateBySwitchCase();
