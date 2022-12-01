@@ -22,11 +22,11 @@ switch (operation) {
         console.log(`Exponentiation: ${firstNumber ** secondNumber}`);
         break;
     default:
-        console.log('Wrong opertor!');                       
+        console.log('Wrong opertor!');
 }
 
 if (operation === '*') {
-    console.log(`Multiplication: ${firstNumber * secondNumber}`);   
+    console.log(`Multiplication: ${firstNumber * secondNumber}`);
 } else if (operation === '/') {
     console.log(`Subtraction: ${firstNumber / secondNumber}`);
 } else if (operation === '+') {
