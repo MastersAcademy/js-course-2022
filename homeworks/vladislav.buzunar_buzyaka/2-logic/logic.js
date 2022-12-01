@@ -12,13 +12,13 @@ const resultSubtract = 20 - 22;
 // If else statement
 console.log('If/else statement!!!');
 
- if (operationMult === '*') {
+if (operationMult === '*') {
     console.log(`${firstNumber} ${operationMult} ${secondNumber} = ${resultMult}`);
-} else if(operationDivis === '/') {
+} else if (operationDivis === '/') {
     console.log(`${firstNumber} ${operationDivis} ${secondNumber} = ${resultDivis}`);
-} else if(operationAddit === '+') {
+} else if (operationAddit === '+') {
     console.log(`${firstNumber} ${operationAddit} ${secondNumber} = ${resultAddit}`);
-} else if(operationSubtract === '-') {
+} else if (operationSubtract === '-') {
     console.log(`${firstNumber} ${operationSubtract} ${secondNumber} = ${resultSubtract}`);
 } else {
     console.log('Error...');
