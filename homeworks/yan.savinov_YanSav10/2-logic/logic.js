@@ -38,5 +38,5 @@ if (operation === '*') {
 } else if (operation === '**') {
     console.log(`Exponentiation: ${firstNumber ** secondNumber}`);
 } else {
-    console.log('Wrong operator!');
-}
+    console.log('Wrong opertor!');
+}    
