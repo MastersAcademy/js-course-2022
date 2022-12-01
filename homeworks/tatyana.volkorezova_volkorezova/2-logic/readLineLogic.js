@@ -1,5 +1,7 @@
-// please install readline-sync before program run
-const readlineSync = require('readline-sync');
+const readline = require('readline').createInterface({
+    input: process.stdin,
+    output: process.stdout,
+});
 
 function calculation(firstNumber, secondNumber, operation) {
     let result;
@@ -29,9 +31,18 @@ function calculation(firstNumber, secondNumber, operation) {
 }
 console.log('Hello! This is the first version of simple calculator. Enjoy!\n');
 
-const firstNumberReadLine = readlineSync.question('Please enter the first number: ');
-const secondNumberReadLine = readlineSync.question('Please enter the second number: ');
-const operationReadLine = readlineSync.question('Please enter operation that should be performed between you numbers: ');
-const resOfArithAction = calculation(firstNumberReadLine, secondNumberReadLine, operationReadLine);
+readline.question('Please enter the first number: ', (firstInput) => {
+    readline.question('Please enter the second number: ', (secondInput) => {
+        readline.question('Please enter operation that should be performed between you numbers: ', (thirdInput) => {
+            const firstNumReadLine = Number(firstInput);
+            const secondNumReadLine = Number(secondInput);
+            const operReadLine = thirdInput;
 
-console.log(`\nThe result of calculation: ${firstNumberReadLine} ${operationReadLine} ${secondNumberReadLine} = ${resOfArithAction}`);
+            // call calculation function
+            const resultOfCalc = calculation(firstNumReadLine, secondNumReadLine, operReadLine);
+
+            console.log(`\nThe result: ${firstNumReadLine} ${operReadLine} ${secondNumReadLine} = ${resultOfCalc}`);
+            readline.close();
+        });
+    });
+});
