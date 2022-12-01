@@ -1,24 +1,24 @@
 const firstNumber = 20;
 const secondNumber = 22;
-const operation = '*';
+const mathOperator = '*';
 
-if (operation === '*') {
+if (mathOperator === '*') {
     console.log(`Множення: ${firstNumber * secondNumber}`);
-} else if ((operation === '/')) {
+} else if (mathOperator === '/') {
     console.log(`Ділення: ${firstNumber / secondNumber}`);
-} else if ((operation === '+')) {
+} else if (mathOperator === '+') {
     console.log(`Додавання: ${firstNumber + secondNumber}`);
-} else if ((operation === '-')) {
+} else if (mathOperator === '-') {
     console.log(`Віднімання: ${firstNumber - secondNumber}`);
-} else if ((operation === '%')) {
+} else if (mathOperator === '%') {
     console.log(`Остача від ділення: ${firstNumber % secondNumber}`);
-} else if ((operation === '**')) {
+} else if (mathOperator === '**') {
     console.log(`Піднесення до степеня: ${firstNumber ** secondNumber}`);
 } else {
     console.log('Некоректний оператор');
 }
 
-switch (operation) {
+switch (mathOperator) {
     case '*':
         console.log(`Множення: ${firstNumber * secondNumber}`);
         break;
