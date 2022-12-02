@@ -35,6 +35,6 @@ switch (operation) {
         console.log(firstNumber - secondNumber);
         break;
     case "*":
-        console.log(firstNumber * secondNumber);
+        console.log(firstNumber / secondNumber);
         break;
 }
