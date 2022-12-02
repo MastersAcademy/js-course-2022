@@ -1,3 +1,8 @@
+const operationMult = '*';
+const operationDivis = '/';
+const operationAddit = '+';
+const operationSubtract = '-';
+
 // Switch statement
 
 const firstUserNumber = prompt('Вкажіть число х : ');
