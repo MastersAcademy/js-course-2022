@@ -1,3 +1,5 @@
+let result;
+
 // If else statement
 
 console.log('If/else statement!!!');
@@ -11,13 +13,13 @@ console.log(arg[3]);
 console.log(arg[4]);
 
 if (userOperationInput === '*') {
-    console.log(`${firstInputNumber} ${userOperationInput} ${secondInputNumber} = ${firstInputNumber * secondInputNumber}`);
+    result = firstInputNumber * secondInputNumber;
 } else if (userOperationInput === '//') {
-    console.log(`${firstInputNumber} ${userOperationInput} ${secondInputNumber} = ${firstInputNumber / secondInputNumber}`);
+    result = firstInputNumber / secondInputNumber;
 } else if (userOperationInput === '+') {
-    console.log(`${firstInputNumber} ${userOperationInput} ${secondInputNumber} = ${firstInputNumber + secondInputNumber}`);
+    result = firstInputNumber + secondInputNumber;
 } else if (userOperationInput === '-') {
-    console.log(`${firstInputNumber} ${userOperationInput} ${secondInputNumber} = ${firstInputNumber - secondInputNumber}`);
-} else {
-    console.log(`${firstInputNumber} ${userOperationInput} ${secondInputNumber} = ${firstInputNumber / secondInputNumber}`);
+    result = firstInputNumber - secondInputNumber;
 }
+
+console.log(`${firstInputNumber} ${userOperationInput} ${secondInputNumber} = ${result}`);
