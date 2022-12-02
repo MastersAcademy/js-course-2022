@@ -25,7 +25,7 @@ else if (operation === '*') result = firstNumber * secondNumber;
 //         result = firstNumber + secondNumber;
 //         break;
 //     case '-':
-//         result = firstNumber +-secondNumber;
+//         result = firstNumber - secondNumber;
 //         break;
 //     case '/':
 //         result = firstNumber / secondNumber;
