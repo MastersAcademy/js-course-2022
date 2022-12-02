@@ -28,7 +28,7 @@ if (operation === '*') {
     const result = firstNumber ** secondNumber;
     console.log(`Результат обраної операції: ${result}`);
 } else {
-    console.log(`Обрано відсутній оператор`);
+    console.log('Обрано відсутній оператор');
 }
 
 // Другий варіант з використанням switch-case
