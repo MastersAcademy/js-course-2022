@@ -1,25 +1,23 @@
-const firstNumber = 20;
-const secondNumber = 22;
-const operationMult = '*';
-const resultMult = 20 * 22;
-const operationDivis = '/';
-const resultDivis = 20 / 22;
-const operationAddit = '+';
-const resultAddit = 20 + 22;
-const operationSubtract = '-';
-const resultSubtract = 20 - 22;
-
 // If else statement
+
 console.log('If/else statement!!!');
 
-if (operationMult === '*') {
-    console.log(`${firstNumber} ${operationMult} ${secondNumber} = ${resultMult}`);
-} else if (operationDivis === '/') {
-    console.log(`${firstNumber} ${operationDivis} ${secondNumber} = ${resultDivis}`);
-} else if (operationAddit === '+') {
-    console.log(`${firstNumber} ${operationAddit} ${secondNumber} = ${resultAddit}`);
-} else if (operationSubtract === '-') {
-    console.log(`${firstNumber} ${operationSubtract} ${secondNumber} = ${resultSubtract}`);
+const arg = process.argv;
+const firstInputNumber = Number(arg[2]);
+const secondInputNumber = Number(arg[3]);
+const userOperationInput = arg[4];
+console.log(arg[2]);
+console.log(arg[3]);
+console.log(arg[4]);
+
+if (userOperationInput === '*') {
+    console.log(`${firstInputNumber} ${userOperationInput} ${secondInputNumber} = ${firstInputNumber * secondInputNumber}`);
+} else if (userOperationInput === '//') {
+    console.log(`${firstInputNumber} ${userOperationInput} ${secondInputNumber} = ${firstInputNumber / secondInputNumber}`);
+} else if (userOperationInput === '+') {
+    console.log(`${firstInputNumber} ${userOperationInput} ${secondInputNumber} = ${firstInputNumber + secondInputNumber}`);
+} else if (userOperationInput === '-') {
+    console.log(`${firstInputNumber} ${userOperationInput} ${secondInputNumber} = ${firstInputNumber - secondInputNumber}`);
 } else {
-    console.log('Error...');
+    console.log(`${firstInputNumber} ${userOperationInput} ${secondInputNumber} = ${firstInputNumber / secondInputNumber}`);
 }
