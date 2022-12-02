@@ -1,10 +1,10 @@
 // Третій варіант з запитом на введення
 
-const readlineSync = require('readline-sync');
+// const readlineSync = require('readline-sync');
 
-let usersFirstNumber = readlineSync.questionInt('Input first operand ');
-let usersSecondNumber = readlineSync.questionInt('Input first operand ');
-let usersOperation = readlineSync.question('Input operation ');
+const usersFirstNumber = readlineSync.questionInt('Input first operand ');
+const usersSecondNumber = readlineSync.questionInt('Input first operand ');
+const usersOperation = readlineSync.question('Input operation ');
 
 let resultOfOperation = 0;
 
