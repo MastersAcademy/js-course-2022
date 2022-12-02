@@ -70,7 +70,7 @@ if (operation === '*') {
 //         console.log(`Результат обраної операції: ${resultOfOperation}`);
 //         break;
 //     default:
-//         console.log(`Обрано відсутній оператор`);
+//         console.log('Обрано відсутній оператор');
 // }
 
 // Третій варіант з запитом на введення
@@ -109,5 +109,5 @@ if (operation === '*') {
 //         console.log(`Результат обраної операції: ${resultOfOperation}`);
 //         break;
 //     default:
-//         console.log(`Обрано відсутній оператор`);
+//         console.log('Обрано відсутній оператор');
 // }
