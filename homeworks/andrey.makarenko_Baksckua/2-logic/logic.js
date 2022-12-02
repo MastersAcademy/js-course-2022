@@ -21,6 +21,7 @@ if (operation === "+") {
     console.log(firstNumber ** secondNumber);
 }
 
+// switch
 // const firstNumber = 20;
 // const secondNumber = 22;
 const operation = "*";
@@ -35,6 +36,6 @@ switch (operation) {
         console.log(firstNumber - secondNumber);
         break;
     case "*":
-        console.log(firstNumber * secondNumber);
+        console.log(firstNumber / secondNumber);
         break;
 }
