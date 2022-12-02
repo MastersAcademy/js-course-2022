@@ -1,4 +1,4 @@
-// homeworks-2
+// if
 const firstNumber = 20;
 const secondNumber = 22;
 const operation = "+";
