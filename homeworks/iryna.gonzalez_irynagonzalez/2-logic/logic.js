@@ -20,17 +20,16 @@ if (operation === '+') {
 
 switch (operation) {
     default: console.log('Error! Learn math');
-             break
+        break;
     case '+': console.log('sum='.concat(firstNumber + secondNumber));
-              break
+        break;
     case '-': console.log('subtraction='.concat(firstNumber - secondNumber));
-              break
+        break;
     case '*': console.log('multiplication='.concat(firstNumber * secondNumber));
-              break
+        break;
     case '/': console.log('division='.concat(firstNumber / secondNumber));
-              break
+        break;
     case '%': console.log('remainderOfTheDivision='.concat(firstNumber % secondNumber));
-              break
+        break;
     case '**': console.log('raisingToPower='.concat(firstNumber ** secondNumber));
 }
-
