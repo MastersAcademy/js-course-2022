@@ -6,13 +6,13 @@ const readLineInterface = readline.createInterface({
 });
 readLineInterface.question('Input firstNumber: ', (first) => {
     const firstNumber = Number(first);
-    readLineInterface.question('Input operation: ', (mathOperation) => {
-        const operation = mathOperation;
+    readLineInterface.question('Input operator: ', (operator) => {
+        const mathOperator = operator;
         readLineInterface.question('Input secondNumber: ', (second) => {
             const secondNumber = Number(second);
             readLineInterface.close();
             console.log('Switch-Case:');
-            switch (operation) {
+            switch (mathOperator) {
                 case '*':
                     console.log(firstNumber * secondNumber);
                     break;
@@ -30,13 +30,13 @@ readLineInterface.question('Input firstNumber: ', (first) => {
                     break;
             }
             console.log('If-Else');
-            if (operation === '*') {
+            if (mathOperator === '*') {
                 console.log(firstNumber * secondNumber);
-            } else if (operation === '/') {
+            } else if (mathOperator === '/') {
                 console.log(firstNumber / secondNumber);
-            } else if (operation === '+') {
+            } else if (mathOperator === '+') {
                 console.log(firstNumber + secondNumber);
-            } else if (operation === '-') {
+            } else if (mathOperator === '-') {
                 console.log(firstNumber - secondNumber);
             } else {
                 console.log('No result');
