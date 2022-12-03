@@ -1,31 +1,29 @@
 const readline = require('readline');
 
-const rl = readline.createInterface(
-    {
+const readLineInterface = readline.createInterface({
         input: process.stdin,
         output: process.stdout,
-    },
-);
-rl.question('Input firstNumbe: ', (first) => {
-    const firstNumber = first;
-    rl.question('Input secondNumber: ', (second) => {
-        const secondNumber = second;
-        rl.question('Operation: ', (oper) => {
-            const operation = oper;
-            rl.close();
+    });
+readLineInterface.question('Input firstNumber: ', (first) => {
+    const firstNumber = Number(first);
+    readLineInterface.question('Input operation: ', (mathOperation) => {
+        const operation = mathOperation;
+        readLineInterface.question('Input secondNumber: ', (second) => {
+            const secondNumber = Number(second);
+            readLineInterface.close();
             console.log('Switch-Case:');
             switch (operation) {
                 case '*':
-                    console.log(Number(firstNumber) * Number(secondNumber));
+                    console.log(firstNumber * secondNumber);
                     break;
                 case '+':
-                    console.log(Number(firstNumber) + Number(secondNumber));
+                    console.log(firstNumber + secondNumber);
                     break;
                 case '-':
-                    console.log(Number(firstNumber) - Number(secondNumber));
+                    console.log(firstNumber - secondNumber);
                     break;
                 case '/':
-                    console.log(Number(firstNumber) / Number(secondNumber));
+                    console.log(firstNumber / secondNumber);
                     break;
                 default:
                     console.log('No result');
@@ -33,13 +31,13 @@ rl.question('Input firstNumbe: ', (first) => {
             }
             console.log('If-Else');
             if (operation === '*') {
-                console.log(Number(firstNumber) * Number(secondNumber));
+                console.log(firstNumber * NumbersecondNumber);
             } else if (operation === '/') {
-                console.log(Number(firstNumber) / Number(secondNumber));
+                console.log(firstNumber / secondNumber);
             } else if (operation === '+') {
-                console.log(Number(firstNumber) + Number(secondNumber));
+                console.log(firstNumber + secondNumber);
             } else if (operation === '-') {
-                console.log(Number(firstNumber) - Number(secondNumber));
+                console.log(firstNumber - secondNumber);
             } else {
                 console.log('No result');
             }
