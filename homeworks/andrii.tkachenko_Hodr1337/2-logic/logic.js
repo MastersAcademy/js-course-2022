@@ -1,25 +1,28 @@
 const firstNumber = 20;
 const secondNumber = 22;
 const operation = '*';
+function result(params) {
+    return console.log(params)
+} ;
 switch (operation) {
     case '*':
-        console.log(firstNumber * secondNumber);
+        result(firstNumber * secondNumber);
         break;
     case '/':
-        console.log(firstNumber / secondNumber);
+        result(firstNumber / secondNumber);
         break;
     case '+':
-        console.log(firstNumber + secondNumber);
+        result(firstNumber + secondNumber);
         break;
     case '-':
-        console.log(firstNumber - secondNumber);
+        result(firstNumber - secondNumber);
         break;
     case '**':
-        console.log(firstNumber ** secondNumber);
+        result(firstNumber ** secondNumber);
         break;
     case '%':
-        console.log(firstNumber % secondNumber);
+        result(firstNumber % secondNumber);
         break;
     default:
-        console.log('Something went wrong');
+        result('Something went wrong');
 }
