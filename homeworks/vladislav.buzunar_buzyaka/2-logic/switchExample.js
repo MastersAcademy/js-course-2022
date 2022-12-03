@@ -24,7 +24,7 @@ switch (valueOperation) {
 }
 
 if (result) {
-    alert(`${firstUserNumber} ${valueOperation} ${secondUserNumber} = ${result}`)
+    alert(`${firstUserNumber} ${valueOperation} ${secondUserNumber} = ${result}`);
 } else {
     alert('В значення "х" та "у" можна задавати лише числа. Повторіть спробу!');
 }
