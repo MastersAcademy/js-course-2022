@@ -64,7 +64,3 @@ typings/
 
 karma.conf.js
 protractor.conf.js
-
-# 
-.package-lock.json
-tsconfig.json
