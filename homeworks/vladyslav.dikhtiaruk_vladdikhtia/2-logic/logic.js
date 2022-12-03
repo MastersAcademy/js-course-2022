@@ -25,7 +25,7 @@ console.log('Result =', result);
 
 console.log('I am using switch construction now');
 
-switch(operation){
+switch (operation) {
     case '+':
         console.log('Result =', firstNumber + secondNumber);
         break;
