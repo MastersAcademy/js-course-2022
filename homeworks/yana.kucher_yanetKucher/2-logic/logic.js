@@ -1,21 +1,21 @@
 const firstNumber = Math.round(Math.random() * 10);
 const secondNumber = Math.round(Math.random() * 20);
-const firstOperation = '*';
-const secondOperation = '+';
+const firstOperator = '*';
+const secondOperator = '+';
 
-if (firstOperation === '*') {
+if (firstOperator === '*') {
     console.log(`multiplication result: ${firstNumber * secondNumber}`);
-} else if (firstOperation === '/') {
+} else if (firstOperator === '/') {
     console.log(`division result: ${firstNumber / secondNumber}`);
-} else if (firstOperation === '+') {
+} else if (firstOperator === '+') {
     console.log(`addition result: ${firstNumber + secondNumber}`);
-} else if (firstOperation === '-') {
+} else if (firstOperator === '-') {
     console.log(`subtraction result: ${firstNumber - secondNumber}`);
 } else {
     console.log('Error');
 }
 
-switch (secondOperation) {
+switch (secondOperator) {
     case '*':
         console.log(`multiplication result: ${firstNumber * secondNumber}`);
         break;
