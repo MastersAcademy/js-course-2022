@@ -15,6 +15,8 @@ switch (operation) {
     case '*':
         result = firstNumber * secondNumber;
         break;
+    default:
+        result = null;
 }
 
 console.log(result);
