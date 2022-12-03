@@ -1,9 +1,9 @@
 const readline = require('readline');
 
 const readLineInterface = readline.createInterface({
-        input: process.stdin,
-        output: process.stdout,
-    });
+    input: process.stdin,
+    output: process.stdout,
+});
 readLineInterface.question('Input firstNumber: ', (first) => {
     const firstNumber = Number(first);
     readLineInterface.question('Input operation: ', (mathOperation) => {
@@ -31,7 +31,7 @@ readLineInterface.question('Input firstNumber: ', (first) => {
             }
             console.log('If-Else');
             if (operation === '*') {
-                console.log(firstNumber * NumbersecondNumber);
+                console.log(firstNumber * secondNumber);
             } else if (operation === '/') {
                 console.log(firstNumber / secondNumber);
             } else if (operation === '+') {
