@@ -1,37 +1,23 @@
 const firstNumber = 20;
 const secondNumber = 22;
-const operationMultiply = '*';
-const operationPlus = '+';
-const operationMinus = '-';
-const operationDivide = '/';
+const operation = '*';
 
-if (operationMultiply === '*') {
+if (operation === '*') {
     console.log('множення', firstNumber * secondNumber);
-} else if (operationMultiply === '+') {
+} else if (operation === '+') {
     console.log('додавання', firstNumber + secondNumber);
-}
-
-if (operationPlus === '+') {
-    console.log('додавання', firstNumber + secondNumber);
-} else if (operationPlus === '-') {
+} else if (operation === '-') {
     console.log('віднімання', firstNumber - secondNumber);
-}
-if (operationMinus === '-') {
-    console.log('віднімання', firstNumber - secondNumber);
-} else if (operationPlus === '-') {
+} else if (operation === '/') {
     console.log('ділення', firstNumber / secondNumber);
 }
-if (operationDivide === '/') {
-    console.log('ділення', firstNumber / secondNumber);
-} else if (operationDivide === '-') {
-    console.log('множення', firstNumber * secondNumber);
-}
+
 // switch-case
 
 const numFirst = 20;
 const numSecond = 22;
-const operation = '/';
-switch (operation) {
+const operationSwitch = '*';
+switch (operationSwitch) {
     case '*':
         console.log('множення', numFirst * numSecond);
         break;
