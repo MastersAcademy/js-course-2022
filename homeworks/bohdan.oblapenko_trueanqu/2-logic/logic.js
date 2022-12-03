@@ -1,13 +1,13 @@
-const readline = require('readline');
+const rl = require('readline');
 
-const rl = readline.createInterface({
+const readline = rl.createInterface({
     input: process.stdin,
     output: process.stdout,
 });
 
-rl.question('Enter first number: ', (firstNumInput) => {
-    rl.question('Enter operation: ', (operation) => {
-        rl.question('Enter second number: ', (secondNumInput) => {
+readline.question('Enter first number: ', (firstNumInput) => {
+    readline.question('Enter operation: ', (operation) => {
+        readline.question('Enter second number: ', (secondNumInput) => {
             const firstNumber = Number(firstNumInput);
             const secondNumber = Number(secondNumInput);
             const notSupportedMessage = `Operation '${operation}' is not yet supported, sorry!`;
@@ -45,7 +45,7 @@ rl.question('Enter first number: ', (firstNumInput) => {
                     console.log(notSupportedMessage);
             }
 
-            rl.close();
+            readline.close();
         });
     });
 });
