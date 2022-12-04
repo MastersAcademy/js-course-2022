@@ -11,31 +11,31 @@ console.log(`Вхідне рівняння ${operandA} ${operator} ${operandB}`)
 let result;
 
 if (operator === '+') {
-  result = operandA + operandB;
+    result = operandA + operandB;
 } else if (operator === '-') {
-  result = operandA - operandB;
+    result = operandA - operandB;
 } else if (operator === '*') {
-  result = operandA * operandB;
+    result = operandA * operandB;
 } else if (operator === '/') {
-  result = operandA / operandB;
+    result = operandA / operandB;
 } else if (operator === '**') {
-  result = operandA ** operandB;
+    result = operandA ** operandB;
 } else if (operator === '%') {
-  result = operandA % operandB;
+    result = operandA % operandB;
 }
 console.log(`Відповідь калькулятора на if / else if : ${result}`);
 
 /// Калькулятор на switch / case :
 
 function switchCaseCalculator() {
-  switch (operator) {
-    case '*': return operandA * operandB;
-    case '/': return operandA / operandB;
-    case '+': return operandA + operandB;
-    case '-': return operandA - operandB;
-    case '**': return operandA ** operandB;
-    case '%': return operandA % operandB;
-    default: return undefined;
+    switch (operator) {
+        case '*': return operandA * operandB;
+        case '/': return operandA / operandB;
+        case '+': return operandA + operandB;
+        case '-': return operandA - operandB;
+        case '**': return operandA ** operandB;
+        case '%': return operandA % operandB;
+        default: return undefined;
   }
 }
 
