@@ -51,6 +51,7 @@ const calculatorFun = {
     '**': operandA ** operandB,
     '%': operandA % operandB,
 };
+
 console.log(`Відповідь фанового рішення : ${calculatorFun[operator]}`);
 
 /// Завдання з вводом даних користувачем через консоль
@@ -65,7 +66,7 @@ const rl = readline.createInterface({
 const elementStorage = {
     firstNumber: null,
     secondNumber: null,
-    operator: '+',
+    operator: null,
 };
 
 function calculateResult() {
