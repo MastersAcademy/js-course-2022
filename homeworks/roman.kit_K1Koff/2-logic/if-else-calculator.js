@@ -1,10 +1,9 @@
 const operandA = 10;
 const operandB = 10;
 const operator = '+';
+let result;
 
 console.log(`Вхідне рівняння ${operandA} ${operator} ${operandB}`);
-
-let result;
 
 if (operator === '+') {
     result = operandA + operandB;

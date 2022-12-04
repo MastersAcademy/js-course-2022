@@ -43,21 +43,21 @@ function askForInput(partOfTheEquation) {
 
 async function collectAndSaveData() {
     console.log('Введіть дані для обрахунку:');
-    await askForInput('Перше число : ').then((answer) => {
+    await askForInput('Перше число:').then((answer) => {
         if (!validateNumber(answer)) {
             console.error('Неправильні дані!');
             process.exit();
         }
         elementStorage.firstNumber = +answer;
     });
-    await askForInput('Оператор : ').then((answer) => {
+    await askForInput('Оператор:').then((answer) => {
         if (!validateOperator(answer)) {
             console.error('Неправильні дані!');
             process.exit();
         }
         elementStorage.operator = answer;
     });
-    await askForInput('Друге число : ').then((answer) => {
+    await askForInput('Друге число:').then((answer) => {
         if (!validateNumber(answer)) {
             console.error('Неправильні дані!');
             process.exit();
