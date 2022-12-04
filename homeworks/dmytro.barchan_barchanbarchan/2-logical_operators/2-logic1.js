@@ -2,25 +2,25 @@ const firstNumber = 20;
 const secondNumber = 22;
 const operator = '+';
 
-const resultAddition = firstNumber + secondNumber;
-const resultSubtraction = firstNumber - secondNumber;
-const resultMultiplication = firstNumber * secondNumber;
-const resultDivision = firstNumber / secondNumber;
-
 switch (operator) {
     case '+':
+        const resultAddition = firstNumber + secondNumber;
         console.log(`firstNumber + secondNumber = ${resultAddition}`);
         break;
     case '-':
+        const resultSubtraction = firstNumber - secondNumber;
         console.log(`firstNumber + secondNumber = ${resultSubtraction}`);
         break;
     case '*':
+        const resultMultiplication = firstNumber * secondNumber;
         console.log(`firstNumber + secondNumber = ${resultMultiplication}`);
         break;
     case '/':
+        const resultDivision = firstNumber / secondNumber;
         console.log(`firstNumber + secondNumber = ${resultDivision}`);
         break;
     default:
+
         console.log(`The operation ${operator} isn't supported`);
         break;
 }
