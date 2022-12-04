@@ -4,20 +4,16 @@ const operator = '+';
 
 switch (operator) {
     case '+':
-        const resultAddition = firstNumber + secondNumber;
-        console.log(`firstNumber + secondNumber = ${resultAddition}`);
+        console.log(`firstNumber + secondNumber = ${firstNumber + secondNumber}`);
         break;
     case '-':
-        const resultSubtraction = firstNumber - secondNumber;
-        console.log(`firstNumber + secondNumber = ${resultSubtraction}`);
+        console.log(`firstNumber + secondNumber = ${firstNumber - secondNumber}`);
         break;
     case '*':
-        const resultMultiplication = firstNumber * secondNumber;
-        console.log(`firstNumber + secondNumber = ${resultMultiplication}`);
+        console.log(`firstNumber + secondNumber = ${firstNumber * secondNumber}`);
         break;
     case '/':
-        const resultDivision = firstNumber / secondNumber;
-        console.log(`firstNumber + secondNumber = ${resultDivision}`);
+        console.log(`firstNumber + secondNumber = ${firstNumber / secondNumber}`);
         break;
     default:
 
