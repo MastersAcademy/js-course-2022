@@ -70,7 +70,7 @@ async function collectAndSaveData() {
 async function runCalculator() {
     await collectAndSaveData();
     const output = calculateResult();
-    console.log(`Відповідь : ${output}`);
+    console.log(`Відповідь: ${output}`);
 }
 
 runCalculator();
