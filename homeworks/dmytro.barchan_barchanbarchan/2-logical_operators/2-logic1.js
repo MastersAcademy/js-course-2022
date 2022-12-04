@@ -1,6 +1,6 @@
 const firstNumber = 20;
 const secondNumber = 22;
-const operator = '+';
+const operator = '-';
 
 switch (operator) {
     case '+':
