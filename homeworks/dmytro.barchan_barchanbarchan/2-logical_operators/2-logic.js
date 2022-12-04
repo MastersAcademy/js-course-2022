@@ -1,18 +1,18 @@
 const firstNumber = 20;
 const secondNumber = 22;
-const operation = '';
+const operator = '';
 
 const resultAddition = firstNumber + secondNumber;
 const resultSubtraction = firstNumber - secondNumber;
 const resultMultiplication = firstNumber * secondNumber;
 const resultDivision = firstNumber / secondNumber;
 
-if (operation === '+') {
+if (operator === '+') {
     console.log(`firstNumber + secondNumber = ${resultAddition}`);
-} else if (operation === '-') {
+} else if (operator === '-') {
     console.log(`firstNumber - secondNumber = ${resultSubtraction}`);
-} else if (operation === '*') {
+} else if (operator === '*') {
     console.log(`firstNumber * secondNumber = ${resultMultiplication}`);
-} else if (operation === '/') {
+} else if (operator === '/') {
     console.log(`firstNumber / secondNumber = ${resultDivision}`);
-} else { console.log(`The operation${operation} isn't supported`); }
+} else { console.log(`The operation${operator} isn't supported`); }
