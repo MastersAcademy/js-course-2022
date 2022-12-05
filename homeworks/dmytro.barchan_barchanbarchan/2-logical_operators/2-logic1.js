@@ -1,6 +1,6 @@
 const firstNumber = 20;
 const secondNumber = 22;
-const operation = '';
+const operation = '+';
 
 const resultAddition = firstNumber + secondNumber;
 const resultSubtraction = firstNumber - secondNumber;
