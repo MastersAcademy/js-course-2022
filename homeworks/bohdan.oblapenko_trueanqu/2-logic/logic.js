@@ -1,6 +1,6 @@
-const rl = require('readline');
+const readlineModule = require('readline');
 
-const readline = rl.createInterface({
+const readline = readlineModule.createInterface({
     input: process.stdin,
     output: process.stdout,
 });
