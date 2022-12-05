@@ -41,7 +41,7 @@ switch (operation) {
         result = firstNumber % secondNumber;
         break;
     default:
-        result = 'Wrong operation';             
+        result = 'Wrong operation';
 }
 
 console.log(result);
