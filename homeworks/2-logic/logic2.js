@@ -16,7 +16,5 @@ switch (operator) {
         console.log(`firstNumber + secondNumber = ${firstNumber / secondNumber}`);
         break;
     default:
-
         console.log(`The operation ${operator} isn't supported`);
-        break;
 }
