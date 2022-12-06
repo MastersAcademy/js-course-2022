@@ -27,8 +27,7 @@ function calculactionlogic(a, b, opss) {
 
 rl.question('Enter first number ', (answer) => {
     const firstNumber = Number(answer);
-    // eslint-disable-next-line no-restricted-globals
-    if (isNaN(firstNumber)) {
+    if (Number.isNaN(firstNumber)) {
         console.log('You entered not a number. Try again please');
         return rl.close();
     }
@@ -36,8 +35,7 @@ rl.question('Enter first number ', (answer) => {
     rl.question('Enter operator ', (operator) => {
         rl.question('Enter second number ', (answer2) => {
             const secondNumber = Number(answer2);
-            // eslint-disable-next-line no-restricted-globals
-            if (isNaN(secondNumber)) {
+            if (Number.isNaN(secondNumber)) {
                 console.log('You entered not a number. Try again please');
                 return rl.close();
             }
