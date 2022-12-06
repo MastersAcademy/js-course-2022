@@ -5,19 +5,19 @@ const rl = readline.createInterface({
     output: process.stdout,
 });
 
-function calculactionlogic(a, b, opss) {
+function calculactionlogic(a, b, operation) {
     let calculationResult;
-    if (opss === '+') {
+    if (operation === '+') {
         calculationResult = a + b;
-    } else if (opss === '-') {
+    } else if (operation === '-') {
         calculationResult = a - b;
-    } else if (opss === '*') {
+    } else if (operation === '*') {
         calculationResult = a * b;
-    } else if (opss === '/') {
+    } else if (operation === '/') {
         calculationResult = a / b;
-    } else if (opss === '**') {
+    } else if (operation === '**') {
         calculationResult = a ** b;
-    } else if (opss === '%') {
+    } else if (operation === '%') {
         calculationResult = a % b;
     } else {
         console.log('You entered wrong operator. Try again please');
