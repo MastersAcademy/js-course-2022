@@ -1,4 +1,4 @@
-//  switch
+
 const firstNumber = 8;
 const secondNumber = 6;
 const operation = '*';
