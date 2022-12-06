@@ -1,19 +1,19 @@
 //  switch
 const firstNumber = 8;
 const secondNumber = 6;
-const operation = "+";
+const operation = '*';
 
 switch (operation) {
-    case "*":
+    case '*':
         console.log(firstNumber * secondNumber);
         break;
-    case "+":
+    case '+':
         console.log(firstNumber + secondNumber);
         break;
-    case "-":
+    case '-':
         console.log(firstNumber - secondNumber);
         break;
-    case "/":
+    case '/':
         console.log(firstNumber / secondNumber);
         break;
 }
