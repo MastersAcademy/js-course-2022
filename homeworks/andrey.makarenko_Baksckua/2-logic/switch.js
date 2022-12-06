@@ -15,5 +15,5 @@ switch (operation) {
     case '/':
         console.log(firstNumber / secondNumber);
         break;
-   // no default
+   default:(0);
 }
