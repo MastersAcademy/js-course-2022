@@ -16,5 +16,5 @@ switch (operation) {
         console.log(firstNumber / secondNumber);
         break;
    default:
-    console.log('default');
+    console.log(0);
 }
