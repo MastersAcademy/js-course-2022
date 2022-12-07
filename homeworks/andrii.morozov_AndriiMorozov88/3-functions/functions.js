@@ -6,8 +6,10 @@ const oilDencity = 926;
 const waterDencity = 1000;
 const mercuryDencity = 13550;
 function getWeight(weight, liquid, count) {
-  return weight * liquid * count
+    return weight * liquid * count;
 }
-const totalWeight = getWeight(oilDencity, bulkVolume, countBulksOil) + getWeight(mercuryDencity, bulkVolume, countBulksMercury) + getWeight(waterDencity, bulkVolume, countBulksWater);
+const mercuryWeight = getWeight(mercuryDencity, bulkVolume, countBulksMercury);
+const waterWeight = getWeight(waterDencity, bulkVolume, countBulksWater);
+const oilWeight = getWeight(oilDencity, bulkVolume, countBulksOil);
+const totalWeight = mercuryWeight + waterWeight + oilWeight;
 console.log(`Total amount = ${totalWeight}`);
-
