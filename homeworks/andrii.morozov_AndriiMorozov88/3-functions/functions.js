@@ -12,4 +12,4 @@ const mercuryWeight = getWeight(mercuryDencity, bulkVolume, countBulksMercury);
 const waterWeight = getWeight(waterDencity, bulkVolume, countBulksWater);
 const oilWeight = getWeight(oilDencity, bulkVolume, countBulksOil);
 const totalWeight = mercuryWeight + waterWeight + oilWeight;
-console.log(`Total amount = ${totalWeight}`);
+console.log(`Total amount = ${totalWeight} kg`);
