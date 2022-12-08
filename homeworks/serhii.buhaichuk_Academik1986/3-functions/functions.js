@@ -10,8 +10,9 @@ const getWeight = (weight, liquid, count) => {
             return weight * count;
         case '':
             return 'Please enter liquid';
+        default:
+            return `Загальна маса рідини: ${OIL * 3 + WATER * 5 + MERCURY * 2}`;
     }
-    return `Загальна маса рідини: ${OIL * 3 + WATER * 5 + MERCURY * 2}`;
 };
 
 console.log(getWeight(926, 'OIL', 3)); // Вага олії
