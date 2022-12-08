@@ -28,4 +28,4 @@ const totalWeight = oilShipment.getWeight()
     + mercuryShipment.getWeight()
     + waterShipment.getWeight();
 
-console.log(`Загальна вага становить: ${totalWeight}`);
+console.log(`Загальна вага становить: ${totalWeight} кг`);
