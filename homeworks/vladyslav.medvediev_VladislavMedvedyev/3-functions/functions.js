@@ -9,15 +9,43 @@ const waterCount = 5;
 const mercuryCount = 2;
 
 // Get total weight of all tanks with same liquid
+let oilTotalWeight;
+let waterTotalWeight;
+let mercuryTotalWeight;
+let message;
+
 function getWeight(weight, liquid, count) {
-    return weight * liquid * count;
+    switch (liquid) {
+        case OIL:
+            oilTotalWeight = weight * liquid * count;
+            break;
+        case WATER:
+            waterTotalWeight = weight * liquid * count;
+            break;
+        case MERCURY:
+            mercuryTotalWeight = weight * liquid * count;
+            break;
+        default:
+            message = 'Incorrect value of liquid argument. Please use OIL or WATER or MERCURY';
+    }
 }
 
-const oilTotalWeight = getWeight(literInOneTank, OIL, oilCount);
-const waterTotalWeight = getWeight(literInOneTank, WATER, waterCount);
-const mercuryTotalWeight = getWeight(literInOneTank, MERCURY, mercuryCount);
+getWeight(literInOneTank, OIL, oilCount);
+getWeight(literInOneTank, WATER, waterCount);
+getWeight(literInOneTank, MERCURY, mercuryCount);
 
 // Get total weight of all tanks
-const totalWeight = () => oilTotalWeight + waterTotalWeight + mercuryTotalWeight;
+let totalWeight;
 
-console.log(`Total weight is ${totalWeight()} kg`);
+function getTotalWeight() {
+    totalWeight = oilTotalWeight + waterTotalWeight + mercuryTotalWeight;
+}
+
+getTotalWeight();
+
+// Show total weight of all tanks in console
+if (Number.isNaN(totalWeight)) {
+    console.log(message);
+} else {
+    console.log(`Total weight is ${totalWeight} kg`);
+}
