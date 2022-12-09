@@ -22,4 +22,13 @@ function totalWeight() {
     return weightOil + weightWater + weightMercury;
 }
 
-console.log(totalWeight());
+console.log('The total mass of liquids has arrived to the station: ', totalWeight());
+
+function exponentiationOfNumber(a, b) {
+    if (b === 1) {
+        return a;
+    }
+    return b * exponentiationOfNumber(a, b - 1);
+}
+
+console.log('The result of reducing the number 5 to the 4th power is ', exponentiationOfNumber(5, 4));
