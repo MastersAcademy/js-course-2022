@@ -2,14 +2,28 @@ const WATER_TANKER_COUNT = 5;
 const OIL_TANKER_COUNT = 3;
 const MERCURY_TANKER_COUNT = 2;
 
-const TANKER_WEIGHT = 1;
-
 const WATER = 1000;
 const OIL = 926;
 const MERCURY = 1355;
 
+let oilWeight;
+let waterWeight;
+let mercuryWeight;
+
 function getWeight(weight, liquid, count) {
-    return weight * liquid * count;
+    switch (liquid) {
+        case 'water':
+            waterWeight = weight * count;
+            break;
+        case 'oil':
+            oilWeight = weight * count;
+            break;
+        case 'mercury':
+            mercuryWeight = weight * count;
+            break;
+        default:
+            console.log('Not valid value of liquid. Acceptably value are use WATER/OIL/MERCURY');
+    }
 }
 
 function getAllLiquidWeight(...args) {
@@ -20,9 +34,9 @@ function getAllLiquidWeight(...args) {
     return sumOfWeight;
 }
 
-const weightOfWater = getWeight(TANKER_WEIGHT, WATER, WATER_TANKER_COUNT);
-const weightOfOil = getWeight(TANKER_WEIGHT, OIL, OIL_TANKER_COUNT);
-const weightOfMercury = getWeight(TANKER_WEIGHT, MERCURY, MERCURY_TANKER_COUNT);
+getWeight(WATER, 'water', WATER_TANKER_COUNT);
+getWeight(OIL, 'oil', OIL_TANKER_COUNT);
+getWeight(MERCURY, 'mercury', MERCURY_TANKER_COUNT);
 
-const totalWeight = getAllLiquidWeight(weightOfWater, weightOfOil, weightOfMercury);
+const totalWeight = getAllLiquidWeight(waterWeight, oilWeight, mercuryWeight);
 console.log(`The total weight of arrived liquids is equal to: ${totalWeight} kilograms`);
