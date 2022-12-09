@@ -19,3 +19,20 @@ function calcTanksWeight(liquidFirst, liquidSecond, liquidThird) {
 }
 
 calcTanksWeight(totalOilWeight, totalWaterWeight, totalMercuryWeight);
+
+// second task
+
+function getExponentiation(num, pow) {
+    function exponentiation(number, power) {
+        if (power === 0) {
+            return 1;
+        }
+        if (power === 1) {
+            return number;
+        }
+        return exponentiation(number * num, power - 1);
+    }
+    return exponentiation(num, pow);
+}
+
+console.log(getExponentiation(3, 3));
