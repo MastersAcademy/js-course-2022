@@ -1,37 +1,37 @@
-const OIL = 926;
-const WATER = 1000;
-const MERCURY = 1355;
-
-const liquidValue = 1;
-
+const oilWeight = 926;
+const waterWeight = 1000;
+const mercuryWeight = 1355;
+const productVolume = 1000;
 const oilCount = 3;
 const waterCount = 5;
 const mercuryCount = 2;
 
 const getWeight = (weight, liquid, count) => {
-    const resultWeightOfProduct = weight * liquid * count;
-    return resultWeightOfProduct;
+    const result = (weight * liquid * count) / 1000;
+    return result;
 };
+
+const oilTotalWeight = getWeight(oilWeight, productVolume, oilCount);
+const waterTotalWeight = getWeight(waterWeight, productVolume, waterCount);
+const mercuryTotalWeight = getWeight(mercuryWeight, productVolume, mercuryCount);
 
 const getTotalWeight = () => {
-    const oilWeight = getWeight(OIL, liquidValue, oilCount);
-    const waterWeight = getWeight(WATER, liquidValue, waterCount);
-    const mercuryWeight = getWeight(MERCURY, liquidValue, mercuryCount);
-    const result = oilWeight + waterWeight + mercuryWeight;
-    console.log(`Total weight of all products is ${result} kg`);
+    const result = oilTotalWeight + waterTotalWeight + mercuryTotalWeight;
+    return result;
 };
 
-getTotalWeight();
+const totalWeight = getTotalWeight();
+console.log(`Total weight of all products is ${totalWeight} kg`);
 
 // Завдання з зірочкою;
 
 const getNumberInDegree = (num, deg) => {
     let result = num;
-    if (deg === 1) {
+    if (deg !== 1) {
+        result = num * getNumberInDegree(num, deg - 1);
         return result;
     }
-    result = num * getNumberInDegree(num, deg - 1);
     return result;
 };
 
-console.log(getNumberInDegree(5, 4));
+console.log(getNumberInDegree(5, 3));
