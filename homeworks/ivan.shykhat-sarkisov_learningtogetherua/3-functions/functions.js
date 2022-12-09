@@ -17,7 +17,7 @@ let summaryLiquidWeight = 0;
 // Ініціалізація функції
 function getWeight(weight, liquid, count) {
     // Обчислення маси одного типу рідини
-    const oneTypeLiquidWeight = weight/1000 * liquid * count;
+    const oneTypeLiquidWeight = (weight / 1000) * liquid * count;
     return oneTypeLiquidWeight;
 }
 
