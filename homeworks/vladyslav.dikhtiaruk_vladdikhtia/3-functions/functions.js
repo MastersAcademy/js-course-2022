@@ -24,6 +24,6 @@ function exp(number, numOfExp) { // task with *
     if (numOfExp === 0) {
         return 1;
     }
-        return number * exp(number, numOfExp - 1);
+    return number * exp(number, numOfExp - 1);
 }
 console.log('\nResult of exponential function: ', exp(2, 5));
