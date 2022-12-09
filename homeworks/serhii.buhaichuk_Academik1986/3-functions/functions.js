@@ -2,20 +2,36 @@ const OIL = 926;
 const WATER = 1000;
 const MERCURY = 1355;
 
-const getWeight = (weight, liquid, count) => {
-    switch (liquid) {
-        case 'OIL':
-        case 'WATER':
-        case 'MERCURY':
-            return weight * count;
-        case '':
-            return 'Please enter liquid';
-        default:
-            return `Загальна маса рідини: ${OIL * 3 + WATER * 5 + MERCURY * 2}`;
+let weightOfOilTanker = 926;
+let weightOfWaterTanker = 1000;
+let weightOfMercuryTanker = 1355;
+
+let amountOfOilTanker = 3;
+let amountOfWaterTanker = 5;
+let amountOfMercuryTanker = 2;
+
+const getWeightOil = (weightOfOilTanker, liquid, amountOfOilTanker) => {
+    if (liquid === OIL) {
+        return weightOfOilTanker * amountOfOilTanker;
     }
 };
+console.log(getWeightOil(weightOfOilTanker, OIL, amountOfOilTanker));
 
-console.log(getWeight(926, 'OIL', 3)); // Вага олії
-console.log(getWeight(1000, 'WATER', 5)); // Вага води
-console.log(getWeight(1355, 'MERCURY', 2)); // Вага ртуті
-console.log(getWeight()); // Загальна вага
+const getWeightWater = (weightOfWaterTanker, liquid, amountOfWaterTanker) => {
+    if (liquid === WATER) {
+        return weightOfWaterTanker * amountOfWaterTanker;
+    }
+};
+console.log(getWeightWater(weightOfWaterTanker, WATER, amountOfWaterTanker));
+
+const getWeightMercury = (weightOfMercuryTanker, liquid, amountOfMercuryTanker) => {
+    if (liquid === MERCURY) {
+        return weightOfMercuryTanker * amountOfMercuryTanker;
+    }
+};
+console.log(getWeightMercury(weightOfMercuryTanker, MERCURY, amountOfMercuryTanker));
+
+const getWeightTotalLiquid = () => {
+    return `Загальна маса рідини: ${OIL * 3 + WATER * 5 + MERCURY * 2}`;
+};
+console.log(getWeightTotalLiquid());
