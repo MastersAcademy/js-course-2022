@@ -13,3 +13,9 @@ const waterWeight = getWeight(waterDencity, bulkVolume, countBulksWater);
 const oilWeight = getWeight(oilDencity, bulkVolume, countBulksOil);
 const totalWeight = mercuryWeight + waterWeight + oilWeight;
 console.log(`Total amount = ${totalWeight} kg`);
+
+function getExponent(basis, exponent) {
+    if (exponent < 1) return 1;
+    return basis * getExponent(basis, exponent - 1);
+}
+console.log(getExponent(6, 3));
