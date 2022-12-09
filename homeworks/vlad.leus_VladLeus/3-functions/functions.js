@@ -2,15 +2,17 @@ const OIL = 926;
 const WATER = 1000;
 const MERCURY = 1355;
 
-const liquids = ['oil', 'water', 'mercury'];
-
-function getWeight(weight, liquid, count) {
+function getWeight(weight, count) {
     return weight * count;
 }
 
-const sumOfWeights = getWeight(OIL, liquids[0], 3)
-    + getWeight(WATER, liquids[1], 5)
-    + getWeight(MERCURY, liquids[2], 2);
+function calculateSummaryWeight() {
+    return getWeight(OIL, 3)
+        + getWeight(WATER, 5)
+        + getWeight(MERCURY, 2);
+}
+
+const sumOfWeights = calculateSummaryWeight();
 console.log(`The weight of all liquids is equal to ${sumOfWeights}`);
 
 const num = 2;
