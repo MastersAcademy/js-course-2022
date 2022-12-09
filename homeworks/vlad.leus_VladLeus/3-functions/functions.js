@@ -8,18 +8,21 @@ function getWeight(weight, liquid, count) {
     return weight * count;
 }
 
-const sumOfWeights = getWeight(OIL, liquids[0], 3) + getWeight(WATER, liquids[1], 5) + getWeight(MERCURY, liquids[2], 2);
+const sumOfWeights = getWeight(OIL, liquids[0], 3)
+    + getWeight(WATER, liquids[1], 5)
+    + getWeight(MERCURY, liquids[2], 2);
 console.log(`The weight of all liquids is equal to ${sumOfWeights}`);
 
-const number = 2;
-const power = 5;
+const num = 2;
+const pow = 5;
 
-function getResultOfPower(number, power){
-    if (power === 0)
+function getResultOfPower(number, power) {
+    if (power === 0) {
         return 1;
-    else
-        return number * getResultOfPower(number, --power);
+    } else {
+        return number * getResultOfPower(number, power - 1);
+    }
 }
 
-const result = getResultOfPower(number, power);
+const result = getResultOfPower(num, pow);
 console.log(result);
