@@ -1,7 +1,7 @@
 // стартові дані
-const oil1KLitersWeight = 926;
-const water1KLitersWeight = 1000;
-const mercury1KLitersWeight = 1355;
+const OIL = 926;
+const WATER = 1000;
+const MERCURY = 1355;
 
 const oilTankQuantity = 3;
 const waterTankQuantity = 5;
@@ -22,15 +22,15 @@ function getWeight(weight, liquid, count) {
 }
 
 // Перший варіант накопичення даних про вагу всіх рідин
-summaryWeight += getWeight(oil1KLitersWeight, oilTankVol, oilTankQuantity);
-summaryWeight += getWeight(water1KLitersWeight, waterTankVol, waterTankQuantity);
-summaryWeight += getWeight(mercury1KLitersWeight, mercuryTankVol, mercuryTankQuantity);
+summaryWeight += getWeight(OIL, oilTankVol, oilTankQuantity);
+summaryWeight += getWeight(WATER, waterTankVol, waterTankQuantity);
+summaryWeight += getWeight(MERCURY, mercuryTankVol, mercuryTankQuantity);
 
 // Другий варіант накопичення даних про вагу всіх рідин
 // [Для коректного виконання коментуємо рядок let summaryLiquidWeight = 0 ]
-// const oilLiquidWeight = getWeight(oil1KLitersWeight, oilTankVol, oilTankQuantity);
-// const waterLiquidWeight = getWeight(water1KLitersWeight, waterTankVol, waterTankQuantity);
-// const mercuryLiquidWeight=getWeight(mercury1KLitersWeight,mercuryTankVol, mercuryTankQuantity)
+// const oilLiquidWeight = getWeight(OIL, oilTankVol, oilTankQuantity);
+// const waterLiquidWeight = getWeight(WATER, waterTankVol, waterTankQuantity);
+// const mercuryLiquidWeight=getWeight(MERCURY,mercuryTankVol, mercuryTankQuantity)
 
 // const summaryWeight = oilLiquidWeight + waterLiquidWeight + mercuryLiquidWeight;
 
