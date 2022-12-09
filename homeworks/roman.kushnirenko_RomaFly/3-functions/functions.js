@@ -1,29 +1,25 @@
 const oilWeight = 926;
 const waterWeight = 1000;
 const mercuryWeight = 1355;
+const liquidVolumeLiters = 1000;
 
 function getWeight(weight, liquid, count) {
-    const totalAmount = weight * count;
+    const totalAmount = (weight / liquid) * liquid * count;
 
-    console.log(`Total amount of ${liquid} = ${totalAmount} kg.`);
+    if (mercuryWeight) {
+        console.log(`Total amount of mercury = ${totalAmount} kg.`);
+    } else if (waterWeight) {
+        console.log(`Total amount of water = ${totalAmount} kg.`);
+    } else if (oilWeight) {
+        console.log(`Total amount of oil = ${totalAmount} kg.`);
+    }
     return totalAmount;
 }
 
-const totalMercury = getWeight(mercuryWeight, 'mercury', 2);
-const totalWater = getWeight(waterWeight, 'water', 5);
-const totalOil = getWeight(oilWeight, 'oil', 3);
+const totalMercury = getWeight(mercuryWeight, liquidVolumeLiters, 2);
+const totalWater = getWeight(waterWeight, liquidVolumeLiters, 5);
+const totalOil = getWeight(oilWeight, liquidVolumeLiters, 3);
 
 const allLiquidsTotalAmount = totalMercury + totalWater + totalOil;
 
 console.log(`\nTotal weight of all liquids = ${allLiquidsTotalAmount} kg.`);
-
-// Завдання з зірочкою
-
-function exponentiation(num1, num2) {
-    if (num2 === 1) {
-        return num1;
-    }
-    return num1 * exponentiation(num1, num2 - 1);
-}
-
-console.log(`\nПіднесення до степеня: ${exponentiation(2, 4)}`);
