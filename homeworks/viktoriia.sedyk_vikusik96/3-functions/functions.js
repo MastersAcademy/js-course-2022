@@ -1,21 +1,21 @@
-const OIL = 926;
-const WATER = 1000;
-const MERCURY = 1355;
+const OIL_WEIGHT = 926;
+const WATER_WEIGHT = 1000;
+const MERCURY_WEIGHT = 1355;
 
 const OIL_COUNT = 3;
 const WATER_COUNT = 5;
 const MERCURY_COUNT = 2;
 
-const TANK_WEIGHT = 1;
+const TANK_VOLUME = 1000;
 
-const getWeight = (weight, liquid, count) => weight * liquid * count;
+const getWeight = (weight, liquid, count) => (liquid * count * weight) / 1000;
 
-const oilWeight = getWeight(TANK_WEIGHT, OIL, OIL_COUNT);
-const waterWeight = getWeight(TANK_WEIGHT, WATER, WATER_COUNT);
-const mercuryWeight = getWeight(TANK_WEIGHT, MERCURY, MERCURY_COUNT);
+const totalOilWeight = getWeight(TANK_VOLUME, OIL_WEIGHT, OIL_COUNT);
+const totalWaterWeight = getWeight(TANK_VOLUME, WATER_WEIGHT, WATER_COUNT);
+const totalMercuryWeight = getWeight(TANK_VOLUME, MERCURY_WEIGHT, MERCURY_COUNT);
 
-function countTanksWeight(liquid1, liquid2, liquid3) {
-    return liquid1 + liquid2 + liquid3;
+function calcTanksWeight(liquidFirst, liquidSecond, liquidThird) {
+    return liquidFirst + liquidSecond + liquidThird;
 }
 
-console.log(countTanksWeight(oilWeight, waterWeight, mercuryWeight));
+calcTanksWeight(totalOilWeight, totalWaterWeight, totalMercuryWeight);
