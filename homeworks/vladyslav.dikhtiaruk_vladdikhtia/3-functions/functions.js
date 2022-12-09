@@ -20,7 +20,7 @@ const sumOfWeight = weightOfWater + weightOfOil + weightOfMercury;
 
 console.log('Summary weight is equal to: ', sumOfWeight);
 
-function exp(number, numOfExp) {//task with *
+function exp(number, numOfExp) { // task with *
     if (numOfExp === 0) {
         return 1;
     }
