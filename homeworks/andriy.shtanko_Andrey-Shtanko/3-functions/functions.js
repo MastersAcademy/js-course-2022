@@ -22,3 +22,16 @@ const getTotalWeight = () => {
 };
 
 getTotalWeight();
+
+// Завдання з зірочкою;
+
+const getNumberInDegree = (num, deg) => {
+    let result = num;
+    if (deg === 1) {
+        return result;
+    }
+    result = num * getNumberInDegree(num, deg - 1);
+    return result;
+};
+
+console.log(getNumberInDegree(5, 4));
