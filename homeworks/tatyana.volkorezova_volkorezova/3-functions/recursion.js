@@ -11,10 +11,7 @@ readline.question('Please enter the number for pow function: ', (firstInput) => 
     readline.question('Please enter the stepin: ', (secondInput) => {
         const firstNumReadLine = Number(firstInput);
         const secondNumReadLine = Number(secondInput);
-
-        // call powRecursion function
         const result = powRecursion(firstNumReadLine, secondNumReadLine);
-
         console.log(`\nThe result of pow function via recursion: ${result}`);
         readline.close();
     });
