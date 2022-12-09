@@ -7,9 +7,9 @@ const oilTankQuantity = 3;
 const waterTankQuantity = 5;
 const mercuryTankQuantity = 2;
 
-const oilTankVolume = 1000;
-const waterTankVolume = 1000;
-const mercuryTankVolume = 1000;
+const oilTankVol = 1000;
+const waterTankVol = 1000;
+const mercuryTankVol = 1000;
 
 // Змінна для першого варіанту обчислення суми трьох рідин
 let summaryWeight = 0;
@@ -22,15 +22,15 @@ function getWeight(weight, liquid, count) {
 }
 
 // Перший варіант накопичення даних про вагу всіх рідин
-summaryWeight += getWeight(oil1KLitersWeight, oilTankVolume, oilTankQuantity);
-summaryWeight += getWeight(water1KLitersWeight, waterTankVolume, waterTankQuantity);
-summaryWeight += getWeight(mercury1KLitersWeight, mercuryTankVolume, mercuryTankQuantity);
+summaryWeight += getWeight(oil1KLitersWeight, oilTankVol, oilTankQuantity);
+summaryWeight += getWeight(water1KLitersWeight, waterTankVol, waterTankQuantity);
+summaryWeight += getWeight(mercury1KLitersWeight, mercuryTankVol, mercuryTankQuantity);
 
 // Другий варіант накопичення даних про вагу всіх рідин
 // [Для коректного виконання коментуємо рядок let summaryLiquidWeight = 0 ]
-// const oilLiquidWeight = getWeight(oil1KLitersWeight, oilTankVolume, oilTankQuantity);
-// const waterLiquidWeight = getWeight(water1KLitersWeight, waterTankVolume, waterTankQuantity);
-// const mercuryLiquidWeight = getWeight(mercury1KLitersWeight, mercuryTankVolume, mercuryTankQuantity);
+// const oilLiquidWeight = getWeight(oil1KLitersWeight, oilTankVol, oilTankQuantity);
+// const waterLiquidWeight = getWeight(water1KLitersWeight, waterTankVol, waterTankQuantity);
+// const mercuryLiquidWeight=getWeight(mercury1KLitersWeight,mercuryTankVol, mercuryTankQuantity)
 
 // const summaryWeight = oilLiquidWeight + waterLiquidWeight + mercuryLiquidWeight;
 
