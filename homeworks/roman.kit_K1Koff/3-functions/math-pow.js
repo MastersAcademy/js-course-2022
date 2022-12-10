@@ -1,6 +1,6 @@
-function mathPow(num1, num2) {
-    if (num2 === 1) return num1;
-    return num1 * mathPow(num1, num2 - 1);
+function mathPow(base, power) {
+    if (power === 1) return base;
+    return base * mathPow(base, power - 1);
 }
 
 console.log(mathPow(3, 4)); //  81
