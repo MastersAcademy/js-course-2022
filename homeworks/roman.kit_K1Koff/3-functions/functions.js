@@ -1,31 +1,33 @@
-function getWeight() {
-    this.liquid = this.count * this.weight;
-    return this.liquid;
-}
-
 const waterShipment = {
-    liquid: 'water',
-    weight: 1000,
-    count: 5,
-    getWeight,
+    tankerVolume: 1000, // liters
+    density: 1.0, // kg per liter
+    tankersCount: 5, // number of tanks
 };
 
 const oilShipment = {
-    liquid: 'oil',
-    weight: 926,
-    count: 3,
-    getWeight,
+    tankerVolume: 1000,
+    density: 0.926,
+    tankersCount: 3,
 };
 
 const mercuryShipment = {
-    liquid: 'mercury',
-    weight: 1355,
-    count: 2,
-    getWeight,
+    tankerVolume: 1000,
+    density: 1.355,
+    tankersCount: 2,
 };
 
-const totalWeight = oilShipment.getWeight()
-    + mercuryShipment.getWeight()
-    + waterShipment.getWeight();
+function getWeight(liquidVolume, liquidDensity, count) {
+    return liquidVolume * liquidDensity * count;
+}
+
+function countTotalWeight(...shipments) {
+    return shipments.reduce((weightSum, currentShipment) => weightSum + getWeight(
+        currentShipment.tankerVolume,
+        currentShipment.density,
+        currentShipment.tankersCount,
+    ), 0);
+}
+
+const totalWeight = countTotalWeight(waterShipment, oilShipment, mercuryShipment);
 
 console.log(`Загальна вага становить: ${totalWeight} кг`);
