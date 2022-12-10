@@ -1,27 +1,41 @@
 const oilDencity = 926;
 const waterDencity = 1000;
 const mercuryDencity = 1355;
-const tankVolume = 1;
+
 const oilTankQuantity = 3;
 const waterTankQuantity = 5;
 const mercuryTankQuantity = 2;
 
+let oilWeight;
+let waterWeight;
+let mercuryWeight;
+
 function getWeight(weight, liquid, count) {
-    return weight * liquid * count;
+    switch (liquid) {
+        case 'oil':
+            oilWeight = weight * count;
+            break;
+        case 'water':
+            waterWeight = weight * count;
+            break;
+        case 'mercury':
+            mercuryWeight = weight * count;
+            break;
+        default:
+            console.log('Wrong liquid value!');
+    }
 }
 
-const oilWeight = getWeight(oilDencity, tankVolume, oilTankQuantity);
-const waterWeight = getWeight(waterDencity, tankVolume, waterTankQuantity);
-const mercuryWeight = getWeight(mercuryDencity, tankVolume, mercuryTankQuantity);
-const totalWeight = oilWeight + waterWeight + mercuryWeight;
+getWeight(oilDencity, 'oil', oilTankQuantity);
+getWeight(waterDencity, 'water', waterTankQuantity);
+getWeight(mercuryDencity, 'mercury', mercuryTankQuantity);
 
-console.log(`Weight of oil = ${oilWeight} kg`);
-console.log(`Weight of water = ${waterWeight} kg`);
-console.log(`Weight of mercury = ${mercuryWeight} kg`);
+let totalWeight;
+
+function getAllWeight() {
+    totalWeight = oilWeight + waterWeight + mercuryWeight;
+}
+
+getAllWeight();
+
 console.log(`Total weight = ${totalWeight} kg`);
-
-function getExponent(baseOfDegree, exponent) {
-    if (baseOfDegree < 1) return 1;
-    return baseOfDegree * getExponent(baseOfDegree, exponent - 1);
-}
-console.log(getExponent(2, 3));
