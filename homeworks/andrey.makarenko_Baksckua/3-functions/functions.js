@@ -7,11 +7,12 @@ const numberOfTanksOil = 3;
 const numberOfTanksWeter = 5;
 const numberOfTanksMerkury = 2;
 
+function getWeight(weight, liquid, count) {
+    return weight * liquid * count;
+}
+
 const oilWeight = getWeight(volume, OIL, numberOfTanksOil);
 const weterWeght = getWeight(volume, WATER, numberOfTanksWeter);
 const mercuryWeght = getWeight(volume, MERCURY, numberOfTanksMerkury);
 
-function getWeight(weight, liquid, count) {
-    return weight * liquid * count;
-}
 console.log(oilWeight + weterWeght + mercuryWeght);
