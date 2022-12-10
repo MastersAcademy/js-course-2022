@@ -4,17 +4,17 @@ const MERCURY = 1355;
 
 function getWeight(weight, liquid, count) {
     if (liquid === OIL) {
-        let value = weight * count;
+        const value = weight * count;
         return value;
     }
 
     if (liquid === WATER) {
-        let value = weight * count;
+        const value = weight * count;
         return value;
     }
 
     if (liquid === MERCURY) {
-        let value = weight * count;
+        const value = weight * count;
         return value;
     }
 };
