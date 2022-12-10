@@ -11,6 +11,6 @@ const calcSumWeter = WATER * numberOfTanksWeter;
 const calcSumMerkury = MERCURY * numberOfTanksMerkury;
 
 const getWeight = function () {
-    return calcSumOil + calcSumWete + calcSumMerkury;
+    return calcSumOil + calcSumWeter + calcSumMerkury;
 };
 console.log(getWeight);
