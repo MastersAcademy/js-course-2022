@@ -8,7 +8,7 @@ const TANK_VOLUME = 1; // одна тисяча літрів
 // оголошення змінних
 const countTanksOil = 3;
 const countTanksWater = 5;
-const countTanksMercury = 3;
+const countTanksMercury = 2;
 
 // оголошення функції
 
