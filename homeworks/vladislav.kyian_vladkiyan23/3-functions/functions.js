@@ -10,16 +10,12 @@ function getWeight(weight, liquid, count) {
         value = weight * count;
     }
 
-    else if (liquid === WATER) {
+    if (liquid === WATER) {
         value = weight * count;
     }
 
-    else if(liquid === MERCURY) {
+    if (liquid === MERCURY) {
         value = weight * count;
-    }
-    
-    else {
-        console.log('Error...');
     }
 
     return value;
