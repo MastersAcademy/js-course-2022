@@ -24,7 +24,7 @@ function getWeight(weight, liquid, count) {
 };
 
 function calculateWeight(water, oil, mercury) {
-    let totalAmount = weightOfOil + weightOfWater + weightOfMercury;
+    const totalAmount = weightOfOil + weightOfWater + weightOfMercury;
     return totalAmount;
 };
 
