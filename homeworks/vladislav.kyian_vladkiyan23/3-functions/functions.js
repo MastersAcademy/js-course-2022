@@ -19,7 +19,7 @@ function getWeight(weight, liquid, count) {
     }
 
     return value;
-};
+}
 
 function calculateWeight() {
     return getWeight(926, OIL, 3) + getWeight(1000, WATER, 5) + getWeight(1355, MERCURY, 2);
