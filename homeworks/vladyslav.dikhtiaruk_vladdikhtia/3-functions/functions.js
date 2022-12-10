@@ -4,19 +4,19 @@ const countOfOil = 3;
 const countOfWater = 5;
 const countOfMercury = 2;
 
-const weightOfOIL = 926;
-const weightOfWATER = 1000;
-const weightOfMERCURY = 1355;
+const weightOfOil = 926;
+const weightOfWater = 1000;
+const weightOfMercury = 1355;
 
 function getWeight(weight, liquid, count) {
     return weight * liquid * count;
 }
 
-const weightOfWater = getWeight(weightOfWATER, 1, countOfWater);
-const weightOfOil = getWeight(weightOfOIL, 1, countOfOil);
-const weightOfMercury = getWeight(weightOfMERCURY, 1, countOfMercury);
+const totalWater = getWeight(weightOfWater, 1, countOfWater);
+const totalOil = getWeight(weightOfOil, 1, countOfOil);
+const totalMercury = getWeight(weightOfMercury, 1, countOfMercury);
 
-const sumOfWeight = weightOfWater + weightOfOil + weightOfMercury;
+const sumOfWeight = totalWater + totalOil + totalMercury;
 
 console.log('Summary weight is equal to: ', sumOfWeight);
 
