@@ -16,3 +16,8 @@ const tanks = [{ volume: 1000, liquid: 'mercury', count: 2 },
     { volume: 1000, liquid: 'oil', count: 3 }];
 
 console.log(getAllWeight(tanks));
+// extraTask
+function pow(base, expo) {
+    if (expo === 0) { return 1; } return base * pow(base, expo - 1);
+}
+console.log(pow(5, 2));
