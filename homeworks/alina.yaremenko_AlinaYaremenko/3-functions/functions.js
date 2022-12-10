@@ -10,7 +10,7 @@ const MERCURY_COUNT = 2;
 const getWeight = (weight, liquid, count) => {
     const result = weight * liquid * count;
     return result;
-}
+};
 
 const oilWeight = getWeight(OIL, TANK_VOLUME, OIL_COUNT);
 const waterWeight = getWeight(WATER, TANK_VOLUME, WATER_COUNT);
