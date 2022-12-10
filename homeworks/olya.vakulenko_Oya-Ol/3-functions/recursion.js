@@ -1,8 +1,10 @@
 // Рекурсія
 
-function getNumber(num, degree) {
-    if (num < 1) return 1;
-    return num * getNumber(num, degree - 1);
+function getPow(base, exponent) {
+    if (exponent !== 1) {
+        return base * getPow(base, exponent - 1);
+    }
+    return base;
 }
 
-console.log(getNumber(5, 8));
+console.log(getPow(5, 8));
