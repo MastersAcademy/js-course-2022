@@ -10,7 +10,7 @@ const amountOfOilTanker = 3;
 const amountOfWaterTanker = 5;
 const amountOfMercuryTanker = 2;
 
-function getWeightOil(weightOfOilTanker, liquid, amountOfOilTanker) {
+const getWeightOil = (weightOfOilTanker, liquid, amountOfOilTanker) => {
     if (liquid === OIL) {
         return weightOfOilTanker * amountOfOilTanker;
     }
@@ -18,7 +18,7 @@ function getWeightOil(weightOfOilTanker, liquid, amountOfOilTanker) {
 };
 console.log(getWeightOil(weightOfOilTanker, OIL, amountOfOilTanker));
 
-function getWeightWater(weightOfWaterTanker, liquid, amountOfWaterTanker) {
+const getWeightWater = (weightOfWaterTanker, liquid, amountOfWaterTanker) => {
     if (liquid === WATER) {
         return weightOfWaterTanker * amountOfWaterTanker;
     }
@@ -26,7 +26,7 @@ function getWeightWater(weightOfWaterTanker, liquid, amountOfWaterTanker) {
 };
 console.log(getWeightWater(weightOfWaterTanker, WATER, amountOfWaterTanker));
 
-function getWeightMercury(weightOfMercuryTanker, liquid, amountOfMercuryTanker) {
+const getWeightMercury = (weightOfMercuryTanker, liquid, amountOfMercuryTanker) => {
     if (liquid === MERCURY) {
         return weightOfMercuryTanker * amountOfMercuryTanker;
     }
