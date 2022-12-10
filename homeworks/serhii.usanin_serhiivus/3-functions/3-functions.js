@@ -16,7 +16,6 @@ function getWeight(liquid, count) {
             result = MERCURY;
             break;
         default:
-            //console.log('Unknown liquid: ' + liquid + '  Weight is undefined');
             console.log(`Unknown liquid: ${liquid} Weight is undefined`);
             return 0;
     }
