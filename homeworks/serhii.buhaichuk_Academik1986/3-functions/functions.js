@@ -7,35 +7,23 @@ const oilCount = 3;
 const waterCount = 5;
 const mercuryCount = 2;
 
-let oilWeight;
-let waterWeight;
-let mercuryWeight;
+let totaOilWeight = oneCistern * OIL * oilCount;
+let totaWaterWeight = oneCistern * WATER * waterCount;
+let totaMercuryWeight = oneCistern * MERCURY * mercuryCount;
+let totalLiquid = totaOilWeight + totaWaterWeight + totaMercuryWeight;
 
 const getWeight = (weight, liquid, count) => {
-    switch (liquid) {
-        case OIL:
-            oilWeight = weight * liquid * count;
-            break;
-        case WATER:
-            waterWeight = weight * liquid * count;
-            break;
-        case MERCURY:
-            mercuryWeight = weight * liquid * count;
-            break;
-        default:
-            break;
+    if (liquid) {
+        return weight * liquid * count;
     }
-    return weight * liquid * count;
+    return `Загальна маса рідини: ${getTotalWeight()} кг`;
+};
+
+function getTotalWeight() {
+    return totalLiquid;
 };
 
 console.log(getWeight(oneCistern, OIL, oilCount));
 console.log(getWeight(oneCistern, WATER, waterCount));
 console.log(getWeight(oneCistern, MERCURY, mercuryCount));
-
-const totalWeight = () => oilWeight + waterWeight + mercuryWeight;
-
-function getTotalWeight() {
-    totalWeight = oilWeight + waterWeight + mercuryWeight;
-};
-
-console.log(`All weight: ${totalWeight()}`);
+console.log(getWeight(getTotalWeight()));
