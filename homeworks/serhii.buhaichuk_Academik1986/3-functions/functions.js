@@ -1,8 +1,3 @@
-const oneCistern = 1000;
-const OIL = 0.926;
-const WATER = 1;
-const MERCURY = 1.355;
-
 const oilCount = 3;
 const waterCount = 5;
 const mercuryCount = 2;
@@ -24,20 +19,17 @@ const getWeight = (weight, liquid, count) => {
             mercuryWeight = weight * liquid * count;
             break;
         default:
-            'Please enter liquid';
             break;
     }
     return weight * liquid * count;
-}
+};
 
 console.log(getWeight(oneCistern, OIL, oilCount));
 console.log(getWeight(oneCistern, WATER, waterCount));
 console.log(getWeight(oneCistern, MERCURY, mercuryCount));
 
-const totalWeight = () => oilWeight + waterWeight + mercuryWeight;
-
 function getTotalWeight() {
-    totalWeight = oilWeight + waterWeight + mercuryWeight;
-}
+    return oilWeight + waterWeight + mercuryWeight;
+};
 
-console.log(`All weight: ${totalWeight()}`);
+console.log(`All weight: ${getTotalWeight()}`);
