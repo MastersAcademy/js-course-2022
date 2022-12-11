@@ -11,14 +11,14 @@ const oilTankVol = 1000;
 const waterTankVol = 1000;
 const mercuryTankVol = 1000;
 
-// Змінна для обчислення суми трьох рідин
-let summaryWeight = 0;
-
 // Ініціалізація функції
 function getWeight(weight, liquid, count) {
     // Повернення маси одного типу рідини
     return (weight / 1000) * liquid * count;
 }
+
+// Змінна для обчислення суми трьох рідин
+let summaryWeight = 0;
 
 // Накопичення даних про вагу всіх рідин
 summaryWeight += getWeight(OIL, oilTankVol, oilTankQuantity);
