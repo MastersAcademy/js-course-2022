@@ -7,10 +7,13 @@ const quantity3 = 3;
 
 function getWeight({ volume, liquid, count }) {
     const coefficient = (volume / 1000) * count;
-    if (liquid === 'mercury') return coefficient * MERCURY;
-    if (liquid === 'water') return coefficient * WATER;
-    if (liquid === 'oil') return coefficient * OIL;
-    return getWeight;
+    if (liquid === 'mercury') {
+        return coefficient * MERCURY;
+    }
+    if (liquid === 'water') {
+        return coefficient * WATER;
+    }
+    return coefficient * OIL;
 }
 
 const bars = [
