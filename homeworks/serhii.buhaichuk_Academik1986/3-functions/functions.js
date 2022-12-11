@@ -9,7 +9,7 @@ const mercuryTankCount = 2;
 
 const getWeight = (weight, liquid, count) => {
     if (liquid) {
-        return weight * liquid * count
+        return weight * liquid * count;
     }
 };
 
