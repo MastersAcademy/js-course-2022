@@ -1,37 +1,42 @@
-const OIL = 926;
-const getWeightOil = (weightOfOilTanker, liquid, amountWagonOil) => {
-    if (liquid === OIL) {
-        return weightOfOilTanker * amountWagonOil;
-    }
-    return 'Enter liquid';
-};
-const weightOfOilTanker = 926;
-const amountWagonOil = 3;
-console.log(getWeightOil(weightOfOilTanker, OIL, amountWagonOil));
+const oneCistern = 1000;
+const OIL = 0.926;
+const WATER = 1;
+const MERCURY = 1.355;
 
-const WATER = 1000;
-const getWeightWater = (weightOfWaterTanker, liquid, amountWagonWater) => {
-    if (liquid === WATER) {
-        return weightOfWaterTanker * amountWagonWater;
-    }
-    return 'Enter liquid';
-};
-const weightOfWaterTanker = 1000;
-const amountWagonWater = 5;
-console.log(getWeightWater(weightOfWaterTanker, WATER, amountWagonWater));
+const oilCount = 3;
+const waterCount = 5;
+const mercuryCount = 2;
 
-const MERCURY = 1355;
-const getWeightMercury = (weightOfMercuryTanker, liquid, amountWagonMercury) => {
-    if (liquid === MERCURY) {
-        return weightOfMercuryTanker * amountWagonMercury;
-    }
-    return 'Enter liquid';
-};
-const weightOfMercuryTanker = 1355;
-const amountWagonMercury = 2;
-console.log(getWeightMercury(weightOfMercuryTanker, MERCURY, amountWagonMercury));
+let oilWeight;
+let waterWeight;
+let mercuryWeight;
+let message;
 
-function getWeightTotalLiquid() {
-    return `Загальна маса рідини: ${OIL * 3 + WATER * 5 + MERCURY * 2}`;
+const getWeight = (weight, liquid, count) => {
+    switch (liquid) {
+        case OIL:
+            oilWeight = weight * liquid * count;
+            break;
+        case WATER:
+            waterWeight = weight * liquid * count;
+            break;
+        case MERCURY:
+            mercuryWeight = weight * liquid * count;
+            break;
+        default:
+            message = 'Please enter liquid';
+    }
+    return weight * liquid * count;
 }
-console.log(getWeightTotalLiquid());
+
+console.log(getWeight(oneCistern, OIL, oilCount));
+console.log(getWeight(oneCistern, WATER, waterCount));
+console.log(getWeight(oneCistern, MERCURY, mercuryCount));
+
+const AllWeight = () => oilWeight + waterWeight + mercuryWeight;
+
+function getAllWeight() {
+    AllWeight = oilWeight + waterWeight + mercuryWeight;
+}
+
+console.log(`All weight: ${AllWeight()}`);
