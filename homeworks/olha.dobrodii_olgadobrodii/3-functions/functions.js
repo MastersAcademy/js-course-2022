@@ -14,7 +14,7 @@
         }
         if (liquid === WATER) {
             return WATER_WEIGHT * count;
-        }     
+        }
         return MERCURY_WEIGHT * count;
     };
     console.log(
