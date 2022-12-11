@@ -24,4 +24,4 @@ function calculateWeight() {
     return TOTAL_WEIGHT_OF_OIL + TOTAL_WEIGHT_OF_WATER + TOTAL_WEIGHT_OF_MERCURY;
 }
 
-console.log('total weight of all liquids = ' + calculateWeight());
+console.log(calculateWeight());
