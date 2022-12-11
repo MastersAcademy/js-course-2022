@@ -1,25 +1,19 @@
-const totalWeightOneTank = 1000;
-const oilTanker = 0.926;
-const waterTanker = 1;
-const mercuryTanker = 1.355;
+const volumeOneTankLiquid = 1;
+const oilWeight = 926;
+const waterWeight = 1000;
+const mercuryWeight = 1355;
 
-const oilCount = 3;
-const waterCount = 5;
-const mercuryCount = 2;
+const oilTankCount = 3;
+const waterTankCount = 5;
+const mercuryTankCount = 2;
 
-const totaOilWeight = totalWeightOneTank * oilTanker * oilCount;
-const totaWaterWeight = totalWeightOneTank * waterTanker * waterCount;
-const totaMercuryWeight = totalWeightOneTank * mercuryTanker * mercuryCount;
-const totalLiquid = totaOilWeight + totaWaterWeight + totaMercuryWeight;
+const totalWeightLiquid = oilWeight * oilTankCount + waterWeight * waterTankCount + mercuryWeight * mercuryTankCount;
 
 const getWeight = (weight, liquid, count) => {
-    if (liquid) {
-        return weight * liquid * count;
-    }
-    return `Загальна маса рідини: ${totalLiquid}`;
+    return weight * liquid * count;
 };
 
-console.log(getWeight(totalWeightOneTank, oilTanker, oilCount));
-console.log(getWeight(totalWeightOneTank, waterTanker, waterCount));
-console.log(getWeight(totalWeightOneTank, mercuryTanker, mercuryCount));
-console.log(getWeight());
+console.log(getWeight(volumeOneTankLiquid, oilWeight, oilTankCount));
+console.log(getWeight(volumeOneTankLiquid, waterWeight, waterTankCount));
+console.log(getWeight(volumeOneTankLiquid, mercuryWeight, mercuryTankCount));
+console.log(totalWeightLiquid);
