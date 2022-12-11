@@ -14,14 +14,14 @@ const totalLiquid = totaOilWeight + totaWaterWeight + totaMercuryWeight;
 
 function getTotalWeight() {
     return totalLiquid;
-};
+}
 
 const getWeight = (weight, liquid, count) => {
     if (liquid) {
         return weight * liquid * count;
     }
     return `Загальна маса рідини: ${getTotalWeight()} кг`;
-};
+}
 
 console.log(getWeight(oneCistern, OIL, oilCount));
 console.log(getWeight(oneCistern, WATER, waterCount));
