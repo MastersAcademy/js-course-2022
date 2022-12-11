@@ -24,7 +24,8 @@ const getWeight = (weight, liquid, count) => {
             mercuryWeight = weight * liquid * count;
             break;
         default:
-            message = 'Please enter liquid';
+            'Please enter liquid';
+            break;
     }
     return weight * liquid * count;
 }
@@ -33,10 +34,10 @@ console.log(getWeight(oneCistern, OIL, oilCount));
 console.log(getWeight(oneCistern, WATER, waterCount));
 console.log(getWeight(oneCistern, MERCURY, mercuryCount));
 
-const AllWeight = () => oilWeight + waterWeight + mercuryWeight;
+const totalWeight = () => oilWeight + waterWeight + mercuryWeight;
 
-function getAllWeight() {
-    AllWeight = oilWeight + waterWeight + mercuryWeight;
+function getTotalWeight() {
+    totalWeight = oilWeight + waterWeight + mercuryWeight;
 }
 
-console.log(`All weight: ${AllWeight()}`);
+console.log(`All weight: ${totalWeight()}`);
