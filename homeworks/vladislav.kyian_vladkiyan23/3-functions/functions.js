@@ -17,11 +17,11 @@ function getWeight(weight, liquid, count) {
 }
 
 function calculateWeight() {
-    const TOTAL_WEIGHT_OF_OIL = getWeight(OIL, LIQUID_OIL, NUMBER_OF_OIL_TANKS);
-    const TOTAL_WEIGHT_OF_WATER = getWeight(WATER, LIQUID_WATER, NUMBER_OF_WATER_TANKS);
-    const TOTAL_WEIGHT_OF_MERCURY = getWeight(MERCURY, LIQUID_MERCUTY, NUMBER_OF_MERCURY_TANKS);
+    const totalWeightOfOil = getWeight(OIL, LIQUID_OIL, NUMBER_OF_OIL_TANKS);
+    const totalWeightOfWater = getWeight(WATER, LIQUID_WATER, NUMBER_OF_WATER_TANKS);
+    const totalWeightOfMercury = getWeight(MERCURY, LIQUID_MERCUTY, NUMBER_OF_MERCURY_TANKS);
 
-    return TOTAL_WEIGHT_OF_OIL + TOTAL_WEIGHT_OF_WATER + TOTAL_WEIGHT_OF_MERCURY;
+    return totalWeightOfOil + totalWeightOfWater + totalWeightOfMercury;
 }
 
 console.log(calculateWeight());
