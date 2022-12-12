@@ -11,13 +11,13 @@ const getWeight = (weight, liquid, count) => {
     if (liquid) {
         return weight * liquid * count;
     }
-    else {
-        return false;
-    }
-}
+};
 
 const oilTotalWeight = (getWeight(volumeOneTankLiquid, oilWeight, oilTankCount));
 const waterTotalWeight = (getWeight(volumeOneTankLiquid, waterWeight, waterTankCount));
 const mercuryTotalWeight = (getWeight(volumeOneTankLiquid, mercuryWeight, mercuryTankCount));
 
+console.log(getWeight(volumeOneTankLiquid, oilWeight, oilTankCount));
+console.log(getWeight(volumeOneTankLiquid, waterWeight, waterTankCount));
+console.log(getWeight(volumeOneTankLiquid, mercuryWeight, mercuryTankCount));
 console.log(`Total weight liquid: ${oilTotalWeight + waterTotalWeight + mercuryTotalWeight} kg`);
