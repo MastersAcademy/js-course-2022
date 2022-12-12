@@ -22,16 +22,11 @@ calcTanksWeight(totalOilWeight, totalWaterWeight, totalMercuryWeight);
 
 // second task
 
-function getExponentiation(num, pow) {
-    let res = 0;
-    function exponentiation(number, power) {
-        if (power === 1) {
-            return res;
-        }
-        res = number * num;
-        return exponentiation(res, power - 1);
+function getExponentiation(number, power) {
+    if (power === 1) {
+        return number;
     }
-    return exponentiation(num, pow);
+    return number * getExponentiation(number, power - 1);
 }
 
 console.log(getExponentiation(2, 4));
