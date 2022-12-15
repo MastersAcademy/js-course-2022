@@ -40,6 +40,12 @@ function showCreatedPets() {
     });
 }
 showCreatedPets();
+function changeFoodState() {
+  template.happiness++;
+  template.health++;
+  template.satiety++;
+  showTemplate();
+}
 function changePlayState() {
     template.happiness += 2;
     template.health++;
@@ -52,16 +58,10 @@ function changePlayState() {
         foodButton.removeEventListener('click', changeFoodState);
     }
 }
-function changeFoodState() {
-    template.happiness++;
-    template.health++;
-    template.satiety++;
-    showTemplate();
-}
 function createPet() {
     inputContainer.classList.toggle('hidden');
     createPetButton.classList.toggle('disabled');
-    let newObject = Object.create(template);
+    const newObject = Object.create(template);
     petArray.push(newObject);
     submitButton.addEventListener('click', () => {
         if (inputPetName.value.length !== 0) {
