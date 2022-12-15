@@ -15,7 +15,7 @@ function feed() {
 
     if (tamagochi.health === 0 || tamagochi.happy === 0) {
         console.log('Your pet is dead');
-    } 
+    }
 }
 
 function play() {
