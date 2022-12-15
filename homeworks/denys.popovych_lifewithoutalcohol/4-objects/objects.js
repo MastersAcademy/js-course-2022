@@ -1,4 +1,4 @@
-const tamagochi = {
+const tamagotchi = {
     name: 'pet',
     health: 6,
     happiness: 4,
@@ -66,14 +66,14 @@ const tamagochi = {
 };
 let lionChild;
 // ========= Create animal ==========
-const lion = Object.create(tamagochi);
+const lion = Object.create(tamagotchi);
 lion.name = 'lion Alex';
 lion.satiety = 5;
 lion.favoriteFood = 'meat';
 // ==================================
 
 // ========= Create animal ==========
-const lioness = Object.create(tamagochi);
+const lioness = Object.create(tamagotchi);
 lioness.name = 'lioness Florrie';
 lioness.satiety = 8;
 lioness.beauty = 5;
@@ -119,7 +119,7 @@ if (lioness.beauty >= 6 && lion.energy == 6) {
     lioness.mating();
     lioness.checkLife();
     lioness.beauty = 1;
-    lionChild = Object.create(tamagochi);
+    lionChild = Object.create(tamagotchi);
     console.log();
     console.log('=========А lion cub was born=========');
     lionChild.name = 'lion cub';
@@ -129,17 +129,17 @@ if (lioness.beauty >= 6 && lion.energy == 6) {
 }
 
 console.log();
-console.log(`=========Play with ${tamagochi.name}=========`);
-tamagochi.checkLife();
-tamagochi.tickle();
-tamagochi.checkLife();
-tamagochi.play();
-tamagochi.checkLife();
-tamagochi.goToTheToilet();
-tamagochi.checkLife();
-tamagochi.gotSick();
-tamagochi.checkLife();
-tamagochi.treat();
-tamagochi.checkLife();
-tamagochi.gotSick();
-tamagochi.checkLife();
+console.log(`=========Play with ${tamagotchi.name}=========`);
+tamagotchi.checkLife();
+tamagotchi.tickle();
+tamagotchi.checkLife();
+tamagotchi.play();
+tamagotchi.checkLife();
+tamagotchi.goToTheToilet();
+tamagotchi.checkLife();
+tamagotchi.gotSick();
+tamagotchi.checkLife();
+tamagotchi.treat();
+tamagotchi.checkLife();
+tamagotchi.gotSick();
+tamagotchi.checkLife();
