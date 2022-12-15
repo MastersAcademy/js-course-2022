@@ -1,25 +1,52 @@
 const tamagotchi = {
-    health: 0,
-    happiness: 5,
+    health: 4,
+    happiness: 1,
     satiety: 5,
-    changeValue(value, sembol) {
-        if (this[value] <= 0) console.log('your tamagotchi is died');
-        if (sembol === '-') this[value]--;
-        if (sembol === '+') this[value]++;
+    play() {
+        this.happiness++;
+        this.health--;
+        this.satiety--;
+
+        this.cheackValues();
+    },
+    eat() {
+        this.satiety++;
+        this.happiness++;
+        this.health++;
+
+        this.cheackValues();
+    },
+    wash() {
+        this.satiety--;
+        this.health++;
+        this.happiness--;
+
+        this.cheackValues();
+    },
+    cheackValues() {
+        if (this.happiness <= 0 || this.health <= 0 || this.satiety <= 0) {
+            console.log('your tamagotchi died');
+        }
     },
 };
 
-tamagotchi.changeValue('health', '+');
-
 // second task
 
-const defaultTamagotchi = {
-    health: 0,
-    happiness: 5,
-    satiety: 5,
-};
-
-const barsik = Object.create(defaultTamagotchi);
+const barsik = Object.create(tamagotchi);
 
 barsik.name = 'Barsik';
 barsik.preferFood = 'fish';
+
+barsik.eat = function (food) {
+    if (food && food === this.preferFood) {
+        this.satiety += 2;
+        this.happiness += 2;
+    } else {
+        this.satiety++;
+        this.happiness++;
+    }
+    this.health++;
+    this.cheackValues();
+};
+
+barsik.eat('fish');
