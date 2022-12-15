@@ -41,10 +41,10 @@ function showCreatedPets() {
 }
 showCreatedPets();
 function changeFoodState() {
-  template.happiness++;
-  template.health++;
-  template.satiety++;
-  showTemplate();
+    template.happiness++;
+    template.health++;
+    template.satiety++;
+    showTemplate();
 }
 function changePlayState() {
     template.happiness += 2;
