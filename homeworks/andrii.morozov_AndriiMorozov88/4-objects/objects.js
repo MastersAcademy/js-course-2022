@@ -9,23 +9,36 @@ const inputHappiness = document.querySelector('[data-input-happiness]');
 const inputSatiety = document.querySelector('[data-input-satiety]');
 const submitButton = document.querySelector('[data-submit]');
 const createdPets = document.querySelector('[data-created-pets]');
-const petArray = new Array();
+const petArray = [];
 let template = {
-	name: 'templatePet',
-	health: 5,
-	happiness: 5,
-	satiety: 5
-}
+    name: 'templatePet',
+	  health: 5,
+	  happiness: 5,
+	  satiety: 5,
+};
 petArray.push(template);
+function showCreatedPets() {
+  createdPets.innerText = '';
+  petArray.forEach((element) => {
+      const createdPet = document.createElement('button');
+      createdPets.append(createdPet);
+      createdPet.classList.add('created-pets');
+      createdPet.innerText = element.name;
+      createdPet.addEventListener('click', () => {
+          template = element;
+          showTemplate();
+      });
+  });
+}
 showCreatedPets();
 function showTemplate() {
-	keysArray = Object.keys(template);
-	pet.innerHTML = '';
-	keysArray.forEach((key) => {
+	  let keysArray = Object.keys(template);
+	  pet.innerHTML = '';
+	  keysArray.forEach((key) => {
 		const objectField = document.createElement('p');
 		pet.append(objectField);
 		objectField.innerText = (key + ': ' + template[key]);
-	});
+	  });
 }
 function changePlayState() {
 	template.happiness = template.happiness + 2;
@@ -44,19 +57,6 @@ function changeFoodState() {
 	template.health ++;
 	template.satiety ++;
 	showTemplate();
-}
-function showCreatedPets() {
-	createdPets.innerText = '';
-	petArray.forEach((element) => {
-		const createdPet = document.createElement('button');
-        createdPets.append(createdPet);
-		createdPet.classList.add('created-pets');
-		createdPet.innerText = element.name;
-		createdPet.addEventListener('click', () => {
-			template = element;
-			showTemplate();
-		});
-	});
 }
 function createPet() {
 	inputContainer.classList.toggle('hidden');
