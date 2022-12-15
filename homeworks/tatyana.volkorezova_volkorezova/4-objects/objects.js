@@ -5,30 +5,33 @@ const tamagochi = {
     happinessValue: 5,
     satietyValue: 3,
     healthUp() {
-        ++this.healthValue;
+        this.healthValue++;
     },
     happyUp() {
-        ++this.happinessValue;
+        this.happinessValue++;
     },
     play() {
-        --this.satietyValue;
-        --this.happinessValue;
-        --this.healthValue;
+        this.satietyValue--;
+        this.happinessValue--;
+        this.healthValue--;
     },
     feedUp() {
-        ++this.satietyValue;
+        this.satietyValue++;
     },
     clean() {
-        ++this.healthValue;
+        this.healthValue++;
     },
     shopping() {
-        ++this.happinessValue;
+        this.happinessValue++;
     },
     stateAnalyzer() {
-        if ((this.healthValue === 0) || (this.happinessValue === 0) || (this.satietyValue === 0)) {
-            console.log(`Unfortunately, ${this.name} died. Game over.`);
-        } else {
+        const isAlive = (this.healthValue > 0)
+            || (this.happinessValue > 0)
+            || (this.satietyValue > 0);
+        if (isAlive) {
             console.log(`Keep on. ${this.name} is still alive.`);
+        } else {
+            console.log(`Unfortunately, ${this.name} died. Game over.`);
         }
     },
 };
@@ -40,4 +43,10 @@ tamagochi.happyUp();
 tamagochi.clean();
 tamagochi.shopping();
 tamagochi.play();
-console.log(tamagochi.stateAnalyzer());
+tamagochi.play();
+tamagochi.play();
+tamagochi.play();
+tamagochi.play();
+tamagochi.play();
+tamagochi.play();
+tamagochi.stateAnalyzer();
