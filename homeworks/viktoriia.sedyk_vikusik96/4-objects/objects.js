@@ -10,3 +10,16 @@ const tamagotchi = {
 };
 
 tamagotchi.changeValue('health', '+');
+
+// second task
+
+const defaultTamagotchi = {
+    health: 0,
+    happiness: 5,
+    satiety: 5,
+};
+
+const barsik = Object.create(defaultTamagotchi);
+
+barsik.name = 'Barsik';
+barsik.preferFood = 'fish';
