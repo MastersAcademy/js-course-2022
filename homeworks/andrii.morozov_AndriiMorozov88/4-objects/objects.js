@@ -18,12 +18,12 @@ let template = {
 };
 petArray.push(template);
 function showTemplate() {
-    let keysArray = Object.keys(template);
+    const keysArray = Object.keys(template);
     pet.innerHTML = '';
     keysArray.forEach((key) => {
-    const objectField = document.createElement('p');
-    pet.append(objectField);
-    objectField.innerText = (key + ': ' + template[key]);
+        const objectField = document.createElement('p');
+        pet.append(objectField);
+        objectField.innerText = key + ': ' + template[key];
     });
 }
 function showCreatedPets() {
@@ -41,40 +41,40 @@ function showCreatedPets() {
 }
 showCreatedPets();
 function changePlayState() {
-	template.happiness = template.happiness + 2;
-	template.health ++;
-	template.satiety --;
-	if ((template.happiness * template.health * template.satiety) > 0) {
-		showTemplate();
-	} else {
-		showTemplate();
-		playButton.removeEventListener('click', changePlayState);
-		foodButton.removeEventListener('click', changeFoodState);
-	}
+    template.happiness = template.happiness + 2;
+    template.health ++;
+    template.satiety --;
+    if ((template.happiness * template.health * template.satiety) > 0) {
+        showTemplate();
+    } else {
+        showTemplate();
+        playButton.removeEventListener('click', changePlayState);
+        foodButton.removeEventListener('click', changeFoodState);
+    }
 }
 function changeFoodState() {
-	template.happiness = template.happiness + 1;
-	template.health ++;
-	template.satiety ++;
-	showTemplate();
+    template.happiness = template.happiness + 1;
+    template.health ++;
+    template.satiety ++;
+    showTemplate();
 }
 function createPet() {
-	inputContainer.classList.toggle('hidden');
-	createPetButton.classList.toggle('disabled');
-	newObject = Object.create(template);
-	petArray.push(newObject);
-	submitButton.addEventListener('click', () => {
-		if (inputPetName.value.length !== 0) {
-			newObject.name = inputPetName.value;
-			newObject.health = Number(inputHealth.value);
-			newObject.happiness = Number(inputHappiness.value);
-			newObject.satiety = Number(inputSatiety.value);
-			showCreatedPets();
-			inputContainer.reset();
-			inputContainer.classList.toggle('hidden');
-			createPetButton.classList.toggle('disabled');
-		}
-	});
+    inputContainer.classList.toggle('hidden');
+    createPetButton.classList.toggle('disabled');
+    newObject = Object.create(template);
+    petArray.push(newObject);
+    submitButton.addEventListener('click', () => {
+        if (inputPetName.value.length !== 0) {
+                newObject.name = inputPetName.value;
+                newObject.health = Number(inputHealth.value);
+                newObject.happiness = Number(inputHappiness.value);
+                newObject.satiety = Number(inputSatiety.value);
+                showCreatedPets();
+                inputContainer.reset();
+                inputContainer.classList.toggle('hidden');
+                createPetButton.classList.toggle('disabled');
+        }
+    });
 }
 showTemplate();
 playButton.addEventListener('click', changePlayState);
