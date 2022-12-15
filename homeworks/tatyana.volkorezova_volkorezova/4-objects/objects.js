@@ -26,8 +26,8 @@ const tamagochi = {
     },
     stateAnalyzer() {
         const isAlive = (this.healthValue > 0)
-            || (this.happinessValue > 0)
-            || (this.satietyValue > 0);
+            && (this.happinessValue > 0)
+            && (this.satietyValue > 0);
         if (isAlive) {
             console.log(`Keep on. ${this.name} is still alive.`);
         } else {
