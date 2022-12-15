@@ -16,8 +16,6 @@ function feed() {
     console.log(`Pet health: ${tamagochi.health}`);
     console.log(`Pet happy: ${tamagochi.happy}`);
     console.log(`Per satiety: ${tamagochi.satiety}`);
-
-
 }
 
 function play() {
@@ -32,8 +30,6 @@ function play() {
     console.log(`Pet health: ${tamagochi.health}`);
     console.log(`Pet happy: ${tamagochi.happy}`);
     console.log(`Per satiety: ${tamagochi.satiety}`);
-
-
 }
 
 feed();
