@@ -5,6 +5,10 @@ const tamagochi = {
 };
 
 function feed() {
+    if (tamagochi.health === 0 || tamagochi.happy === 0) {
+        console.log('Your pet is dead');
+    }
+
     tamagochi.health += 1;
     tamagochi.happy -= 1;
     tamagochi.satiety += 1;
@@ -13,12 +17,14 @@ function feed() {
     console.log(`Pet happy: ${tamagochi.happy}`);
     console.log(`Per satiety: ${tamagochi.satiety}`);
 
-    if (tamagochi.health === 0 || tamagochi.happy === 0) {
-        console.log('Your pet is dead');
-    }
+
 }
 
 function play() {
+    if (tamagochi.health === 0 || tamagochi.satiety === 0) {
+        console.log('Your pet is dead');
+    }
+
     tamagochi.health -= 1;
     tamagochi.happy += 1;
     tamagochi.satiety -= 1;
@@ -27,9 +33,7 @@ function play() {
     console.log(`Pet happy: ${tamagochi.happy}`);
     console.log(`Per satiety: ${tamagochi.satiety}`);
 
-    if (tamagochi.health === 0 || tamagochi.satiety === 0) {
-        console.log('Your pet is dead');
-    }
+
 }
 
 feed();
