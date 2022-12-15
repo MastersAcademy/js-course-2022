@@ -12,34 +12,34 @@ const createdPets = document.querySelector('[data-created-pets]');
 const petArray = [];
 let template = {
     name: 'templatePet',
-	  health: 5,
-	  happiness: 5,
-	  satiety: 5,
+    health: 5,
+    happiness: 5,
+    satiety: 5,
 };
 petArray.push(template);
+function showTemplate() {
+    let keysArray = Object.keys(template);
+    pet.innerHTML = '';
+    keysArray.forEach((key) => {
+    const objectField = document.createElement('p');
+    pet.append(objectField);
+    objectField.innerText = (key + ': ' + template[key]);
+    });
+}
 function showCreatedPets() {
-  createdPets.innerText = '';
-  petArray.forEach((element) => {
-      const createdPet = document.createElement('button');
-      createdPets.append(createdPet);
-      createdPet.classList.add('created-pets');
-      createdPet.innerText = element.name;
-      createdPet.addEventListener('click', () => {
-          template = element;
-          showTemplate();
-      });
-  });
+    createdPets.innerText = '';
+    petArray.forEach((element) => {
+        const createdPet = document.createElement('button');
+        createdPets.append(createdPet);
+        createdPet.classList.add('created-pets');
+        createdPet.innerText = element.name;
+        createdPet.addEventListener('click', () => {
+            template = element;
+            showTemplate();
+        });
+    });
 }
 showCreatedPets();
-function showTemplate() {
-	  let keysArray = Object.keys(template);
-	  pet.innerHTML = '';
-	  keysArray.forEach((key) => {
-		const objectField = document.createElement('p');
-		pet.append(objectField);
-		objectField.innerText = (key + ': ' + template[key]);
-	  });
-}
 function changePlayState() {
 	template.happiness = template.happiness + 2;
 	template.health ++;
