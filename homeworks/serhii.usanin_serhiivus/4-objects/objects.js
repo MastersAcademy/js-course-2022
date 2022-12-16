@@ -1,74 +1,72 @@
-function CreateObject(name){
-    return {name: name,
+function CreateObject(name) {
+    return { 
+        name: name,
         helthCount: 100,
         helthStr: 'Good',
-        orderToNeed: {
-        sleep: 100,
-        eat: 100,
-        drink: 100,
-        rest: 100,
-        play: 100,
-    },
-    sleep: function(duration) {
-        this.orderToNeed.sleep += duration;
-        this.orderToNeed.sleep = Math.min(100, this.orderToNeed.sleep);
-        this.orderToNeed.rest += duration;
-        this.orderToNeed.rest = Math.min(100, this.orderToNeed.rest);
-        this.orderToNeed.drink -= 0.5 * duration;
-        this.orderToNeed.eat -= 0.5 * duration;
-        this.orderToNeed.play -= 0.5 * duration; 
-    },
-    eat: function(duration) {
-        this.orderToNeed.eat += 10 * duration;
-        this.orderToNeed.eat = Math.min(100,this.orderToNeed.eat);
-        this.orderToNeed.sleep -= duration;
-        this.orderToNeed.drink -= duration;
-        this.orderToNeed.play -= duration; 
-    },
-    drink: function(duration) {
-        this.orderToNeed.drink += 10 * duration;
-        this.orderToNeed.drink = Math.min(100, this.orderToNeed.drink);
-       
-        this.orderToNeed.sleep -= duration;
-        this.orderToNeed.drink -= duration;
-        this.orderToNeed.play -= duration; 
-    },
-    rest: function(duration) {
-        this.orderToNeed.rest += duration;
-        this.orderToNeed.rest = Math.min(100, this.orderToNeed.rest);
-       
-        this.orderToNeed.sleep -= duration;
-        this.orderToNeed.eat -= 0.5 * duration;
-        this.orderToNeed.drink -= 0.5 * duration;
-        this.orderToNeed.play -= duration;
-    },
-    play: function(duration) {
-        this.orderToNeed.play += duration;
-        this.orderToNeed.play = Math.min(100, this.orderToNeed.play);
-       
-        this.orderToNeed.sleep -= duration;
-        this.orderToNeed.eat -= duration;
-        this.orderToNeed.drink -= duration;
-    },
-    checkHelth: function(){
-        let maxTotal = 0;
-        let total = 0;
-        for (let key in this.orderToNeed){
-            maxTotal += 100;
-            total += this.orderToNeed[key];
-        };
-        this.helthCount = Math.round(total/maxTotal*100);
-        if (this.helthCount > 80) {
-            this.helthStr = 'Perfect';
-        }else if (this.helthCount > 40) {
-            this.helthStr = 'Good';
-        }else if (this.helthCount > 0) {
-            this.helthStr = 'Bad'; 
-        } else{
-            this.helthStr = 'Dead';
+        listToNeed: {
+            sleep: 100,
+            eat: 100,
+            drink: 100,
+            rest: 100,
+            play: 100,
+        },
+        sleep: function(duration) {
+            this.listToNeed.sleep += duration;
+            this.listToNeed.sleep = Math.min(100, this.listToNeed.sleep);
+            this.listToNeed.rest += duration;
+            this.listToNeed.rest = Math.min(100, this.listToNeed.rest);
+            this.listToNeed.drink -= 0.5 * duration;
+            this.listToNeed.eat -= 0.5 * duration;
+            this.listToNeed.play -= 0.5 * duration; 
+        },
+        eat: function(duration) {
+            this.listToNeed.eat += 10 * duration;
+            this.listToNeed.eat = Math.min(100,this.listToNeed.eat);
+            this.listToNeed.sleep -= duration;
+            this.listToNeed.drink -= duration;
+            this.listToNeed.play -= duration; 
+        },
+        drink: function(duration) {
+            this.listToNeed.drink += 10 * duration;
+            this.listToNeed.drink = Math.min(100, this.listToNeed.drink);
+            this.listToNeed.sleep -= duration;
+            this.listToNeed.drink -= duration;
+            this.listToNeed.play -= duration; 
+        },
+        rest: function(duration) {
+            this.listToNeed.rest += duration;
+            this.listToNeed.rest = Math.min(100, this.listToNeed.rest);
+            this.listToNeed.sleep -= duration;
+            this.listToNeed.eat -= 0.5 * duration;
+            this.listToNeed.drink -= 0.5 * duration;
+            this.listToNeed.play -= duration;
+        },
+        play: function(duration) {
+            this.listToNeed.play += duration;
+            this.listToNeed.play = Math.min(100, this.listToNeed.play);
+            this.listToNeed.sleep -= duration;
+            this.listToNeed.eat -= duration;
+            this.listToNeed.drink -= duration;
+        },
+        checkHelth: function() {
+            let maxTotal = 0;
+            let total = 0;
+            for (let key in this.listToNeed) {
+                maxTotal += 100;
+                total += this.listToNeed[key];
+            };
+            this.helthCount = Math.round(total/maxTotal*100);
+            if (this.helthCount > 80) {
+                this.helthStr = 'Perfect';
+            } else if (this.helthCount > 40) {
+                this.helthStr = 'Good';
+            } else if (this.helthCount > 0) {
+                this.helthStr = 'Bad'; 
+            } else{
+                this.helthStr = 'Dead';
+            }
         }
-    }
-};
+    };
 }
 
 let tamagochi = CreateObject('TomCat');
