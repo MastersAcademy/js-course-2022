@@ -1,13 +1,13 @@
 const pet = document.querySelector('[data-pet]');
 const inputContainer = document.querySelector('[data-input-container]');
-const playButton = document.querySelector('[data-play]');
-const foodButton = document.querySelector('[data-food]');
-const createPetButton = document.querySelector('[data-create-pet]');
+const playButtonEl = document.querySelector('[data-play]');
+const foodButtonEl = document.querySelector('[data-food]');
+const createPetButtonEl = document.querySelector('[data-create-pet]');
 const inputPetName = document.querySelector('[data-input-pet-name]');
 const inputHealth = document.querySelector('[data-input-health]');
 const inputHappiness = document.querySelector('[data-input-happiness]');
 const inputSatiety = document.querySelector('[data-input-satiety]');
-const submitButton = document.querySelector('[data-submit]');
+const submitButtonEl = document.querySelector('[data-submit]');
 const createdPets = document.querySelector('[data-created-pets]');
 const petArray = [];
 let template = {
@@ -50,7 +50,7 @@ function changePlayState() {
     template.happiness += 2;
     template.health++;
     template.satiety--;
-    if ((template.happiness * template.health * template.satiety) > 0) {
+    if (template.happiness * template.health * template.satiety) {
         showTemplate();
     } else {
         showTemplate();
@@ -60,11 +60,11 @@ function changePlayState() {
 }
 function createPet() {
     inputContainer.classList.toggle('hidden');
-    createPetButton.classList.toggle('disabled');
+    createPetButtonEl.classList.toggle('disabled');
     const newObject = Object.create(template);
     petArray.push(newObject);
-    submitButton.addEventListener('click', () => {
-        if (inputPetName.value.length !== 0) {
+    submitButtonEl.addEventListener('click', () => {
+        if (inputPetName.value.length) {
             newObject.name = inputPetName.value;
             newObject.health = Number(inputHealth.value);
             newObject.happiness = Number(inputHappiness.value);
@@ -72,11 +72,11 @@ function createPet() {
             showCreatedPets();
             inputContainer.reset();
             inputContainer.classList.toggle('hidden');
-            createPetButton.classList.toggle('disabled');
+            createPetButtonEl.classList.toggle('disabled');
         }
     });
 }
 showTemplate();
-playButton.addEventListener('click', changePlayState);
-foodButton.addEventListener('click', changeFoodState);
-createPetButton.addEventListener('click', createPet);
+playButtonEl.addEventListener('click', changePlayState);
+foodButtonEl.addEventListener('click', changeFoodState);
+createPetButtonEl.addEventListener('click', createPet);
