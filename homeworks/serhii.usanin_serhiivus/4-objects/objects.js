@@ -1,6 +1,6 @@
 function CreateObject(name) {
     return {
-        name: name,
+        name,
         helthCount: 100,
         helthStr: 'Good',
         listToNeed: {
@@ -8,9 +8,9 @@ function CreateObject(name) {
             eat: 100,
             drink: 100,
             rest: 100,
-            play: 100,
+            play: 100
         },
-        sleep: function(duration) {
+        sleep(duration) {
             this.listToNeed.sleep += duration;
             this.listToNeed.sleep = Math.min(100, this.listToNeed.sleep);
             this.listToNeed.rest += duration;
@@ -19,21 +19,21 @@ function CreateObject(name) {
             this.listToNeed.eat -= 0.5 * duration;
             this.listToNeed.play -= 0.5 * duration;
         },
-        eat: function(duration) {
+        eat(duration) {
             this.listToNeed.eat += 10 * duration;
             this.listToNeed.eat = Math.min(100, this.listToNeed.eat);
             this.listToNeed.sleep -= duration;
             this.listToNeed.drink -= duration;
             this.listToNeed.play -= duration;
         },
-        drink: function(duration) {
+        drink(duration) {
             this.listToNeed.drink += 10 * duration;
             this.listToNeed.drink = Math.min(100, this.listToNeed.drink);
             this.listToNeed.sleep -= duration;
             this.listToNeed.drink -= duration;
             this.listToNeed.play -= duration;
         },
-        rest: function(duration) {
+        rest(duration) {
             this.listToNeed.rest += duration;
             this.listToNeed.rest = Math.min(100, this.listToNeed.rest);
             this.listToNeed.sleep -= duration;
@@ -41,20 +41,21 @@ function CreateObject(name) {
             this.listToNeed.drink -= 0.5 * duration;
             this.listToNeed.play -= duration;
         },
-        play: function(duration) {
+        play(duration) {
             this.listToNeed.play += duration;
             this.listToNeed.play = Math.min(100, this.listToNeed.play);
             this.listToNeed.sleep -= duration;
             this.listToNeed.eat -= duration;
             this.listToNeed.drink -= duration;
         },
-        checkHelth: function() {
+        checkHelth() {
             let maxTotal = 0;
             let total = 0;
-            for (let key in this.listToNeed) {
+            const keys = Object.keys(this.listToNeed);
+            keys.forEach((key) => {
                 maxTotal += 100;
                 total += this.listToNeed[key];
-            }
+            });
             this.helthCount = Math.round((total / maxTotal) * 100);
             if (this.helthCount > 80) {
                 this.helthStr = 'Perfect';
@@ -63,7 +64,7 @@ function CreateObject(name) {
             } else if (this.helthCount > 0) {
                 this.helthStr = 'Bad';
             } else {
-                this.helthStr = 'Dead';
+                this.helthStr = 'Dead';  
             }
         },
     };
@@ -94,4 +95,4 @@ sirko.checkHelth();
 
 console.log(tamagochi);
 console.log(tomaGochi);
-console.log(sirko.name, sirko.colour, sirko.helthStr)
+console.log(sirko.name, sirko.colour, sirko.helthStr);
