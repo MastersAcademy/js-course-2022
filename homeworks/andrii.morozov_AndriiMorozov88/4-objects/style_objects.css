@@ -21,6 +21,10 @@
   visibility: hidden;
 }
 
+.disabled {
+  display: none;
+}
+
 .created-pets {
   display: flex;
   width: 100px;
