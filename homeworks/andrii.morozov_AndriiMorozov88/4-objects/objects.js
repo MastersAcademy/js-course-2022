@@ -54,8 +54,8 @@ function changePlayState() {
         showTemplate();
     } else {
         showTemplate();
-        playButton.removeEventListener('click', changePlayState);
-        foodButton.removeEventListener('click', changeFoodState);
+        playButtonEl.removeEventListener('click', changePlayState);
+        foodButtonEl.removeEventListener('click', changeFoodState);
     }
 }
 function createPet() {
