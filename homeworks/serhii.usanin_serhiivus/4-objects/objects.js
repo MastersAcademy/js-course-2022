@@ -8,7 +8,7 @@ function CreateObject(name) {
             eat: 100,
             drink: 100,
             rest: 100,
-            play: 100
+            play: 100,
         },
         sleep(duration) {
             this.listToNeed.sleep += duration;
@@ -64,7 +64,7 @@ function CreateObject(name) {
             } else if (this.helthCount > 0) {
                 this.helthStr = 'Bad';
             } else {
-                this.helthStr = 'Dead';  
+                this.helthStr = 'Dead';
             }
         },
     };
