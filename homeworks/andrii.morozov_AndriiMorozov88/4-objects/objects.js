@@ -61,10 +61,10 @@ function changePlayState() {
 function createPet() {
     inputContainer.classList.toggle('hidden');
     createPetButtonEl.classList.toggle('disabled');
-    const newObject = Object.create(template);
-    petArray.push(newObject);
     submitButtonEl.addEventListener('click', () => {
-        if (inputPetName.value.length) {
+        if (inputPetName.value.length > 0) {
+            const newObject = Object.create(template);
+            petArray.push(newObject);
             newObject.name = inputPetName.value;
             newObject.health = Number(inputHealth.value);
             newObject.happiness = Number(inputHappiness.value);
