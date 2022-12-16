@@ -24,7 +24,7 @@ const tamagochi = {
         if (isAlive) {
             console.log(`${this.name} is alive!`);
         } else {
-            console.log(`${this.name} is died!`)
+            console.log(`${this.name} is died!`);
         }
     },
 };
