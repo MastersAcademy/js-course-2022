@@ -1,4 +1,4 @@
-function CreateObject (name) {
+function CreateObject(name) {
     return {
         name: name,
         helthCount: 100,
@@ -10,7 +10,7 @@ function CreateObject (name) {
             rest: 100,
             play: 100,
         },
-        sleep: function (duration) {
+        sleep: function(duration) {
             this.listToNeed.sleep += duration;
             this.listToNeed.sleep = Math.min(100, this.listToNeed.sleep);
             this.listToNeed.rest += duration;
@@ -19,21 +19,21 @@ function CreateObject (name) {
             this.listToNeed.eat -= 0.5 * duration;
             this.listToNeed.play -= 0.5 * duration;
         },
-        eat: function (duration) {
+        eat: function(duration) {
             this.listToNeed.eat += 10 * duration;
             this.listToNeed.eat = Math.min(100, this.listToNeed.eat);
             this.listToNeed.sleep -= duration;
             this.listToNeed.drink -= duration;
             this.listToNeed.play -= duration;
         },
-        drink: function (duration) {
+        drink: function(duration) {
             this.listToNeed.drink += 10 * duration;
             this.listToNeed.drink = Math.min(100, this.listToNeed.drink);
             this.listToNeed.sleep -= duration;
             this.listToNeed.drink -= duration;
             this.listToNeed.play -= duration;
         },
-        rest: function (duration) {
+        rest: function(duration) {
             this.listToNeed.rest += duration;
             this.listToNeed.rest = Math.min(100, this.listToNeed.rest);
             this.listToNeed.sleep -= duration;
@@ -41,14 +41,14 @@ function CreateObject (name) {
             this.listToNeed.drink -= 0.5 * duration;
             this.listToNeed.play -= duration;
         },
-        play: function (duration) {
+        play: function(duration) {
             this.listToNeed.play += duration;
             this.listToNeed.play = Math.min(100, this.listToNeed.play);
             this.listToNeed.sleep -= duration;
             this.listToNeed.eat -= duration;
             this.listToNeed.drink -= duration;
         },
-        checkHelth: function () {
+        checkHelth: function() {
             let maxTotal = 0;
             let total = 0;
             for (let key in this.listToNeed) {
@@ -94,4 +94,4 @@ sirko.checkHelth();
 
 console.log(tamagochi);
 console.log(tomaGochi);
-console.log(sirko.name, sirko.colour, sirko.helthStr);
+console.log(sirko.name, sirko.colour, sirko.helthStr)
