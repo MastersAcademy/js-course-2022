@@ -1,5 +1,5 @@
 const tamagochi = {
-    nameToy: "Toy",
+    nameToy: 'Toy',
     healthLevel: 50,
     hungryLevel: 50,
     sleepLevel: 50,
@@ -19,33 +19,29 @@ const tamagochi = {
     health: function () {
         if (this.healthLevel > 0) {
             return true;
-        } else {
-            return false;
         }
+        return false;
     },
     // метод, що перевіряє один з показників
     hungry: function () {
         if (this.hungryLevel > 0) {
             return true;
-        } else {
-            return false;
-        };
+        }
+        return false;
     },
     // метод, що перевіряє один з показників
     sleep: function () {
         if (this.sleepLevel > 0) {
             return true;
-        } else {
-            return false;
         }
+        return false;
     },
     // метод, що перевіряє загальний стан персонажа
     happy: function () {
         if ((this.health() && this.hungry() && this.sleep()) === true) {
-            return this.nameToy + " is happy";
-        } else {
-            return this.nameToy + " is dead";
+            return `${this.nameToy} is happy`;
         }
+        return `${this.nameToy} is dead`;
     },
 };
 // 10 використань методу зменшення показників призводять до смерті персонаж
