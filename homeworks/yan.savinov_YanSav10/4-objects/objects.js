@@ -29,9 +29,7 @@ const tamagochi = {
         this.satietyValue--;
     },
     lifeCheck() {
-        const checkIsAlive = this.healthValue > 0 
-            && this.happinessValue > 0 
-            && this.satietyValue > 0;
+        const IsAlive = this.healthValue > 0 && this.happinessValue > 0 && this.satietyValue > 0;
         if (checkIsAlive) {
             console.log(`${this.name} is alive!`);
         } else {
