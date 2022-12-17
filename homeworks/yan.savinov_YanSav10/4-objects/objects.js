@@ -8,34 +8,37 @@ const tamagochi = {
         this.satietyValue--;
         this.happinessValue++;
     },
-    feed() {
+    eat() {
+        this.healthValue--;
         this.satietyValue++;
+        this.happinessValue++;
     },
-    healthUp() {
+    sleep() {
         this.healthValue++;
+        this.happinessValue++;
+        this.satietyValue--;
     },
     training() {
         this.healthValue++;
         this.happinessValue--;
         this.satietyValue--;
     },
+    relax() {
+        this.healthValue--;
+        this.happinessValue++;
+        this.satietyValue--;
+    },
     lifeCheck() {
-        const isAlive = this.healthValue > 0 && this.happinessValue > 0 && this.satietyValue > 0;
-        if (isAlive) {
+        if (this.healthValue > 0 && this.happinessValue > 0 && this.satietyValue > 0) {
             console.log(`${this.name} is alive!`);
         } else {
-            console.log(`${this.name} is died!`);
+            console.log(`${this.name} died!`)
         }
     },
-};
+}; 
 tamagochi.play();
-tamagochi.feed();
-tamagochi.healthUp();
+tamagochi.eat();
+tamagochi.sleep();
 tamagochi.training();
-tamagochi.play();
-tamagochi.play();
-tamagochi.play();
-tamagochi.play();
-tamagochi.training();
-tamagochi.training();
+tamagochi.relax();      
 tamagochi.lifeCheck();
