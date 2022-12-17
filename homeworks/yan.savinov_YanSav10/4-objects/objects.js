@@ -40,4 +40,4 @@ tamagochi.play();
 tamagochi.eat();
 tamagochi.sleep();
 tamagochi.training();
-tamagochi.relax(); 
+tamagochi.relax();
