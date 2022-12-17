@@ -51,17 +51,17 @@ rl.question('Please write the actions from the list (heal,play,feed) that you wa
     }
 
     yourActionsArray.forEach((element) => {
-        if (element === 'heal') {
-            // eslint-disable-next-line no-param-reassign
-            element = healIt();
-        }
-        if (element === 'play') {
-            // eslint-disable-next-line no-param-reassign
-            element = playIt();
-        }
-        if (element === 'feed') {
-            // eslint-disable-next-line no-param-reassign
-            element = feedIt();
+        switch (element) {
+            case 'heal':
+                healIt();
+                break;
+            case 'play':
+                playIt();
+                break;
+            case 'feed':
+                feedIt();
+                break;
+            default: console.log('Opps. Your actions do not correspond to the "Example : heal play feed."');
         }
     });
 
