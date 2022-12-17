@@ -35,10 +35,9 @@ const tamagochi = {
             console.log(`${this.name} died!`);
         }
     },
-}; 
+};
 tamagochi.play();
 tamagochi.eat();
 tamagochi.sleep();
 tamagochi.training();
-tamagochi.relax();      
-tamagochi.lifeCheck();
+tamagochi.relax(); 
