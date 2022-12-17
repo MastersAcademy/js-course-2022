@@ -44,5 +44,3 @@ tamagochi.eat();
 tamagochi.sleep();
 tamagochi.traning();
 tamagochi.tamagochiLifeStatus();
-
-// console.log(tamagochi);
