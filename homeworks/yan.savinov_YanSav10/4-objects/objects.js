@@ -32,7 +32,7 @@ const tamagochi = {
         if (this.healthValue > 0 && this.happinessValue > 0 && this.satietyValue > 0) {
             console.log(`${this.name} is alive!`);
         } else {
-            console.log(`${this.name} died!`)
+            console.log(`${this.name} died!`);
         }
     },
 }; 
