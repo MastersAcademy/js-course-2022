@@ -28,7 +28,7 @@ const tamagotchi = {
         if (this.hungerMeter > 9) {
             console.log('Your pet is dead, because of hunger');
         }
-        console.log("I am happy, I've enjoyed a lot");
+        console.log('I am happy, I have enjoyed a lot');
     },
 
     clean() {
@@ -84,7 +84,7 @@ const dog = Object.create(tamagotchi);
 dog.name = 'Jordan';
 dog.healthMeter = 6;
 dog.happyMeter = 10;
-dog.voice = function() {
+dog.voice = function () {
     console.log('gav gav');
 };
 
