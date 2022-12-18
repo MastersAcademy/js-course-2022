@@ -23,7 +23,7 @@ const ben = {
     feed() {
         this.satiety += 2.5 * this.metabolism;
         this.health += 0.5 * this.metabolism;
-        this.happiness += 1 * this.metabolism;
+        this.happiness += this.metabolism;
         this.agile -= 0.5 * this.metabolism;
     },
     heal() {
