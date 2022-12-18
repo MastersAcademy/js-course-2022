@@ -12,29 +12,26 @@ const tamagotchi = {
             console.log(`Your ${tamagotchi.name} is dead... 😭😭😭`);
         }
     },
-    indicatorsTamagotchi() {
-        console.log(`Status ${this.name}:
-            health = ${this.health}
-            happiness = ${this.happiness}
-            satiety = ${this.satiety}
-            cleanliness = ${this.cleanliness}`);
-    },
     statusTamagotchi() {
+        const indicators = `
+
+    Status ${this.name}:
+        health = ${this.health}
+        happiness = ${this.happiness}
+        satiety = ${this.satiety}
+        cleanliness = ${this.cleanliness}`;
+        let message = '';
+
         if (this.health <= 3) {
-            console.log(`Your ${tamagotchi.name} has few lives!`);
-            this.indicatorsTamagotchi();
+            message = `Your ${tamagotchi.name} has few lives!`;
         } else if (this.happiness <= 3) {
-            console.log(`${tamagotchi.name} lacks happiness!`);
-            this.indicatorsTamagotchi();
+            message = `${tamagotchi.name} lacks happiness!`;
         } else if (this.satiety <= 3) {
-            console.log(`Your ${tamagotchi.name} wants to eat!`);
-            this.indicatorsTamagotchi();
+            message = `Your ${tamagotchi.name} wants to eat!`;
         } else if (this.cleanliness <= 3) {
-            console.log(`It is very dirty near ${tamagotchi.name}!`);
-            this.indicatorsTamagotchi();
-        } else {
-            this.indicatorsTamagotchi();
+            message = `It is very dirty near ${tamagotchi.name}!`;
         }
+        console.log(message, indicators);
     },
     feedTamagotchi() {
         this.health++;
