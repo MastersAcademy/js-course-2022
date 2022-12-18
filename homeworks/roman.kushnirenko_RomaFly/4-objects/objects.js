@@ -11,9 +11,9 @@ const eagle = {
 
         const stateOfEagle = `\nЗдоров'я - ${this.healthLevel} \nЩастя - ${this.happyLevel} \nСитість - ${this.foodLevel}`;
 
-        const EagleIsDead = this.healthLevel === 0 || this.happyLevel === 0 || this.foodLevel === 0;
+        const eagleIsDead = this.healthLevel === 0 || this.happyLevel === 0 || this.foodLevel === 0;
 
-        if (EagleIsDead) {
+        if (eagleIsDead) {
             console.log(`${this.name} помер ${stateOfEagle}`);
         } else if (this.foodLevel === 1) {
             console.log(`Покорми, ${this.name} на межі виживання! ${stateOfEagle}`);
