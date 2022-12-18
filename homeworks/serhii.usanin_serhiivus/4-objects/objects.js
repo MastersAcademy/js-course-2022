@@ -58,13 +58,13 @@ function CreateObject(name) {
                     total += this.helthIndicators[key];
                 });
                 return Math.round((total / maxTotal) * 100);
-            }
+            };
             const calculateHelthStr = () => {
                 if (this.helthCount > 80) return 'Perfect';
                 if (this.helthCount > 40) return 'Good';
                 if (this.helthCount > 0) return 'Bad';
                 return 'Dead';
-            }
+            };
             this.helthNumber = calculateHelthNumber();
             this.helthStr = calculateHelthStr();
         },
