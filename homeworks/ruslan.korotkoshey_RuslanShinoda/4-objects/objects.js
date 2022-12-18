@@ -30,6 +30,7 @@ const tamagotchi = {
         } else if (this.cleanliness <= 3) {
             message = `It is very dirty near ${tamagotchi.name}!`;
         }
+
         console.log(message, indicators);
     },
     feedTamagotchi() {
