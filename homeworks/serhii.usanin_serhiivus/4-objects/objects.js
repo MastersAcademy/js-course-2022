@@ -21,7 +21,7 @@ function CreateObject(name) {
             this.changeIndicator(this.helthIndicators, 'rest', duration, 1);
             this.changeIndicator(this.helthIndicators, 'drink', duration, -0.5);
             this.changeIndicator(this.helthIndicators, 'eat', duration, -0.5);
-            this.changeIndicator(this.helthIndicators, 'play', duration,-0.5);
+            this.changeIndicator(this.helthIndicators, 'play', duration, -0.5);
         },
         eat(duration) {
             this.changeIndicator(this.helthIndicators, 'eat', duration, 10);
@@ -60,15 +60,10 @@ function CreateObject(name) {
                 return Math.round((total / maxTotal) * 100);
             }
             const calculateHelthStr = () => {
-                if (this.helthCount > 80) {
-                    return 'Perfect';
-                } else if (this.helthCount > 40) {
-                    return  'Good';
-                } else if (this.helthCount > 0) {
-                    return 'Bad';
-                } else {
-                    return 'Dead';
-                }
+                if (this.helthCount > 80) return 'Perfect';
+                if (this.helthCount > 40) return 'Good';
+                if (this.helthCount > 0) return 'Bad';
+                return 'Dead';
             }
             this.helthNumber = calculateHelthNumber();
             this.helthStr = calculateHelthStr();
@@ -101,4 +96,4 @@ sirko.sleep(50);
 console.log(tamagochi);
 console.log(tomaGochi);
 console.log(sirko.name, sirko.colour, sirko.helthIndicators.sleep);
-console.log(sirko.helthIndicators)
+console.log(sirko.helthIndicators);
