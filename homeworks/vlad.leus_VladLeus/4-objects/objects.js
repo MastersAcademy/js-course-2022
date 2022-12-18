@@ -27,7 +27,7 @@ const tamagotchi = {
             }
         }
     },
-    feed () {
+    feed() {
         if (!this.isDead()) {
             if (this.satiety === 3) {
                 console.log('Ohhh, I\'m so full!');
@@ -74,8 +74,17 @@ const mainTamagotchi = {
     health: 3,
     happiness: 3,
     satiety: 3,
-    isDead(){
-        return this.health === 0 ? true : this.happiness === 0 ? true : this.satiety === 0;
+    isDead() {
+        if (this.health === 0) {
+            return true;
+        }
+        if (this.satiety === 0) {
+            return true;
+        }
+        if (this.happiness === 0) {
+            return true
+        }
+        return false;
     },
     play() {
         if (!this.isDead()) {
