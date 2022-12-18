@@ -12,7 +12,7 @@ const tamagotchi = {
         this.happyMeter += 1;
         this.careMeter -= 2;
         if (this.careMeter <= 0) {
-            return  console.log('Your pet is dead, because of careless');
+            console.log('Your pet is dead, because of careless');
         }
         console.log('I am full');
     },
@@ -23,10 +23,10 @@ const tamagotchi = {
         this.happyMeter += 2;
         this.careMeter += 1;
         if (this.healthMeter <= 0) {
-            return console.log('Your pet is dead, because of health');
+            console.log('Your pet is dead, because of health');
         }
         if (this.hungerMeter > 9) {
-            return console.log('Your pet is dead, because of hunger');
+            console.log('Your pet is dead, because of hunger');
         }
         console.log("I am happy, I've enjoyed a lot");
     },
@@ -37,7 +37,7 @@ const tamagotchi = {
         this.hungerMeter += 1;
         this.careMeter = 10;
         if (this.hungerMeter > 9) {
-            return console.log('Your pet is dead, because of hunger');
+            console.log('Your pet is dead, because of hunger');
         }
         console.log('I am clean');
     },
@@ -48,7 +48,7 @@ const tamagotchi = {
         this.hungerMeter += 3;
         this.careMeter -= 2;
         if (this.hungerMeter > 9) {
-            return console.log('Your pet is dead, because of hunger');
+            console.log('Your pet is dead, because of hunger');
         }
         console.log('I am healthy, training was good');
     },
@@ -59,13 +59,13 @@ const tamagotchi = {
         this.hungerMeter -= 2;
         this.careMeter -= 1;
         if (this.happyMeter <= 0) {
-            return console.log('Your pet is dead, because of unhappiness');
+            console.log('Your pet is dead, because of unhappiness');
         }
         if (this.hungerMeter > 9) {
-            return console.log('Your pet is dead, because of hunger');
+            console.log('Your pet is dead, because of hunger');
         }
         if (this.careMeter <= 0) {
-            return console.log('Your pet is dead, because of careless');
+            console.log('Your pet is dead, because of careless');
         }
         console.log('I am not sleepy and ready to live one more day');
     },
@@ -80,14 +80,13 @@ tamagotchi.sleep();
 tamagotchi.training();
 tamagotchi.training(); // dead
 
-
-let dog = Object.create(tamagotchi);
+const dog = Object.create(tamagotchi);
 dog.name = 'Jordan';
 dog.healthMeter = 6;
 dog.happyMeter = 10;
-dog.voice = function (){
+dog.voice = function() {
     console.log('gav gav');
-}
+};
 
 console.log('\n\n\n');
 console.log(dog.name);
