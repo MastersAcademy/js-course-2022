@@ -2,7 +2,7 @@ const tamagotchi = {
     health: 3,
     happiness: 3,
     satiety: 3,
-    isDead(){
+    isDead() {
         return this.health === 0 ? true : this.happiness === 0;
     },
     play() {
@@ -20,9 +20,9 @@ const tamagotchi = {
             }
         } else {
             if (this.health === 0) {
-                console.log("Ur tamagotchi was too hungry, so he is dead. R.I.P.")
+                console.log("Ur tamagotchi was too hungry, so he is dead. R.I.P.");
             } else if (this.happiness === 0) {
-                console.log("Ur tamagotchi died been too fat and in depression. R.I.P.")
+                console.log("Ur tamagotchi died been too fat and in depression. R.I.P.");
             }
         }
     },
@@ -41,9 +41,9 @@ const tamagotchi = {
             }
         } else {
             if (this.health === 0){
-                console.log("Ur tamagotchi was too hungry, so he is dead. R.I.P.")
+                console.log("Ur tamagotchi was too hungry, so he is dead. R.I.P.");
             } else if (this.happiness === 0) {
-                console.log("Ur tamagotchi died been too fat and in depression. R.I.P.")
+                console.log("Ur tamagotchi died been too fat and in depression. R.I.P.");
             }
         }
     }
@@ -77,7 +77,7 @@ const mainTamagotchi = {
     },
     play() {
         if (!this.isDead()){
-            if (this.happiness === 3){
+            if (this.happiness === 3) {
                 console.log("I don't wanna play, i'm happy!");
                 this.happiness--;
                 this.satiety--;
@@ -90,17 +90,17 @@ const mainTamagotchi = {
             }
         } else {
             if (this.health === 0) {
-                console.log("Ur is dead. R.I.P.")
+                console.log("Ur is dead. R.I.P.");
             } else if (this.satiety === 0){
-                console.log("Ur tamagotchi died cuz of hunger. R.I.P.")
+                console.log("Ur tamagotchi died cuz of hunger. R.I.P.");
             } else if (this.happiness === 0) {
-                console.log("Ur tamagotchi died in depression. R.I.P.")
+                console.log("Ur tamagotchi died in depression. R.I.P.");
             }
         }
     },
     feed () {
         if (!this.isDead()){
-            if (this.satiety === 3){
+            if (this.satiety === 3) {
                 console.log("Ohhh, I'm so full!");
                 this.satiety--;
                 this.health--;
@@ -113,11 +113,11 @@ const mainTamagotchi = {
             }
         } else {
             if (this.health === 0) {
-                console.log("Ur is dead. R.I.P.")
+                console.log("Ur is dead. R.I.P.");
             } else if (this.satiety === 0){
-                console.log("Ur tamagotchi died cuz of hunger. R.I.P.")
+                console.log("Ur tamagotchi died cuz of hunger. R.I.P.");
             } else if (this.happiness === 0) {
-                console.log("Ur tamagotchi died in depression. R.I.P.")
+                console.log("Ur tamagotchi died in depression. R.I.P.");
             }
         }
     }
@@ -131,13 +131,13 @@ myTamagotchi.name = "Den";
 myTamagotchi.health = 5;
 myTamagotchi["favouriteDish"] = "cookies";
 
-console.log(myTamagotchi)
+console.log(myTamagotchi);
 
 myTamagotchi.play();
 myTamagotchi.play();
 myTamagotchi.feed();
 myTamagotchi.play();
 myTamagotchi.play();
-console.log(myTamagotchi.satiety)
+console.log(myTamagotchi.satiety);
 myTamagotchi.play();
 
