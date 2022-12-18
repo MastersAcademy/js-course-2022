@@ -4,40 +4,40 @@ const tamagochi = {
     hungryLevel: 50,
     sleepLevel: 50,
     // метод який зменшує показники, стан коли про персонажа не дбають
-    decrease: function () {
+    decrease() {
         this.healthLevel -= 1;
         this.hungryLevel -= 2;
         this.sleepLevel -= 5;
     },
     // метод який збільшує показники, стан коли піклуються про персонажа
-    increase: function () {
+    increase() {
         this.healthLevel += 0.5;
         this.hungryLevel += 1;
         this.sleepLevel += 2.5;
     },
     // метод, що перевіряє один з показників
-    health: function () {
+    health() {
         if (this.healthLevel > 0) {
             return true;
         }
         return false;
     },
     // метод, що перевіряє один з показників
-    hungry: function () {
+    hungry() {
         if (this.hungryLevel > 0) {
             return true;
         }
         return false;
     },
     // метод, що перевіряє один з показників
-    sleep: function () {
+    sleep() {
         if (this.sleepLevel > 0) {
             return true;
         }
         return false;
     },
     // метод, що перевіряє загальний стан персонажа
-    happy: function () {
+    happy() {
         if ((this.health() && this.hungry() && this.sleep()) === true) {
             return `${this.nameToy} is happy`;
         }
