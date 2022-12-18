@@ -42,7 +42,7 @@ const ben = {
     },
     isWin() {
         const mainParams = [this.health, this.happiness, this.satiety, this.agile];
-        return mainParams.some((val) => val > 10);
+        return mainParams.every((val) => val >= 10);
     },
     secretCheat() {
         this.happiness += 100;
@@ -53,12 +53,12 @@ const ben = {
     showStats() {
         console.log(
             `
-Every 15 sec Ben lose 1 hp from all stats.\r
-If One of them will be equal to 0, he gonna die.\r
-Play, feed or heal him to balance stats.\r
-When they all would reach the score of 10,\r
-you'll win this game.\r
-/*****************************/\r
+Every 15 sec Ben lose 1 hp from all stats.
+If One of them will be equal to 0, he gonna die.
+Play, feed or heal him to balance stats.
+When they all would reach the score of 10,
+you'll win this game.
+/*****************************/
 Ben's stats: 
 health: ${this.health}
 happiness: ${this.happiness}
