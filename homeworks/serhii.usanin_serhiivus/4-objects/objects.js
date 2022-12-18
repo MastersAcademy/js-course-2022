@@ -10,43 +10,43 @@ function CreateObject(name) {
             rest: 100,
             play: 100,
         },
-        changeIndicator(object,key,duration,koef) {
-            object[key] += duration*koef;
+        changeIndicator(object, key, duration, koef) {
+            object[key] += duration * koef;
             if (koef > 0) {
                 object[key] = Math.min(100, object[key]);
-            } 
+            }
         },
         sleep(duration) {
-            this.changeIndicator(this.helthIndicators,'sleep', duration, 1);
-            this.changeIndicator(this.helthIndicators,'rest', duration, 1);
-            this.changeIndicator(this.helthIndicators,'drink', duration, - 0.5);
-            this.changeIndicator(this.helthIndicators,'eat', duration, - 0.5);
-            this.changeIndicator(this.helthIndicators,'play', duration,- 0.5);
+            this.changeIndicator(this.helthIndicators, 'sleep', duration, 1);
+            this.changeIndicator(this.helthIndicators, 'rest', duration, 1);
+            this.changeIndicator(this.helthIndicators, 'drink', duration, - 0.5);
+            this.changeIndicator(this.helthIndicators, 'eat', duration, - 0.5);
+            this.changeIndicator(this.helthIndicators, 'play', duration,- 0.5);
         },
         eat(duration) {
-            this.changeIndicator(this.helthIndicators,'eat', duration, 10);
-            this.changeIndicator(this.helthIndicators,'sleep', duration, -1);
-            this.changeIndicator(this.helthIndicators,'drink', duration, -1);
-            this.changeIndicator(this.helthIndicators,'play', duration, -1);
+            this.changeIndicator(this.helthIndicators, 'eat', duration, 10);
+            this.changeIndicator(this.helthIndicators, 'sleep', duration, -1);
+            this.changeIndicator(this.helthIndicators, 'drink', duration, -1);
+            this.changeIndicator(this.helthIndicators, 'play', duration, -1);
         },
         drink(duration) {
-            this.changeIndicator(this.helthIndicators,'drink', duration, 10);
-            this.changeIndicator(this.helthIndicators,'sleep', duration, -1);
-            this.changeIndicator(this.helthIndicators,'drink', duration, -1);
-            this.changeIndicator(this.helthIndicators,'play', duration, -1);
+            this.changeIndicator(this.helthIndicators, 'drink', duration, 10);
+            this.changeIndicator(this.helthIndicators, 'sleep', duration, -1);
+            this.changeIndicator(this.helthIndicators, 'drink', duration, -1);
+            this.changeIndicator(this.helthIndicators, 'play', duration, -1);
         },
         rest(duration) {
-            this.changeIndicator(this.helthIndicators,'rest', duration, 10);
-            this.changeIndicator(this.helthIndicators,'sleep', duration, -0.5);
-            this.changeIndicator(this.helthIndicators,'eat', duration, -0.5);
-            this.changeIndicator(this.helthIndicators,'drink', duration, -0.5);
-            this.changeIndicator(this.helthIndicators,'play', duration, -1);
+            this.changeIndicator(this.helthIndicators, 'rest', duration, 10);
+            this.changeIndicator(this.helthIndicators, 'sleep', duration, -0.5);
+            this.changeIndicator(this.helthIndicators, 'eat', duration, -0.5);
+            this.changeIndicator(this.helthIndicators, 'drink', duration, -0.5);
+            this.changeIndicator(this.helthIndicators, 'play', duration, -1);
         },
         play(duration) {
-            this.changeIndicator(this.helthIndicators,'play', duration, 1);
-            this.changeIndicator(this.helthIndicators,'sleep', duration, -1);
-            this.changeIndicator(this.helthIndicators,'eat', duration, -1);
-            this.changeIndicator(this.helthIndicators,'drink', duration, -1);
+            this.changeIndicator(this.helthIndicators, 'play', duration, 1);
+            this.changeIndicator(this.helthIndicators, 'sleep', duration, -1);
+            this.changeIndicator(this.helthIndicators, 'eat', duration, -1);
+            this.changeIndicator(this.helthIndicators, 'drink', duration, -1);
         },
         checkHelth() {
             const calculateHelthNumber = () => {
