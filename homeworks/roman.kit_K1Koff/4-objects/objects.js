@@ -30,50 +30,43 @@ const ben = {
         this.health += 2.0 * this.metabolism;
         this.agile += 0.5 * this.metabolism;
     },
-    showStats() {
-        console.log('//*****************************/\n');
-        console.log(
-            `Ben's stats: 
-        \n health: ${this.health}
-        \n happiness: ${this.happiness}
-        \n satiety: ${this.satiety}
-        \n agile: ${this.agile} \n`,
-        );
-        console.log('//*****************************//');
-    },
     damageCycle() {
-        setInterval(() => {
-            this.health -= 1;
-            this.happiness -= 1;
-            this.satiety -= 1;
-            this.agile -= 1;
-        }, 15 * 1000);
+        this.health -= 1;
+        this.happiness -= 1;
+        this.satiety -= 1;
+        this.agile -= 1;
     },
-    gameResult() {
-        if (
-            [this.health, this.happiness, this.satiety, this.agile].find(
-                (val) => val <= 0,
-            )
-        ) {
-            console.clear();
-            console.log('\n Game over');
-            process.exit();
-        } else if (
-            [this.health, this.happiness, this.satiety, this.agile].find(
-                (val) => val < 10,
-            )
-        ) {
-            return null;
-        }
-        console.clear();
-        console.log('\n You won! Congrats!');
-        return process.exit();
+    isDead() {
+        const parametersForVerification = [this.health, this.happiness, this.satiety, this.agile];
+        return parametersForVerification.find((val) => val <= 0);
+    },
+    isWin() {
+        const parametersForVerification = [this.health, this.happiness, this.satiety, this.agile];
+        return !parametersForVerification.find((val) => val < 10);
     },
     secretCheat() {
         this.happiness += 100;
         this.agile += 100;
         this.satiety += 100;
         this.health += 100;
+    },
+    showStats() {
+        console.log(
+            `
+Every 15 sec Ben lose 1 hp from all stats.\r
+If One of them will be equal to 0, he gonna die.\r
+Play, feed or heal him to balance stats.\r
+When they all would reach the score of 10,\r
+you'll win this game.\r
+/*****************************/\r
+Ben's stats: 
+health: ${this.health}
+happiness: ${this.happiness}
+satiety: ${this.satiety}
+agile: ${this.agile}
+//*****************************//
+            `,
+        );
     },
 };
 
@@ -89,25 +82,27 @@ function userInput() {
             case 'apple':
                 return ben.secretCheat();
             default:
-                return console.log('No such function');
+                return console.error('No such function');
         }
     });
 }
 
 function runGame() {
-    ben.damageCycle();
-    setInterval(() => {
+    const damageInterval = setInterval(() => {
+        ben.damageCycle();
+    }, 15 * 1000);
+    const userActionInterval = setInterval(() => {
         console.clear();
-        console.log(
-            `Every 15 sec ben lose 1 hp from all stats
-         \n If One of them will be equal to 0, he gonna die.
-         \n Play, feed or heal him to balance stats.
-         \n When they all would reach the score of 10,
-         \n you'll win this game. \n`,
-        );
         ben.showStats();
         userInput();
-        ben.gameResult();
+        if (ben.isDead() || ben.isWin()) {
+            console.clear();
+            clearInterval(damageInterval);
+            clearInterval(userActionInterval);
+            if (ben.isDead()) { console.log('YOU LOST!'); }
+            if (ben.isWin()) { console.log('YOU WON!'); }
+            rl.close();
+        }
     }, 5 * 1000);
 }
 
