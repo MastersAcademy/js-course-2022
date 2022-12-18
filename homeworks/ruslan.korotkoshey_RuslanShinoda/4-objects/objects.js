@@ -14,7 +14,6 @@ const tamagotchi = {
     },
     statusTamagotchi() {
         const indicators = `
-
     Status ${this.name}:
         health = ${this.health}
         happiness = ${this.happiness}
