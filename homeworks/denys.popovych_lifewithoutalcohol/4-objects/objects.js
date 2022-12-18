@@ -113,7 +113,7 @@ lioness.sleep();
 lioness.checkLife();
 lioness.bath();
 lioness.checkLife();
-if (lioness.beauty >= 6 && lion.energy == 6) {
+if (lioness.beauty >= 6 && lion.energy === 6) {
     lion.mating();
     lion.checkLife();
     lioness.mating();
