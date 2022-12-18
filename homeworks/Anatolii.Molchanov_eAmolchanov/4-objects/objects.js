@@ -26,7 +26,7 @@ const tamagochi = {
         this.happinessDown();
 
         if (!this.health || !this.happiness || !this.satiety) {
-            console.log("Game over");
+            console.log('Game over');
         }
     },
 };
