@@ -9,7 +9,7 @@ const tamagochi = {
         console.log(`Tamagochi health: ${tamagochi.health}`);
         console.log(`Tamagochi happy: ${tamagochi.happy}`);
         console.log(`Tamagochi satiety: ${tamagochi.satiety}`);
-        return this.checkIsAlive()
+        return this.checkIsAlive();
     },
     feed() {
         tamagochi.health += 1;
@@ -18,7 +18,7 @@ const tamagochi = {
         console.log(`Tamagochi health: ${tamagochi.health}`);
         console.log(`Tamagochi happy: ${tamagochi.happy}`);
         console.log(`Tamagochi satiety: ${tamagochi.satiety}`);
-        return this.checkIsAlive()
+        return this.checkIsAlive();
     },
     checkIsAlive() {
         if (tamagochi.health <= 0 || tamagochi.satiety <= 0 || tamagochi.happy <= 0) {
