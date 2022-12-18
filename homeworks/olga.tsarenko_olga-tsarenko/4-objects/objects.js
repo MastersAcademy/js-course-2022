@@ -5,28 +5,27 @@ const tamagochiDefault = {
     satiety: 5,
 };
 
-const isAlive = (tamagochi) => {
-    const lifeIndicator = Object.keys(tamagochi).find((key) => tamagochi[key] === 0);
-    if (lifeIndicator) {
-        console.log(`The ${lifeIndicator} is over !!!! ${tamagochi.name}, R.I.P.`);
-    }
-};
-
 const tamagochiPlays = {
+    isAlive() {
+        const lifeIndicator = Object.keys(this).find((key) => this[key] === 0);
+        if (lifeIndicator) {
+            console.log(`The ${lifeIndicator} is over !!!! ${this.name}, R.I.P.`);
+        }
+    },
     eat() {
         this.satiety++;
         this.happiness--;
-        isAlive(this);
+        this.isAlive(this);
     },
     sport() {
         this.health++;
         this.satiety--;
-        isAlive(this);
+        this.isAlive(this);
     },
     play() {
         this.happiness++;
         this.health--;
-        isAlive(this);
+        this.isAlive(this);
     },
 };
 
