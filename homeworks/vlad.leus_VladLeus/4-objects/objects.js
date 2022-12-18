@@ -82,7 +82,7 @@ const mainTamagotchi = {
             return true;
         }
         if (this.happiness === 0) {
-            return true
+            return true;
         }
         return false;
     },
