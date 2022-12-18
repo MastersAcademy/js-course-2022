@@ -11,9 +11,10 @@ const tamagochi = {
 
         const tamagochiStates = `Здоров'я  в ${tamagochi.name} - ${tamagochi.healthLevels} Щастя - ${tamagochi.happyLevels} Ситість - ${tamagochi.foodLevels}`;
 
-        const tamagochiDied = tamagochi.healthLevels === 0 || tamagochi.happyLevels === 0 || tamagochi.foodLevels === 0;
+        const tamagochiDiedFirst = tamagochi.healthLevels === 0 || tamagochi.happyLevels === 0;
+        const tamagochiDiedSecond = tamagochi.foodLevels === 0;
 
-        if (tamagochiDied === true) {
+        if (tamagochiDiedFirst === true && tamagochiDiedSecond === true) {
             console.log(`${tamagochi.name} вмер... ${tamagochiStates}`);
         } else if (tamagochi.foodLevels === 1) {
             console.log(`Покорми, ${tamagochi.name}, бо вiн скоро вмре... ${tamagochiStates}`);
