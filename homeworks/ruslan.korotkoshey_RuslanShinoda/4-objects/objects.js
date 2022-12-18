@@ -2,8 +2,8 @@ const tamagotchi = {
     name: 'Kurama',
     health: 10,
     happiness: 10,
-    satiety: 2,
-    cleanliness: 2,
+    satiety: 10,
+    cleanliness: 10,
     lifeCheckTamagotchi() {
         if (tamagotchi.health <= 0
             || tamagotchi.happiness <= 0
@@ -71,10 +71,10 @@ const tamagotchi = {
     },
 };
 
-// tamagotchi.feedTamagotchi();
-// tamagotchi.playTamagotchi();
-// tamagotchi.clearTamagotchi();
-// tamagotchi.berateTamagotchi();
-// tamagotchi.putToSleepTamagotchi();
-// tamagotchi.feedTamagotchi();
+tamagotchi.feedTamagotchi();
+tamagotchi.playTamagotchi();
+tamagotchi.clearTamagotchi();
+tamagotchi.berateTamagotchi();
+tamagotchi.putToSleepTamagotchi();
+tamagotchi.feedTamagotchi();
 tamagotchi.statusTamagotchi();
