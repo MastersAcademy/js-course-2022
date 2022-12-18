@@ -19,9 +19,9 @@ function CreateObject(name) {
         sleep(duration) {
             this.changeIndicator(this.helthIndicators, 'sleep', duration, 1);
             this.changeIndicator(this.helthIndicators, 'rest', duration, 1);
-            this.changeIndicator(this.helthIndicators, 'drink', duration, - 0.5);
-            this.changeIndicator(this.helthIndicators, 'eat', duration, - 0.5);
-            this.changeIndicator(this.helthIndicators, 'play', duration,- 0.5);
+            this.changeIndicator(this.helthIndicators, 'drink', duration, -0.5);
+            this.changeIndicator(this.helthIndicators, 'eat', duration, -0.5);
+            this.changeIndicator(this.helthIndicators, 'play', duration,-0.5);
         },
         eat(duration) {
             this.changeIndicator(this.helthIndicators, 'eat', duration, 10);
