@@ -37,12 +37,12 @@ const ben = {
         this.agile -= 1;
     },
     isDead() {
-        const parametersForVerification = [this.health, this.happiness, this.satiety, this.agile];
-        return parametersForVerification.find((val) => val <= 0);
+        const mainParams = [this.health, this.happiness, this.satiety, this.agile];
+        return mainParams.some((val) => val <= 0);
     },
     isWin() {
-        const parametersForVerification = [this.health, this.happiness, this.satiety, this.agile];
-        return !parametersForVerification.find((val) => val < 10);
+        const mainParams = [this.health, this.happiness, this.satiety, this.agile];
+        return mainParams.some((val) => val > 10);
     },
     secretCheat() {
         this.happiness += 100;
