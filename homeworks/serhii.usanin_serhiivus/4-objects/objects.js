@@ -1,75 +1,80 @@
 function CreateObject(name) {
     return {
         name,
-        helthCount: 100,
+        helthNumber: 100,
         helthStr: 'Good',
-        listToNeed: {
+        helthIndicators: {
             sleep: 100,
             eat: 100,
             drink: 100,
             rest: 100,
             play: 100,
         },
+        changeIndicator(object,key,duration,koef) {
+            object[key] += duration*koef;
+            if (koef > 0) {
+                object[key] = Math.min(100, object[key]);
+            } 
+        },
         sleep(duration) {
-            this.listToNeed.sleep += duration;
-            this.listToNeed.sleep = Math.min(100, this.listToNeed.sleep);
-            this.listToNeed.rest += duration;
-            this.listToNeed.rest = Math.min(100, this.listToNeed.rest);
-            this.listToNeed.drink -= 0.5 * duration;
-            this.listToNeed.eat -= 0.5 * duration;
-            this.listToNeed.play -= 0.5 * duration;
+            this.changeIndicator(this.helthIndicators,'sleep', duration, 1);
+            this.changeIndicator(this.helthIndicators,'rest', duration, 1);
+            this.changeIndicator(this.helthIndicators,'drink', duration, - 0.5);
+            this.changeIndicator(this.helthIndicators,'eat', duration, - 0.5);
+            this.changeIndicator(this.helthIndicators,'play', duration,- 0.5);
         },
         eat(duration) {
-            this.listToNeed.eat += 10 * duration;
-            this.listToNeed.eat = Math.min(100, this.listToNeed.eat);
-            this.listToNeed.sleep -= duration;
-            this.listToNeed.drink -= duration;
-            this.listToNeed.play -= duration;
+            this.changeIndicator(this.helthIndicators,'eat', duration, 10);
+            this.changeIndicator(this.helthIndicators,'sleep', duration, -1);
+            this.changeIndicator(this.helthIndicators,'drink', duration, -1);
+            this.changeIndicator(this.helthIndicators,'play', duration, -1);
         },
         drink(duration) {
-            this.listToNeed.drink += 10 * duration;
-            this.listToNeed.drink = Math.min(100, this.listToNeed.drink);
-            this.listToNeed.sleep -= duration;
-            this.listToNeed.drink -= duration;
-            this.listToNeed.play -= duration;
+            this.changeIndicator(this.helthIndicators,'drink', duration, 10);
+            this.changeIndicator(this.helthIndicators,'sleep', duration, -1);
+            this.changeIndicator(this.helthIndicators,'drink', duration, -1);
+            this.changeIndicator(this.helthIndicators,'play', duration, -1);
         },
         rest(duration) {
-            this.listToNeed.rest += duration;
-            this.listToNeed.rest = Math.min(100, this.listToNeed.rest);
-            this.listToNeed.sleep -= duration;
-            this.listToNeed.eat -= 0.5 * duration;
-            this.listToNeed.drink -= 0.5 * duration;
-            this.listToNeed.play -= duration;
+            this.changeIndicator(this.helthIndicators,'rest', duration, 10);
+            this.changeIndicator(this.helthIndicators,'sleep', duration, -0.5);
+            this.changeIndicator(this.helthIndicators,'eat', duration, -0.5);
+            this.changeIndicator(this.helthIndicators,'drink', duration, -0.5);
+            this.changeIndicator(this.helthIndicators,'play', duration, -1);
         },
         play(duration) {
-            this.listToNeed.play += duration;
-            this.listToNeed.play = Math.min(100, this.listToNeed.play);
-            this.listToNeed.sleep -= duration;
-            this.listToNeed.eat -= duration;
-            this.listToNeed.drink -= duration;
+            this.changeIndicator(this.helthIndicators,'play', duration, 1);
+            this.changeIndicator(this.helthIndicators,'sleep', duration, -1);
+            this.changeIndicator(this.helthIndicators,'eat', duration, -1);
+            this.changeIndicator(this.helthIndicators,'drink', duration, -1);
         },
         checkHelth() {
-            let maxTotal = 0;
-            let total = 0;
-            const keys = Object.keys(this.listToNeed);
-            keys.forEach((key) => {
-                maxTotal += 100;
-                total += this.listToNeed[key];
-            });
-            this.helthCount = Math.round((total / maxTotal) * 100);
-            if (this.helthCount > 80) {
-                this.helthStr = 'Perfect';
-            } else if (this.helthCount > 40) {
-                this.helthStr = 'Good';
-            } else if (this.helthCount > 0) {
-                this.helthStr = 'Bad';
-            } else {
-                this.helthStr = 'Dead';
+            const calculateHelthNumber = () => {
+                let maxTotal = 0;
+                let total = 0;
+                const keys = Object.keys(this.helthIndicators);
+                keys.forEach((key) => {
+                    maxTotal += 100;
+                    total += this.helthIndicators[key];
+                });
+                return Math.round((total / maxTotal) * 100);
             }
+            const calculateHelthStr = () => {
+                if (this.helthCount > 80) {
+                    return 'Perfect';
+                } else if (this.helthCount > 40) {
+                    return  'Good';
+                } else if (this.helthCount > 0) {
+                    return 'Bad';
+                } else {
+                    return 'Dead';
+                }
+            }
+            this.helthNumber = calculateHelthNumber();
+            this.helthStr = calculateHelthStr();
         },
     };
 }
-
 const tamagochi = CreateObject('TomCat');
 tamagochi.play(30);
 tamagochi.play(20);
@@ -92,7 +97,8 @@ sirko.colour = 'Red';
 sirko.breed = 'mastiff';
 sirko.play(50);
 sirko.checkHelth();
-
+sirko.sleep(50);
 console.log(tamagochi);
 console.log(tomaGochi);
-console.log(sirko.name, sirko.colour, sirko.helthStr);
+console.log(sirko.name, sirko.colour, sirko.helthIndicators.sleep);
+console.log(sirko.helthIndicators)
