@@ -31,7 +31,6 @@ const tamagochi = {
   },
 };
 
-
 tamagochi.play();
 tamagochi.play();
 tamagochi.play();
