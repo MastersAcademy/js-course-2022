@@ -30,7 +30,7 @@ const ben = {
         this.health += 2.0 * this.metabolism;
         this.agile += 0.5 * this.metabolism;
     },
-    damageCycle() {
+    damage() {
         this.health -= 1;
         this.happiness -= 1;
         this.satiety -= 1;
@@ -89,7 +89,7 @@ function userInput() {
 
 function runGame() {
     const damageInterval = setInterval(() => {
-        ben.damageCycle();
+        ben.damage();
     }, 15 * 1000);
     const userActionInterval = setInterval(() => {
         console.clear();
