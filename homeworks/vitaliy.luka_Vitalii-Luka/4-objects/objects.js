@@ -50,24 +50,26 @@ const askFood = () => new Promise((resolve) => {
 const performAction = () => new Promise((resolve) => {
     console.log(`\n${userTamagotchi.animal} ${userTamagotchi.name} likes to "play", "eat" and needs "sleep"...`);
     rl.question(`\n    Choice action for "${userTamagotchi.name}" > `, (answer) => {
+        console.clear();
         switch (answer) {
             case 'play':
                 userTamagotchi.happiness += 1;
                 userTamagotchi.satiety -= 1;
                 userTamagotchi.health -= 1;
+                console.log(`\n****** The "${userTamagotchi.animal} ${userTamagotchi.name}" played with you ******`);
                 break;
             case 'eat':
                 userTamagotchi.satiety += 1;
                 userTamagotchi.happiness -= 1;
+                console.log(`\n****** The "${userTamagotchi.animal} ${userTamagotchi.name}" ate well ******`);
                 break;
             case 'sleep':
                 userTamagotchi.health += 1;
                 userTamagotchi.satiety -= 1;
+                console.log(`\n****** The "${userTamagotchi.animal} ${userTamagotchi.name}" slept all day ******`);
                 break;
             default:
-                console.log('\n***************************************');
-                console.log(`\n"${userTamagotchi.animal} ${userTamagotchi.name}" doesn't understand you...`);
-                console.log(`"${userTamagotchi.animal} ${userTamagotchi.name}" likes to "play", "eat" and needs "sleep". \nTry again....`);
+                console.log(`\n****** "${userTamagotchi.animal} ${userTamagotchi.name}" doesn't understand you... ******`);
                 break;
         }
         resolve();
@@ -77,32 +79,31 @@ const performAction = () => new Promise((resolve) => {
 const actionChoice = async () => {
     if ((userTamagotchi.satiety > 0) && (userTamagotchi.health > 0)) {
         await performAction();
-        console.log('\n***************************************');
         userTamagotchi.description();
         userTamagotchi.characteristic();
         await actionChoice();
     } else {
-        console.log('\n***************************************');
+        console.clear();
+        console.log('\n***************   OH NO!!!!  *****************');
         console.log(`\nYou didn't take good care of your Tamagotchi "${userTamagotchi.name}" :(`);
+        userTamagotchi.characteristic();
         console.log(`\nThe "${userTamagotchi.animal} ${userTamagotchi.name}" was taken to the veterinary clinic....`);
-        console.log('\n***************************************');
-        console.log('\nGame over\n');
+        console.log('\n***************   Game over   ****************\n');
         rl.close();
     }
 };
 
 const startGame = async () => {
-    console.log('\nTo start the game you need to create a Tamagotchi...\n');
+    console.clear();
+    console.log('\n**** To start the game you need to create a Tamagotchi... *****\n');
     await askAnimal();
     await askName();
     await askFood();
     userTamagotchi.happiness = 5;
     userTamagotchi.health = 5;
     userTamagotchi.satiety = 5;
-    console.log('\n=======================================');
-    console.log('=            Start new game           =');
-    console.log('=======================================');
-    console.log('\n***************************************');
+    console.clear();
+    console.log('\n*************** Start new game ****************');
     userTamagotchi.description();
     userTamagotchi.characteristic();
     await actionChoice();
