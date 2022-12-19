@@ -43,7 +43,7 @@ function inputNumber(question, dataStack) {
     return new Promise((resolve) => {
         rl.question(`${question} (from 1 to 10): `, (answer) => {
             if (+answer > 0 && +answer <= 10) {
-                dataStack.push(answer);
+                dataStack.push(+answer);
                 resolve(dataStack);
             } else {
                 dataStack.push('---');
@@ -84,23 +84,23 @@ function addNewCharacter(characterInfo) {
             enumerable: true,
         },
         health: {
-            value: +characterInfo[1],
+            value: characterInfo[1],
             enumerable: true,
         },
         strenght: {
-            value: +characterInfo[2],
+            value: characterInfo[2],
             enumerable: true,
         },
         satiety: {
-            value: +characterInfo[3],
+            value: characterInfo[3],
             enumerable: true,
         },
         happiness: {
-            value: +characterInfo[4],
+            value: characterInfo[4],
             enumerable: true,
         },
         intelligence: {
-            value: +characterInfo[5],
+            value: characterInfo[5],
             enumerable: true,
         },
         favouriteFood: {
