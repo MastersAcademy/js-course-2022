@@ -25,35 +25,35 @@ function exit() {
     rl.close();
 }
 
-function menu(command, restartApp) {
+function menu(command, runAppCallback) {
     switch (command) {
-        case 'y': restartApp();
+        case 'y': runAppCallback();
             break;
         case 'n': exit();
             break;
         case 'sh': console.clear();
             console.log(characters);
-            setTimeout(async () => { await restartApp(); }, 5 * 1000);
+            setTimeout(async () => { await runAppCallback(); }, 5 * 1000);
             break;
-        default: restartApp();
+        default: runAppCallback();
     }
 }
 
-function inputNumber(question, dataStack = []) {
+function inputNumber(question, dataStack) {
     return new Promise((resolve) => {
         rl.question(`${question} (from 1 to 10): `, (answer) => {
             if (+answer > 0 && +answer <= 10) {
                 dataStack.push(answer);
                 resolve(dataStack);
             } else {
-                dataStack.push(false);
+                dataStack.push('---');
                 resolve(dataStack);
             }
         });
     });
 }
 
-function inputString(question, dataStack = []) {
+function inputString(question, dataStack) {
     return new Promise((resolve) => {
         rl.question(question, (answer) => {
             dataStack.push(answer);
@@ -66,7 +66,7 @@ async function getUserInput() {
     console.clear();
     rl.resume();
     console.log('\nInput information about your future character:\n');
-    return inputString('input name: ')
+    return inputString('input name: ', [])
         .then((answers) => inputNumber('input health', answers))
         .then((answers) => inputNumber('input strenght', answers))
         .then((answers) => inputNumber('input satiety', answers))
