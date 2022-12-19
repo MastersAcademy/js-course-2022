@@ -19,9 +19,7 @@ const baseObject = {
 
 function exit() {
     console.clear();
-    if (characters) {
-        console.log(characters);
-    }
+    console.log(characters);
     rl.close();
 }
 
