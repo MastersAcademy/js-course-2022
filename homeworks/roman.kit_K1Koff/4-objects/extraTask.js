@@ -116,8 +116,8 @@ function addNewCharacter(characterInfo) {
 }
 
 async function runApp() {
-    const chracter = await getUserInput();
-    characters.push(addNewCharacter(chracter));
+    const newCharacter = await getUserInput();
+    characters.push(addNewCharacter(newCharacter));
     console.log(characters);
     rl.question(('Add new character? (type `y`/`n`). \nto show existing characters type `sh`\n'), (answer) => {
         menu(answer, runApp);
