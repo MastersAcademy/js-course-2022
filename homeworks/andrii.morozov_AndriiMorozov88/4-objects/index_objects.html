@@ -1,34 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Objects</title>
-  <link rel="stylesheet" href="style_objects.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
 </head>
 <body>
-  <main class="main">
-    <div class="main__create-pet">
-        <button data-create-pet>Create New Pet</button>
-        <form class="input-container hidden" data-input-container>
-          <input type="text" placeholder="Input Pet name" data-input-pet-name>
-          <p>Input Health</p>
-          <input type="range" max="20" data-input-health>
-          <p>Input Happiness</p>
-          <input type="range" max="20" data-input-happiness>
-          <p>Input Satiety</p>
-          <input type="range" max="20" data-input-satiety>
-          <button type="button" data-submit>Submit</button>
-        </form>
+    <div data-main>
+          <div class="main__game-field" data-pet></div>
+          <button data-play>Play</button>
+          <button data-food>Food</button>
     </div>
-    <div>
-        <div class="main__game-field" data-pet></div>
-        <button data-play>Play</button>
-        <button data-food>Food</button>
-        <div data-created-pets></div>
-    </div>
-  </main>
-  <script src="objects.js"></script>
+    <script src="objects.js"></script>
 </body>
 </html>
