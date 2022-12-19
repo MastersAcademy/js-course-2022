@@ -35,7 +35,6 @@ function changePlayState() {
     if (picachu.happiness * picachu.health * picachu.satiety) {
         showTemplate();
     } else {
-        showTemplate();
         main.innerText = 'Game Over';
         playButtonEl.removeEventListener('click', changePlayState);
         foodButtonEl.removeEventListener('click', changeFoodState);
