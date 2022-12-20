@@ -44,9 +44,3 @@ const tamagochi = {
         return `${this.nameToy} is dead`;
     },
 };
-// 10 використань методу зменшення показників призводять до смерті персонаж
-// за 10 викликів на нуль зміниться найбільш витратний показник
-for (let i = 0; i < 10; i++) {
-    tamagochi.decrease();
-    console.log(tamagochi.happy());
-}
