@@ -1,49 +1,63 @@
 const tamagochi = {
-    health: 5,
-    happiness: 5,
-    satiety: 3,
-    healthUp() {
-        this.health++;
+    name: 'Guchi',
+    energy: 10,
+    happiness: 10,
+    satiety: 10,
+    isStillAlive() {
+        return this.energy > 0
+        && this.happiness > 0
+        && this.satiety > 0
     },
-    helthDown() {
-        this.health--;
-        this.happinessDown();
-    },
-    happinessUp() {
-        this.happiness++;
-    },
-    happinessDown() {
-        this.happiness--;
-    },
-    satietyUp() {
+    feed() {
         this.satiety++;
-    },
-    satietyDown() {
-        this.satiety--;
-    },
-    eat() {
-        this.satietyUp();
-        this.healthUp();
+        this.happiness--;
+        this.energy--;
+        this.showMessage('It was delicious!');
     },
     play() {
-        this.helthDown();
-        this.satietyDown();
-        this.happinessUp();
-
-        if (!this.health || !this.happiness || !this.satiety) {
-            console.log('Game over');
-        } else if (this.satiety === 1) {
-            console.log('I`m hungry');
-        } else {
-            console.log('Wow, that was cool!');
+        this.happiness++;
+        this.satiety--;
+        this.showMessage('wow, that was amazing, I want more!');
+    },
+    sleep() {
+        this.energy++;
+        this.satiety--;
+        this.showMessage('Oiiio...bz!..');
+        if (this.isStillAlive) {
+            setTimeout(this.showMessage('Good morning! let`s play?'), 500);
         }
     },
+    showMessage(event) {
+        const isGameOver = !this.isStillAlive();
+        let message = 'I`m bored, play with me..';
+
+        if (isGameOver) {
+            message = 'Game over';
+        } else if (this.satiety === 2) {
+            message = 'I`m hungry, feed me';
+        } else if (this.energy === 2) {
+            message = 'I`m tired, I wont sleep';
+        } else {
+            message = event;
+        }
+
+        console.log(message);
+    },
+    start() {
+        console.log(`Hi, I'm ${this.name}, play with me..`);
+    }
 };
 
-tamagochi.play();
-tamagochi.play();
-tamagochi.eat();
-tamagochi.eat();
-tamagochi.eat();
-tamagochi.play();
-tamagochi.play();
+const gochi = Object.create(tamagochi);
+gochi.name = 'Gochi';
+gochi.energy = 6;
+gochi.happiness = 6;
+gochi.satiety = 6;
+
+const tuchi = Object.create(gochi);
+tuchi.name = 'Tuchi';
+tuchi.age = 16;
+
+tuchi.start = function() {
+    console.log(`Hi, I'm ${this.name}, I'm ${this.age} years old`);
+}
