@@ -44,3 +44,5 @@ const tamagochi = {
         return `${this.nameToy} is dead`;
     },
 };
+
+console.log(tamagochi);
