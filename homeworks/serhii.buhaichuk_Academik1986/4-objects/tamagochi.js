@@ -2,34 +2,46 @@ const tamagochi = {
     health: 50,
     happy: 50,
     satiety: 50,
-    showTamagochiIndicators() {
-        console.log(`Hi! My name is tamagochi\u{1F60D}:${this.name}! Here is my scores`);
+    superPower: 20,
+
+    play() {
+        tamagochi.health -= 1;
+        tamagochi.happy += 1;
+        tamagochi.satiety -= 1;
+        console.log(`Tamagochi health: ${tamagochi.health}`);
+        console.log(`Tamagochi happy: ${tamagochi.happy}`);
+        console.log(`Tamagochi satiety: ${tamagochi.satiety}`);
+        return this.checkIsAlive();
+    },
+    feed() {
+        tamagochi.health += 1;
+        tamagochi.happy -= 1;
+        tamagochi.satiety += 1;
+        console.log(`Tamagochi health: ${tamagochi.health}`);
+        console.log(`Tamagochi happy: ${tamagochi.happy}`);
+        console.log(`Tamagochi satiety: ${tamagochi.satiety}`);
+        return this.checkIsAlive();
+    },
+    checkIsAlive() {
+        if (tamagochi.health <= 0 || tamagochi.satiety <= 0 || tamagochi.happy <= 0) {
+            return console.log('GAME OVER:Tamagochi died');
+        }
+        return console.log('Tamagochi is alive');
+    },
+    addScores(someFood) {
+        if (someFood === this.favoriteFood) {
+            this.superPower += 5;
+            return console.log(`Ooo.. yee!\u{1F60D} My superpower is growing: ${this.superPower} `);
+        }
+        return console.log("What is this? I don't like it. Please give me the 'Cookies'");
     },
 };
 
-const tamagochi1 = Object.create(tamagochi);
-tamagochi1.name = 'Yamakasy';
-tamagochi1.health = 20;
-tamagochi1.happy = 20;
-tamagochi1.satiety = 20;
-tamagochi1['favorite eat'] = 'cookies';
-tamagochi1.showTamagochiIndicators();
-console.log(tamagochi1);
+tamagochi.play();
+tamagochi.feed();
 
-const tamagochi2 = Object.create(tamagochi);
-tamagochi2.name = 'Kitana';
-tamagochi2.health = 37;
-tamagochi2.happy = 42;
-tamagochi2.satiety = 85;
-tamagochi2['favorite drink'] = 'pineapple juice';
-tamagochi2.showTamagochiIndicators();
-console.log(tamagochi2);
-
-const tamagochi3 = Object.create(tamagochi);
-tamagochi3.name = 'Yakudza';
-tamagochi3.health = 67;
-tamagochi3.happy = 88;
-tamagochi3.satiety = 77;
-tamagochi3['favorite weapon'] = 'knife';
-tamagochi3.showTamagochiIndicators();
-console.log(tamagochi3);
+const me = Object.create(tamagochi);
+me.favoriteFood = 'Cookies';
+me.addScores('Cookies');
+me.addScores('Pepsi');
+me.addScores('Cookies');
