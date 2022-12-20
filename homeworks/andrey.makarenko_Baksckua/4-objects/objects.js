@@ -21,11 +21,11 @@ const tamagochi = {
         this.satiety -= 1;
         this.displayStatus();
     },
-    displayStatus(){
-    if(this.health <= 0 || this.happiness <= 0 || this.satiety <= 0) {
-         console.log('Game Over');
-    } else {
-         console.log('Tamagochi is alive');
+    displayStatus() {
+         if (this.health <= 0 || this.happiness <= 0 || this.satiety <= 0) {
+             console.log('Game Over');
+         } else {
+             console.log('Tamagochi is alive');
        }
     },
 
