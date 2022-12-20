@@ -33,13 +33,6 @@ const tamagochi = {
         if (!isAlive) {
             console.log(`${this.name} is gone because one of the vitals went below zero: ${arrayParams.join(', ')}`);
         }
-        // if (this.health <= 0
-        //     || this.happyness <= 0
-        //     || this.feed <= 0
-        //     || this.weariness <= 0) {
-        //     console.log(`${this.name} is gone because one of the vitals went below zero:`);
-        //     return false;
-        // }
         return isAlive;
     },
     eatBurger() {
