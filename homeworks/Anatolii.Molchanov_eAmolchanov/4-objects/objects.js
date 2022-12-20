@@ -20,7 +20,7 @@ const tamagochi = {
         this.showMessage('wow, that was amazing, I want more!');
     },
     sleep() {
-        this.energy++;
+        this.energy += 2;
         this.satiety--;
         this.showMessage('Oiiio...bz!..');
         if (this.isStillAlive) {
