@@ -22,16 +22,14 @@ const tamagochi = {
         this.displayStatus();
     },
     displayStatus() {
-         if (this.health <= 0 || this.happiness <= 0 || this.satiety <= 0) {
-             console.log('Game Over');
-         } else {
-             console.log('Tamagochi is alive');
-       }
+        if (this.health <= 0 || this.happiness <= 0 || this.satiety <= 0) {
+            console.log('Game Over');
+        } else {
+            console.log('Tamagochi is alive');
+        }
     },
-
 };
 
- tamagochi.play();
- tamagochi.food();
- tamagochi.sleep();
-
+tamagochi.play();
+tamagochi.food();
+tamagochi.sleep();
