@@ -1,97 +1,115 @@
 const tamagochi = {
     name: 'Bob',
-    years: 5,
     health: 100,
     happyness: 100,
     feed: 100,
     mentalHealth: 100,
     weariness: 20,
-    checkHealth(name, param) {
-        if (param <= 0) {
-            console.log(`${name} is gone`);
-            return false;
+    checkLife() {
+        let isAlive = true;
+        const arrayParams = [];
+
+        if (this.health <= 0) {
+            isAlive = false;
+            arrayParams.push(`health = ${this.health}`);
         }
-        return true;
+        if (this.happyness <= 0) {
+            isAlive = false;
+            arrayParams.push(`happyness = ${this.happyness}`);
+        }
+        if (this.feed <= 0) {
+            isAlive = false;
+            arrayParams.push(`feed = ${this.feed}`);
+        }
+        if (this.mentalHealth <= 0) {
+            isAlive = false;
+            arrayParams.push(`mentalHealth = ${this.mentalHealth}`);
+        }
+        if (this.weariness <= 0) {
+            isAlive = false;
+            arrayParams.push(`weariness = ${this.weariness}`);
+        }
+
+        if (!isAlive) {
+            console.log(`${this.name} is gone because one of the vitals went below zero: ${arrayParams.join(', ')}`);
+        }
+        // if (this.health <= 0
+        //     || this.happyness <= 0
+        //     || this.feed <= 0
+        //     || this.weariness <= 0) {
+        //     console.log(`${this.name} is gone because one of the vitals went below zero:`);
+        //     return false;
+        // }
+        return isAlive;
     },
     eatBurger() {
-        if (!this.checkHealth(this.name, this.health)) {
-            return false;
+        if (this.checkLife()) {
+            this.health -= 2;
+            this.happyness -= 2;
+            this.feed += 5;
+            this.weariness += 4;
         }
-        this.health -= 2;
-        this.happyness += 2;
-        this.feed += 5;
-        this.weariness += 4;
-        return true;
     },
     eatSalad() {
-        if (!this.checkHealth(this.name, this.health)) {
-            return false;
+        if (this.checkLife()) {
+            this.health += 1;
+            this.happyness += 1;
+            this.feed += 1;
+            this.weariness += 1;
         }
-        this.health += 1;
-        this.happyness += 1;
-        this.feed += 1;
-        this.weariness += 1;
-        return true;
     },
     eatMcmenu() {
-        if (!this.checkHealth(this.name, this.health)) {
-            return false;
+        if (this.checkLife()) {
+            this.health -= 2;
+            this.happyness += 2;
+            this.feed += 9;
+            this.weariness += 7;
         }
-        this.health -= 2;
-        this.happyness += 2;
-        this.feed += 9;
-        this.weariness += 7;
-        return true;
     },
     drinkWater() {
-        if (!this.checkHealth(this.name, this.health)) {
-            return false;
+        if (this.checkLife()) {
+            this.health += 1;
+            this.feed += 1;
+            this.happyness += 1;
+            this.weariness -= 5;
+            this.mentalHealth += 1;
         }
-        this.health += 1;
-        this.feed += 1;
-        this.happyness += 1;
-        this.weariness -= 5;
-        this.mentalHealth += 1;
-        return true;
     },
     walk() {
-        if (!this.checkHealth(this.name, this.health)) {
-            return false;
+        if (this.checkLife()) {
+            this.health += 2;
+            this.feed -= 5;
+            this.happyness += 1;
+            this.weariness += 2;
+            this.mentalHealth += 2;
         }
-        this.health += 2;
-        this.feed -= 5;
-        this.happyness += 1;
-        this.weariness += 2;
-        this.mentalHealth += 2;
-        return true;
     },
     sleep() {
-        if (!this.checkHealth(this.name, this.health)) {
-            return false;
+        if (this.checkLife()) {
+            this.health += 5;
+            this.feed -= 8;
+            this.happyness += 2;
+            this.weariness -= 5;
+            this.mentalHealth += 6;
         }
-        this.health += 5;
-        this.feed -= 8;
-        this.happyness += 2;
-        this.weariness -= 5;
-        this.mentalHealth += 6;
-        return true;
     },
     watchYoutube() {
-        if (!this.checkHealth(this.name, this.health)) {
-            return false;
+        if (this.checkLife()) {
+            this.health -= 1;
+            this.feed -= 3;
+            this.happyness += 1;
+            this.weariness -= 4;
         }
-        this.health -= 1;
-        this.feed -= 3;
-        this.happyness += 1;
-        this.weariness -= 4;
-        return true;
     },
 };
 
 tamagochi.eatBurger();
-tamagochi.eatSalad();
-tamagochi.eatMcmenu();
-tamagochi.drinkWater();
-tamagochi.walk();
-tamagochi.sleep();
-console.log(tamagochi);
+
+console.log(`
+Current status ${tamagochi.name}:
+    Health - ${tamagochi.health};
+    Feed - ${tamagochi.feed};
+    Happyness - ${tamagochi.happyness};
+    MentalHealth - ${tamagochi.mentalHealth};
+    Weariness - ${tamagochi.weariness};
+`);
