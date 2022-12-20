@@ -6,7 +6,7 @@ const tamagochi = {
     isStillAlive() {
         return this.energy > 0
         && this.happiness > 0
-        && this.satiety > 0
+        && this.satiety > 0;
     },
     feed() {
         this.satiety++;
@@ -23,7 +23,7 @@ const tamagochi = {
         this.energy += 2;
         this.satiety--;
         this.showMessage('Oiiio...bz!..');
-        if (this.isStillAlive) {
+        if (this.isStillAlive()) {
             setTimeout(this.showMessage('Good morning! let`s play?'), 500);
         }
     },
@@ -45,7 +45,7 @@ const tamagochi = {
     },
     start() {
         console.log(`Hi, I'm ${this.name}, play with me..`);
-    }
+    },
 };
 
 const gochi = Object.create(tamagochi);
@@ -58,6 +58,6 @@ const tuchi = Object.create(gochi);
 tuchi.name = 'Tuchi';
 tuchi.age = 16;
 
-tuchi.start = function() {
+tuchi.start = function () {
     console.log(`Hi, I'm ${this.name}, I'm ${this.age} years old`);
-}
+};
