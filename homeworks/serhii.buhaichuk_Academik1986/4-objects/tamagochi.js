@@ -33,7 +33,7 @@ const tamagochi = {
             this.superPower += 5;
             return console.log(`Ooo.. yee!\u{1F60D} My superpower is growing: ${this.superPower} `);
         }
-        return console.log("What is this? I don't like it. Please give me the 'Cookies'");
+        return console.log('What is this? I dont like it. Please give me the Cookies');
     },
 };
 
