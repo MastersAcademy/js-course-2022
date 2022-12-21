@@ -1,18 +1,18 @@
 // Task 1
-// function newYearTree(length) {
-//     for (let i = 0; i < length; i++) {
-//         let star = '*';
-//         const space = ' ';
-//         const spaces = space.repeat(length - i - 1);
-//         for (let k = 1; k <= i; k++) {
-//             star += '**';
-//         }
-//         star = spaces + star;
-//         console.log(star);
-//     }
-// }
+function newYearTree(length) {
+    for (let i = 0; i < length; i++) {
+        let star = '*';
+        const space = ' ';
+        const spaces = space.repeat(length - i - 1);
+        for (let k = 1; k <= i; k++) {
+            star += '**';
+        }
+        star = spaces + star;
+        console.log(star);
+    }
+}
 
-// newYearTree(15);
+newYearTree(15);
 
 // Task 2
 const arr = [
@@ -28,22 +28,24 @@ const arr = [
     [8, 6, 8, 6, 6, 7, 7, 6, 6, 7, 8, 7, 6, 6, 6, 6, 7, 8, 7],
 ];
 
-const oneDimensionalArray = arr.flat();
-const changedOneDimensionalArray = oneDimensionalArray.map((element) => {
-    if (element < 5) {
-        return ' ';
-    }
-    if (element > 5) {
-        return '*';
-    }
-    return element;
+const finalArray = [];
+arr.forEach((element) => {
+    const itemInArr = element.map((el) => {
+        if (el < 5) {
+            return ' ';
+        }
+        if (el > 5) {
+            return '*';
+        }
+        return el;
+    });
+    finalArray.push(itemInArr.join());
 });
-console.log(changedOneDimensionalArray.join());
+console.log(finalArray);
 
-console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~With Reduce~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
-
-const changedArray = arr.reduce((acc, current) => {
-    const arrElement = current.map((element) => {
+// Task 2 with reduce()
+const finalArrayReduce = arr.reduce((acc, current) => {
+    const itemInArr = current.map((element) => {
         if (element < 5) {
             return ' ';
         }
@@ -52,7 +54,7 @@ const changedArray = arr.reduce((acc, current) => {
         }
         return element;
     });
-    acc.push(arrElement);
+    acc.push(itemInArr.join());
     return acc;
 }, []);
-console.log(changedArray.join());
+console.log(finalArrayReduce);
