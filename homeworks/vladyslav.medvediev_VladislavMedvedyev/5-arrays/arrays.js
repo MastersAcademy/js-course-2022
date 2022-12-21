@@ -1,18 +1,18 @@
 // Task 1
-function newYearTree(length) {
-    for (let i = 0; i < length; i++) {
-        let star = '*';
-        const space = ' ';
-        const spaces = space.repeat(length - i - 1);
-        for (let k = 1; k <= i; k++) {
-            star += '**';
-        }
-        star = spaces + star;
-        console.log(star);
-    }
-}
+// function newYearTree(length) {
+//     for (let i = 0; i < length; i++) {
+//         let star = '*';
+//         const space = ' ';
+//         const spaces = space.repeat(length - i - 1);
+//         for (let k = 1; k <= i; k++) {
+//             star += '**';
+//         }
+//         star = spaces + star;
+//         console.log(star);
+//     }
+// }
 
-newYearTree(15);
+// newYearTree(15);
 
 // Task 2
 const arr = [
@@ -39,3 +39,20 @@ const changedOneDimensionalArray = oneDimensionalArray.map((element) => {
     return element;
 });
 console.log(changedOneDimensionalArray.join());
+
+console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~With Reduce~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+
+const changedArray = arr.reduce((acc, current) => {
+    const arrElement = current.map((element) => {
+        if (element < 5) {
+            return ' ';
+        }
+        if (element > 5) {
+            return '*';
+        }
+        return element;
+    });
+    acc.push(arrElement);
+    return acc;
+}, []);
+console.log(changedArray.join());
