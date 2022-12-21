@@ -54,7 +54,7 @@ arr.forEach((value) => {
 });
 console.log(arr1);
 
-console.log('=========== Task with star===========');
+console.log('=========== Task with star ===========');
 function makeStarWithToy(count) {
     let i = 1;
     let starToy = '@';
