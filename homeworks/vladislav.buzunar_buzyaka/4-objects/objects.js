@@ -40,7 +40,7 @@ const tamagochi = {
         this.healthLevels += 1;
         this.happyLevels += 2;
         this.foodLevels += 1;
-        if (this.healthLevels <= 0){
+        if (this.healthLevels <= 0) {
             console.log(`${this.name} вмер...`);
         }
     },
