@@ -1,44 +1,63 @@
+const tamagochiStates = `Здоров'я  в ${this.name} - ${this.healthLevels} Щастя - ${this.happyLevels} Ситість - ${this.foodLevels}`;
+
 const tamagochi = {
     name: 'Tamagochi',
     age: 23,
     healthLevels: 5,
     happyLevels: 3,
     foodLevels: 4,
+    aliveLee: true,
     noEating() {
-        tamagochi.healthLevels -= 1;
-        tamagochi.happyLevels -= 1;
-        tamagochi.foodLevels -= 1;
-
-        const tamagochiStates = `Здоров'я  в ${tamagochi.name} - ${tamagochi.healthLevels} Щастя - ${tamagochi.happyLevels} Ситість - ${tamagochi.foodLevels}`;
-
-        const tamagochiDiedFirst = tamagochi.healthLevels === 0 || tamagochi.happyLevels === 0;
-        const tamagochiDiedSecond = tamagochi.foodLevels === 0;
-
-        if (tamagochiDiedFirst === true && tamagochiDiedSecond === true) {
-            console.log(`${tamagochi.name} вмер... ${tamagochiStates}`);
-        } else if (tamagochi.foodLevels === 1) {
-            console.log(`Покорми, ${tamagochi.name}, бо вiн скоро вмре... ${tamagochiStates}`);
+        this.healthLevels -= 1;
+        this.happyLevels -= 1;
+        this.foodLevels -= 1;
+        const tamagochiDied = this.healthLevels === 0 || this.happyLevels === 0 || this.foodLevels === 0;
+        if (tamagochiDied === true) {
+            console.log(`${this.name} вмер... ${tamagochiStates}`);
+        } else if (this.foodLevels === 1) {
+            console.log(`Покорми, ${this.name}, бо вiн скоро вмре... ${tamagochiStates}`);
         } else {
-            console.log(`Сьогодні ${tamagochi.name} нічого не вполював... ${tamagochiStates}`);
+            console.log(`Сьогодні ${this.name} нічого не вполював... ${tamagochiStates}`);
         }
     },
     eating() {
-        const tamagochiStates = `Здоров'я  в ${tamagochi.name} - ${tamagochi.healthLevels} Щастя - ${tamagochi.happyLevels} Ситість - ${tamagochi.foodLevels}`;
-        tamagochi.healthLevels += 2;
-        tamagochi.happyLevels += 2;
-        tamagochi.foodLevels += 2;
-        if (tamagochi.foodLevels > 0) {
-            console.log(`Сьогодні, наший ${tamagochi.name}, схопив свою здобич! ${tamagochiStates}`);
+        this.healthLevels += 2;
+        this.happyLevels += 2;
+        this.foodLevels += 2;
+        if (this.foodLevels > 0) {
+            console.log(`Сьогодні, наший ${this.name}, схопив свою здобич! ${tamagochiStates}`);
         }
     },
+    play() {
+        this.healthLevels += 1;
+        this.happyLevels += 3;
+        this.foodLevels += 1;
+        if(this.happyLevels > 0) {
+            console.log(`Сьогоднi наш ${this.name} погрався з тобою! ${tamagochiStates}`);
+        }
+    },
+    doExercises() {
+        this.healthLevels += 1;
+        this.happyLevels += 2;
+        this.foodLevels += 1;
+        if(this.healthLevels <= 0){
+            console.log(`${this.name} вмер...`);
+        }
+    }
 };
+
+if(tamagochi.foodLevels <= 0 || tamagochi.healthLevels <= 0 || tamagochi.happyLevels <= 0) {
+    console.log(`Game over! Play again!`);
+}
 
 tamagochi.noEating();
 tamagochi.eating();
+tamagochi.play();
+tamagochi.doExercises();
 
-const Sobaken = Object.create(tamagochi);
+const sobaken = Object.create(tamagochi);
 
-Sobaken.name = 'Рiчард';
-Sobaken.age = 1;
-Sobaken.favoritFood = 'мнясо';
-console.log(`Нашого собакена звати ${Sobaken.name}. Собакену ${Sobaken.age} роки, його найулюбленіша їжа це - ${Sobaken.favoritFood}`);
+sobaken.name = 'Рiчард';
+sobaken.age = 1;
+sobaken.favoritFood = 'мнясо';
+console.log(`Нашого собакена звати ${sobaken.name}. Собакену ${sobaken.age} роки, його найулюбленіша їжа це - ${sobaken.favoritFood}`);
