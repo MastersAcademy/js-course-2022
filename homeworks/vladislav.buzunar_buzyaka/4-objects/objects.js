@@ -11,8 +11,8 @@ const tamagochi = {
         this.healthLevels -= 1;
         this.happyLevels -= 1;
         this.foodLevels -= 1;
-        const tamagochiDied = this.healthLevels === 0 || this.happyLevels === 0 || this.foodLevels === 0;
-        if (tamagochiDied === true) {
+        const tamDied = this.healthLevels == 0 || this.happyLevels == 0 || this.foodLevels == 0;
+        if (tamDied === true) {
             console.log(`${this.name} вмер... ${tamagochiStates}`);
         } else if (this.foodLevels === 1) {
             console.log(`Покорми, ${this.name}, бо вiн скоро вмре... ${tamagochiStates}`);
