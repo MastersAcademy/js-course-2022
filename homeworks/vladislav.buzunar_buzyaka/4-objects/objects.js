@@ -10,7 +10,7 @@ const tamagochi = {
         } else {
             console.log(`${this.name} живе й далi!`);
         }
-    return this;
+        return this;
     },
     get tamagochiStates() {
         return `Здоров'я  в ${this.name} - ${this.healthLevels} Щастя - ${this.happyLevels} Ситість - ${this.foodLevels}`;
@@ -24,7 +24,6 @@ const tamagochi = {
         this.healthLevels += 2;
         this.happyLevels += 2;
         this.foodLevels += 2;
-        tamagochi.alive;
         if (this.foodLevels > 0) {
             console.log(`Сьогодні, наший ${this.name}, схопив свою здобич! ${this.tamagochiStates}`);
         }
@@ -61,7 +60,7 @@ const tamagochi = {
             console.log(`${this.name} вмер... ${this.tamagochiStates}`);
         }
         return this;
-    }
+    },
 };
 
 // tamagochi.idol().idol().idol(); // example died
