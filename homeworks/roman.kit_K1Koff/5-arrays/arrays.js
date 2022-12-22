@@ -35,7 +35,7 @@ console.log(outputArray);
 function renderDecoratedTree(height) {
     for (let i = 0, h = height; i < height; i++) {
         if (i % 2) {
-            console.log(`${' '.repeat(h--)}#${'*'.repeat(2 * i - 1)}#`);
+            console.log(`${' '.repeat(h--)}@${'*'.repeat(2 * i - 1)}@`);
         } else {
             console.log(`${' '.repeat(h--)}${'*'.repeat(2 * i + 1)}`);
         }
