@@ -24,7 +24,7 @@ const createChristmasTree = function (height) {
         if ((i + 2) % 2 !== 0) {
             treeItem += '@';
             for (let b = 0; b < needles - 2; b++) {
-                treeItem += '*'
+                treeItem += '*';
             }
             treeItem += '@';
         } else {
