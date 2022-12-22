@@ -1,13 +1,14 @@
-/// Створити ялинку заданої висоти
+/// Rende crhristmas tree
+
 function renderTree(height) {
-    for (let i = 0, h = height; i < height; i++) {
-        console.log(`${' '.repeat(h--)}${'*'.repeat(2 * i + 1)}`);
+    for (let i = 0; i < height; i++) {
+        console.log(`${' '.repeat(height - i)}${'*'.repeat(2 * i + 1)}`);
     }
 }
 
 renderTree(10);
 
-/// Перетворити вхідний масив
+/// Input array transformation
 
 const inputArray = [
     [1, 4, 2, 4, 4, 2, 4, 3, 2, 6, 2, 4, 2, 4, 3, 1, 2, 4, 3],
@@ -22,22 +23,20 @@ const inputArray = [
     [8, 6, 8, 6, 6, 7, 7, 6, 6, 7, 8, 7, 6, 6, 6, 6, 7, 8, 7],
 ];
 
-function replaceWith(number) {
-    return number > 5 ? '*' : ' ';
-}
+const replaceWith = (number) => (number > 5 ? '*' : ' ');
 
 const outputArray = inputArray.map((subArray) => subArray.map((number) => replaceWith(number)).join(''));
 
 console.log(outputArray);
 
-/// Завдання з зірочкою
+/// Extra task
 
 function renderDecoratedTree(height) {
-    for (let i = 0, h = height; i < height; i++) {
+    for (let i = 0; i < height; i++) {
         if (i % 2) {
-            console.log(`${' '.repeat(h--)}@${'*'.repeat(2 * i - 1)}@`);
+            console.log(`${' '.repeat(height - i)}@${'*'.repeat(2 * i - 1)}@`);
         } else {
-            console.log(`${' '.repeat(h--)}${'*'.repeat(2 * i + 1)}`);
+            console.log(`${' '.repeat(height - i)}${'*'.repeat(2 * i + 1)}`);
         }
     }
 }
