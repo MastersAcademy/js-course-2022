@@ -1,8 +1,13 @@
-const lowRowAmount = 10;
-const pineArray = new Array(lowRowAmount);
+const lowRowStarsAmount = 4;
+const pineArray = new Array(lowRowStarsAmount);
 pineArray.fill('*');
-function getPineForm(starsAmount) {
+function getUpRowStarsAmount(starsAmount) {
     const upRowAmount = starsAmount % 2 === 1 ? 1 : 2;
     return upRowAmount;
 }
-console.log(getPineForm(lowRowAmount));
+function getPineHeight(starsAmount) {
+    const pineHeight = Math.round(starsAmount / 2);
+    return pineHeight;
+}
+console.log(getUpRowStarsAmount(lowRowStarsAmount));
+console.log(getPineHeight(lowRowStarsAmount));
