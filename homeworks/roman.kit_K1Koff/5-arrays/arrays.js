@@ -31,12 +31,15 @@ console.log(outputArray);
 
 /// Extra task
 
+const starSymbol = String.fromCharCode(10034);
+const snowFlakeSymbol = String.fromCharCode(10053);
+
 function renderDecoratedTree(height) {
     for (let i = 0; i < height; i++) {
         if (i % 2) {
-            console.log(`${' '.repeat(height - i)}@${'*'.repeat(2 * i - 1)}@`);
+            console.log(`${' '.repeat(height - i)}${starSymbol}${snowFlakeSymbol.repeat(2 * i - 1)}${starSymbol}`);
         } else {
-            console.log(`${' '.repeat(height - i)}${'*'.repeat(2 * i + 1)}`);
+            console.log(`${' '.repeat(height - i)}${snowFlakeSymbol.repeat(2 * i + 1)}`);
         }
     }
 }
