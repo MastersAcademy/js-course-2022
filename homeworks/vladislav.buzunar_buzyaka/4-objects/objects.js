@@ -27,6 +27,7 @@ const tamagochi = {
         if (this.foodLevels > 0) {
             console.log(`Сьогодні, наший ${this.name}, схопив свою здобич! ${this.tamagochiStates}`);
         }
+        tamagochi.alive;
         return this;
     },
     idol() {
@@ -39,6 +40,7 @@ const tamagochi = {
         } else {
             console.log(`Сьогодні ${this.name} нічого не вполював... ${this.tamagochiStates}`);
         }
+        tamagochi.alive;
         return this;
     },
     play() {
@@ -49,6 +51,7 @@ const tamagochi = {
         if (this.happyLevels > 0) {
             console.log(`Сьогоднi наш ${this.name} погрався з тобою! ${this.tamagochiStates}`);
         }
+        tamagochi.alive;
         return this;
     },
     doExercises() {
@@ -59,6 +62,7 @@ const tamagochi = {
         if (this.healthLevels <= 0) {
             console.log(`${this.name} вмер... ${this.tamagochiStates}`);
         }
+        tamagochi.alive;
         return this;
     },
 };
