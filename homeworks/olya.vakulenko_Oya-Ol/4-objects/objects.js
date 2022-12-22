@@ -119,6 +119,7 @@ const tamagochi = {
     },
     sayHello() {
         console.log(`Hello, guys! My name is ${this.name}!`);
+        return this;
     },
     getStatus() {
         const status = `Name: ${this.name} `
@@ -138,10 +139,7 @@ const tamagochi = {
 
 Object.keys(tamagochi);
 
-tamagochi.sayHello();
-tamagochi.doExercise();
-tamagochi.getPlay();
-tamagochi.getFull();
-tamagochi.doShopping();
-tamagochi.doWealth();
-tamagochi.getStatus();
+tamagochi.sayHello().doExercise().getPlay().getFull()
+    .doShopping()
+    .doWealth()
+    .getStatus();
