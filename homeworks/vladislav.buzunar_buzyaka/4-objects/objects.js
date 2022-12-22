@@ -4,20 +4,21 @@ const tamagochi = {
     healthLevels: 5,
     happyLevels: 3,
     foodLevels: 4,
+    alive: true,
     get alive() {
         if (this.healthLevels === 0 || this.happyLevels === 0 || this.foodLevels === 0) {
-            console.log(`${this.name} помер...`);
+            console.log(`${this.name} вмер...`)
         } else {
-            console.log(`${this.name} живе й далi!`);
-        }
-        return this;
+            console.log(`${this.name} живий!`)
+        };
+        return this.health >= 0 && this.happiness >= 0 && this.foodLevels >= 0;
     },
     get tamagochiStates() {
         return `Здоров'я  в ${this.name} - ${this.healthLevels} Щастя - ${this.happyLevels} Ситість - ${this.foodLevels}`;
     },
     get doGameOver() {
-        console.log('Game over!');
-        return this.alive;
+        console.log(`${this.name} вмер...`);
+        return this.alive();
     },
     eat() {
         this.alive;
