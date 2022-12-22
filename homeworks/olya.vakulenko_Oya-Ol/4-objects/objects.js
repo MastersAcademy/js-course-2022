@@ -21,6 +21,10 @@ const tamagochi = {
         } else {
             console.log('Wow, I\'m fine!');
         }
+        if (!this.alive) {
+            console.log('Your tamagochi is not alive! Game over!');
+            return this;
+        }
         if (this.win) {
             console.log(`Your tamagochi ${this.name} win!`);
             return this;
@@ -43,7 +47,10 @@ const tamagochi = {
         } else {
             console.log('Wow, I\'m fine!');
         }
-
+        if (!this.alive) {
+            console.log('Your tamagochi is not alive! Game over!');
+            return this;
+        }
         if (this.win) {
             console.log(`Your tamagochi ${this.name} win!`);
             return this;
@@ -65,7 +72,10 @@ const tamagochi = {
         } else {
             console.log('Oh, I\'m hungry!');
         }
-
+        if (!this.alive) {
+            console.log('Your tamagochi is not alive! Game over!');
+            return this;
+        }
         if (this.win) {
             console.log(`Your tamagochi ${this.name} win!`);
             return this;
@@ -87,7 +97,10 @@ const tamagochi = {
         } else {
             console.log('Oh, I\'m a waste!');
         }
-
+        if (!this.alive) {
+            console.log('Your tamagochi is not alive! Game over!');
+            return this;
+        }
         if (this.win) {
             console.log(`Your tamagochi ${this.name} win!`);
             return this;
@@ -108,7 +121,10 @@ const tamagochi = {
         } else {
             console.log('Oh, I\'m poor!');
         }
-
+        if (!this.alive) {
+            console.log('Your tamagochi is not alive! Game over!');
+            return this;
+        }
         if (this.win) {
             console.log(`Your tamagochi ${this.name} win!`);
             return this;
