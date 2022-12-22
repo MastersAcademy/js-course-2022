@@ -13,13 +13,13 @@ const tamagochi = {
     },
     eat() {
         if (!this.alive) {
-            this.doGameOver;
+            this.doGameOver();
         }
         this.healthLevels += 2;
         this.happyLevels += 2;
         this.foodLevels += 2;
         if (!this.alive) {
-            this.doGameOver;
+            this.doGameOver();
         }
         if (this.foodLevels > 0) {
             console.log(`Сьогодні, наший ${this.name}, схопив свою здобич! ${this.tamagochiStates}`);
@@ -28,7 +28,7 @@ const tamagochi = {
     },
     idol() {
         if (!this.alive) {
-            this.doGameOver;
+            this.doGameOver();
         }
         this.healthLevels -= 1;
         this.happyLevels -= 1;
@@ -39,13 +39,13 @@ const tamagochi = {
             console.log(`Сьогодні ${this.name} нічого не вполював... ${this.tamagochiStates}`);
         }
         if (!this.alive) {
-            this.doGameOver;
+            this.doGameOver();
         }
         return this;
     },
     play() {
         if (!this.alive) {
-            this.doGameOver;
+            this.doGameOver();
         }
         this.healthLevels += 1;
         this.happyLevels += 3;
@@ -54,13 +54,13 @@ const tamagochi = {
             console.log(`Сьогоднi наш ${this.name} погрався з тобою! ${this.tamagochiStates}`);
         }
         if (!this.alive) {
-            this.doGameOver;
+            this.doGameOver();
         }
         return this;
     },
     doExercises() {
         if (!this.alive) {
-            this.doGameOver;
+            this.doGameOver();
         }
         this.healthLevels += 1;
         this.happyLevels += 2;
@@ -69,10 +69,10 @@ const tamagochi = {
             console.log(`${this.name} вмер... ${this.tamagochiStates}`);
         }
         if (!this.alive) {
-            this.doGameOver;
+            this.doGameOver();
         }
         return this;
-    }
+    },
 };
 
 tamagochi.eat().eat().doExercises().idol();
