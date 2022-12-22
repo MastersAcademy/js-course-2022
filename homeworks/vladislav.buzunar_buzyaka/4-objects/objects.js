@@ -4,6 +4,14 @@ const tamagochi = {
     healthLevels: 5,
     happyLevels: 3,
     foodLevels: 4,
+    get alive() {
+        if (this.healthLevels === 0 || this.happyLevels === 0 || this.foodLevels === 0) {
+            console.log(`${this.name} помер...`);
+        } else {
+            console.log(`${this.name} живе й далi!`);
+        }
+    return this;
+    },
     get tamagochiStates() {
         return `Здоров'я  в ${this.name} - ${this.healthLevels} Щастя - ${this.happyLevels} Ситість - ${this.foodLevels}`;
     },
@@ -19,14 +27,14 @@ const tamagochi = {
         tamagochi.alive;
         if (this.foodLevels > 0) {
             console.log(`Сьогодні, наший ${this.name}, схопив свою здобич! ${this.tamagochiStates}`);
-        };
+        }
         return this;
     },
     idol() {
         tamagochi.alive;
-        this.healthLevels--;
-        this.happyLevels--;
-        this.foodLevels--;
+        this.healthLevels -= 1;
+        this.happyLevels -= 1;
+        this.foodLevels -= 1;
         if (this.foodLevels === 1) {
             console.log(`Покорми, ${this.name}, бо вiн скоро вмре... ${this.tamagochiStates}`);
         } else {
@@ -36,9 +44,9 @@ const tamagochi = {
     },
     play() {
         tamagochi.alive;
-        this.healthLevels--;
+        this.healthLevels -= 1;
         this.happyLevels += 3;
-        this.foodLevels--;
+        this.foodLevels -= 1;
         if (this.happyLevels > 0) {
             console.log(`Сьогоднi наш ${this.name} погрався з тобою! ${this.tamagochiStates}`);
         }
@@ -46,22 +54,14 @@ const tamagochi = {
     },
     doExercises() {
         tamagochi.alive;
-        this.healthLevels--;
-        this.happyLevels--;
-        this.foodLevels--;
+        this.healthLevels -= 1;
+        this.happyLevels -= 1;
+        this.foodLevels -= 1;
         if (this.healthLevels <= 0) {
             console.log(`${this.name} вмер... ${this.tamagochiStates}`);
         }
         return this;
-    },
-    get alive() {
-        if (this.healthLevels === 0 || this.happyLevels === 0 || this.foodLevels === 0) {
-            console.log(`${this.name} помер...`);
-        } else {
-            console.log(`${this.name} живе й далi!`);
-        }
-    return this;
-    },
+    }
 };
 
 // tamagochi.idol().idol().idol(); // example died
