@@ -1,33 +1,36 @@
 const tamagochi = {
     name: 'Pikachu',
-    health: 10,
-    satiety: 10,
-    happiness: 10,
-    wealth: 10,
+    health: 5,
+    satiety: 5,
+    happiness: 5,
+    wealth: 5,
     get alive() {
         return this.health > 1 && this.satiety > 1 && this.happiness > 1 && this.wealth > 1;
     },
-    // eslint-disable-next-line consistent-return
+    get win() {
+        return this.health >= 10 && this.satiety >= 10 && this.happiness >= 10 && this.wealth >= 10;
+    },
     doExercise() {
         if (!this.alive) {
-            console.log('Your tamagochi is not alive!');
-            return console.log('Game over!');
+            console.log('Your tamagochi is not alive! Game over!');
+            return this;
         }
-
         this.health++;
         if (this.health > 1) {
             console.log('Let\'s do exercise!');
         } else {
             console.log('Wow, I\'m fine!');
         }
-
+        if (this.win) {
+            console.log(`Your tamagochi ${this.name} win!`);
+            return this;
+        }
         this.getStatus();
+        return this;
     },
-    // eslint-disable-next-line consistent-return
     getPlay() {
         if (!this.alive) {
-            console.log('Your tamagochi is not alive!');
-            return console.log('Game over!');
+            console.log('Your tamagochi is not alive! Game over!');
         }
 
         this.health--;
@@ -40,13 +43,18 @@ const tamagochi = {
             console.log('Wow, I\'m fine!');
         }
 
+        if (this.win) {
+            console.log(`Your tamagochi ${this.name} win!`);
+            return this;
+        }
+
         this.getStatus();
+        return this;
     },
-    // eslint-disable-next-line consistent-return
     getFull() {
         if (!this.alive) {
-            console.log('Your tamagochi is not alive!');
-            return console.log('Game over!');
+            console.log('Your tamagochi is not alive! Game over!');
+            return this;
         }
         this.satiety++;
         this.happiness++;
@@ -57,13 +65,18 @@ const tamagochi = {
             console.log('Oh, I\'m hungry!');
         }
 
+        if (this.win) {
+            console.log(`Your tamagochi ${this.name} win!`);
+            return this;
+        }
+
         this.getStatus();
+        return this;
     },
-    // eslint-disable-next-line consistent-return
     doShopping() {
         if (!this.alive) {
-            console.log('Your tamagochi is not alive!');
-            return console.log('Game over!');
+            console.log('Your tamagochi is not alive! Game over!');
+            return this;
         }
         this.happiness++;
         this.wealth--;
@@ -74,13 +87,18 @@ const tamagochi = {
             console.log('Oh, I\'m a waste!');
         }
 
+        if (this.win) {
+            console.log(`Your tamagochi ${this.name} win!`);
+            return this;
+        }
+
         this.getStatus();
+        return this;
     },
-    // eslint-disable-next-line consistent-return
     doWealth() {
         if (!this.alive) {
-            console.log('Your tamagochi is not alive!');
-            return console.log('Game over!');
+            console.log('Your tamagochi is not alive! Game over!');
+            return this;
         }
         this.wealth++;
 
@@ -90,7 +108,16 @@ const tamagochi = {
             console.log('Oh, I\'m poor!');
         }
 
+        if (this.win) {
+            console.log(`Your tamagochi ${this.name} win!`);
+            return this;
+        }
+
         this.getStatus();
+        return this;
+    },
+    sayHello() {
+        console.log(`Hello, guys! My name is ${this.name}!`);
     },
     getStatus() {
         const status = `Name: ${this.name}`
@@ -102,34 +129,18 @@ const tamagochi = {
             console.log(`Your tamagochi ${this.name} got sick and died!`);
         } if (this.satiety <= 1 || this.happiness <= 1) {
             console.log(`Your tamagochi ${this.name} was hungry and died!`);
-            // eslint-disable-next-line max-len
-        } if (this.health >= 10 && this.satiety >= 10 && this.happiness >= 10 && this.wealth >= 10) {
-            console.log(`Your tamagochi ${this.name} win!`);
         }
         console.log(status);
+        return this;
     },
 };
 
 Object.keys(tamagochi);
-
-tamagochi.sayHello = function () {
-    console.log(`Hello, guys! My name is ${this.name}!`);
-};
 
 tamagochi.sayHello();
 tamagochi.doExercise();
 tamagochi.getPlay();
 tamagochi.getFull();
 tamagochi.doShopping();
-tamagochi.doShopping();
-tamagochi.doShopping();
-tamagochi.doShopping();
-tamagochi.doShopping();
-tamagochi.doWealth();
-tamagochi.doWealth();
-tamagochi.doWealth();
-tamagochi.doWealth();
-tamagochi.doWealth();
-tamagochi.doWealth();
 tamagochi.doWealth();
 tamagochi.getStatus();
