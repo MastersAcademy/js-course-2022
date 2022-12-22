@@ -1,4 +1,4 @@
-/// Rende crhristmas tree
+/// Render crhristmas tree
 
 function renderTree(height) {
     for (let i = 0; i < height; i++) {
