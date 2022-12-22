@@ -31,6 +31,7 @@ const tamagochi = {
     getPlay() {
         if (!this.alive) {
             console.log('Your tamagochi is not alive! Game over!');
+            return this;
         }
 
         this.health--;
@@ -120,11 +121,11 @@ const tamagochi = {
         console.log(`Hello, guys! My name is ${this.name}!`);
     },
     getStatus() {
-        const status = `Name: ${this.name}`
-            + `Health: ${this.health}`
-            + `Satiety: ${this.satiety}`
-            + `Happiness: ${this.happiness}`
-            + `Wealth: ${this.wealth}`;
+        const status = `Name: ${this.name} `
+            + `Health: ${this.health} `
+            + `Satiety: ${this.satiety} `
+            + `Happiness: ${this.happiness} `
+            + `Wealth: ${this.wealth} `;
         if (this.health <= 1 || this.satiety <= 1 || this.wealth <= 1) {
             console.log(`Your tamagochi ${this.name} got sick and died!`);
         } if (this.satiety <= 1 || this.happiness <= 1) {
