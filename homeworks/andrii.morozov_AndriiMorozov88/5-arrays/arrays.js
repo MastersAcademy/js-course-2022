@@ -1,7 +1,7 @@
-const lowRowStarsAmount = 21;
+const pineHeight = 10;
 function pine(height) {
-    let starAmount = height % 2 === 1 ? 1 : 2;
-    const pineHeight = Math.round(height / 2);
+    let starAmount = 1;
+    const lowRowStarsAmount = height * 2 - 1;
     for (let count = 0; count < pineHeight; count++) {
         let dashAmount = lowRowStarsAmount - starAmount;
         const starsArray = new Array(starAmount);
@@ -18,7 +18,7 @@ function pine(height) {
         console.log(pineArray.join(''));
     }
 }
-pine(lowRowStarsAmount);
+pine(pineHeight);
 
 const arr = [
     [1, 4, 2, 4, 4, 2, 4, 3, 2, 6, 2, 4, 2, 4, 3, 1, 2, 4, 3],
