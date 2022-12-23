@@ -26,6 +26,7 @@ function displayChristmasTreeWithoutToys(height) {
 function displayChristmasTreeWithToys(height) {
     let rowWithToys = 1;
     let separateRowOfTree = '';
+    const arrayWithTree = [];
 
     for (let i = 0; i < height; i++) {
         for (let q = 0; q < height - i - 1; q++) {
@@ -43,9 +44,10 @@ function displayChristmasTreeWithToys(height) {
             }
         }
         rowWithToys += 2;
-        console.log(separateRowOfTree);
+        arrayWithTree.push(separateRowOfTree);
         separateRowOfTree = '';
     }
+    console.log(arrayWithTree.join('\n'));
 }
 
 function displayChristmasTreeWithToysDesignTree(height) {
@@ -72,7 +74,7 @@ function displayChristmasTreeWithToysDesignTree(height) {
     }
 }
 
-function additionalTree(height) {
+function additionalTreeWithOutStarOnCenter(height) {
     let i = 0;
     let spaceItem = '';
     let starItem = '';
@@ -96,6 +98,7 @@ function additionalTree(height) {
         i++;
     }
 }
+
 readline.question('Please enter the height of future Christmas tree: ', (treeHeight) => {
     const heightReadLine = Number(treeHeight);
 
@@ -105,7 +108,7 @@ readline.question('Please enter the height of future Christmas tree: ', (treeHei
     displayChristmasTreeWithToys(heightReadLine);
     console.log('\nEnjoy your Christmas tree WITH toys (tree with design)');
     displayChristmasTreeWithToysDesignTree(heightReadLine);
-    console.log('\nEnjoy special additional Christmas tree');
-    additionalTree(heightReadLine);
+    console.log('\nEnjoy special additional Christmas tree WITHOUT STAR IN THE CENTER');
+    additionalTreeWithOutStarOnCenter(heightReadLine);
     readline.close();
 });
