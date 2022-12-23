@@ -1,44 +1,18 @@
-const createTree = function (height) {
+function createTree (height) {
     let treeItem = '';
-    let needles = 1;
-    for (let i = 0; i < height; i++) {
-        for (let a = 0; a < height - i - 1; a++) {
+    for (let i = 1; i <= height; i++) {
+        for (let j = 0; j <= height - i; j++) {
             treeItem += ' ';
         }
-        for (let b = 0; b < needles; b++) {
+        for (k = 0; k < (i * 2) - 1; k++) {
             treeItem += '*';
         }
-        needles += 2;
-        console.log(treeItem);
-        treeItem = '';
+        treeItem += '\n';
     }
-};
+    return treeItem;
+}
 
-const createChristmasTree = function (height) {
-    let treeItem = '';
-    let needles = 1;
-    for (let i = 0; i < height; i++) {
-        for (let a = 0; a < height - i - 1; a++) {
-            treeItem += ' ';
-        }
-        if ((i + 2) % 2 !== 0) {
-            treeItem += '@';
-            for (let b = 0; b < needles - 2; b++) {
-                treeItem += '*';
-            }
-            treeItem += '@';
-        } else {
-            for (let b = 0; b < needles; b++) {
-                treeItem += '*';
-            }
-        }
-        needles += 2;
-        console.log(treeItem);
-        treeItem = '';
-    }
-};
-createTree(6);
-createChristmasTree(6);
+console.log(createTree(10));
 
 const array = [
     [1, 4, 2, 4, 4, 2, 4, 3, 2, 6, 2, 4, 2, 4, 3, 1, 2, 4, 3],
@@ -52,5 +26,19 @@ const array = [
     [1, 6, 6, 6, 6, 8, 8, 7, 6, 6, 7, 8, 7, 8, 8, 7, 6, 7, 1],
     [8, 6, 8, 6, 6, 7, 7, 6, 6, 7, 8, 7, 6, 6, 6, 6, 7, 8, 7],
 ];
-const newArray = array.map((element) => element.map((el) => (el > 5 ? '*' : ' ')).join(''));
-console.log(newArray);
+
+const newArray = [];
+array.forEach((element) => {
+    newArray.push(
+        element.reduce((acc, currentValue) => {
+            let symbol = currentValue;
+            if (symbol < 5) {
+                symbol = ' ';
+            } else {
+                symbol = '*';
+            }
+            return acc + symbol;
+        }, '\n'),
+    );
+});
+console.log(newArray.join(''));
