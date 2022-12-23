@@ -1,5 +1,5 @@
 const pineHeight = 10;
-function pine(height) {
+function getPineTree(height) {
     let starAmount = 1;
     const lowRowStarsAmount = height * 2 - 1;
     for (let count = 0; count < pineHeight; count++) {
@@ -18,7 +18,7 @@ function pine(height) {
         console.log(pineArray.join(''));
     }
 }
-pine(pineHeight);
+getPineTree(pineHeight);
 
 const arr = [
     [1, 4, 2, 4, 4, 2, 4, 3, 2, 6, 2, 4, 2, 4, 3, 1, 2, 4, 3],
