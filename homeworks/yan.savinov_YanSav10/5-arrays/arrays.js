@@ -1,10 +1,10 @@
-function createTree (height) {
+function createTree(height) {
     let treeItem = '';
     for (let i = 1; i <= height; i++) {
         for (let j = 0; j <= height - i; j++) {
             treeItem += ' ';
         }
-        for (k = 0; k < (i * 2) - 1; k++) {
+        for (let k = 0; k < (i * 2) - 1; k++) {
             treeItem += '*';
         }
         treeItem += '\n';
