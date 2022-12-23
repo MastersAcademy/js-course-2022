@@ -1,28 +1,30 @@
 // first task
-const height = 10;
-if (height >= 0 && height <= 20) {
-    const star = '*';
-    const space = ' ';
-    let lineToy = false;
-    let toy = null;
+const ChristmasTree = (height) => {
+    if (height >= 0 && height <= 20) {
+        const star = '*';
+        const space = ' ';
+        let lineToy = false;
+        let toy = null;
 
-    for (let i = 0; i <= height; i++) {
-        const background = space.repeat(height - i);
-        let tree = star.repeat(i);
+        for (let i = 0; i <= height; i++) {
+            const background = space.repeat(height - i);
+            let tree = star.repeat(i);
 
-        if (lineToy === false) {
-            toy = '';
-            lineToy = true;
-        } else {
-            tree = star.repeat(i - 1);
-            toy = '@';
-            lineToy = false;
+            if (lineToy === false) {
+                toy = '';
+                lineToy = true;
+            } else {
+                tree = star.repeat(i - 1);
+                toy = '@';
+                lineToy = false;
+            }
+
+            const result = background + toy + tree + star + tree + toy;
+            console.log(result);
         }
-
-        const result = background + toy + tree + star + tree + toy;
-        console.log(result);
     }
-}
+};
+ChristmasTree(15);
 // second task
 const array = [
     [1, 4, 2, 4, 4, 2, 4, 3, 2, 6, 2, 4, 2, 4, 3, 1, 2, 4, 3],
@@ -37,13 +39,15 @@ const array = [
     [8, 6, 8, 6, 6, 7, 7, 6, 6, 7, 8, 7, 6, 6, 6, 6, 7, 8, 7],
 ];
 
-const modifyArray = array.map(
-    (item) => item.reduce(
-        (accumulator, currentValue) => {
-            const itemValue = (currentValue > 5) ? '*' : ' ';
-            return accumulator + itemValue;
-        }, '',
-    ),
+const modifyArray = (el) => (
+    el.map(
+        (item) => item.reduce(
+            (accumulator, currentValue) => {
+                const itemValue = (currentValue > 5) ? '*' : ' ';
+                return accumulator + itemValue;
+            }, '',
+        ),
+    )
 );
 
-console.log(modifyArray);
+console.log(modifyArray(array));
