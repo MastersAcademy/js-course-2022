@@ -15,8 +15,18 @@ function convertStrToStarts(array) {
     return array.map((el) => (el < 5 ? ' ' : '*'));
 }
 
+function hungDecorations(array) {
+    const result = array;
+    const findIndexStar = array.findIndex((el) => el === '*');
+
+    result[findIndexStar] = '@';
+    result[result.length - findIndexStar - 1] = '@';
+    return result;
+}
+
 function makeTreeFromArrays(height) {
     const getStars = height.map((array) => (convertStrToStarts(array)));
+    getStars.map((array) => hungDecorations(array));
     const convertArraysInStrings = getStars.map((array) => array.join(''));
 
     convertArraysInStrings.map((el) => console.log(el));
