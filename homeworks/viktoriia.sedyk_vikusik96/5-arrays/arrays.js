@@ -17,12 +17,11 @@ function convertStrToStarts(array) {
 
 function makeTreeFromArrays(height) {
     const getStars = height.map((array) => (convertStrToStarts(array)));
-    console.log(getStars);
-    // const convertArraysInStrings = getStars.map((array) => array.join(''));
+    const convertArraysInStrings = getStars.map((array) => array.join(''));
 
-    // convertArraysInStrings.map((el) => console.log(el));
+    convertArraysInStrings.map((el) => console.log(el));
 
-    // return convertArraysInStrings;
+    return convertArraysInStrings;
 }
 
 makeTreeFromArrays(defayltArray);
