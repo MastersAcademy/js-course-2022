@@ -7,9 +7,11 @@ function displayChristmasTreeWithoutToys(height) {
     let spaceItem = '';
     let starItem = '';
     let i = 0;
+
     while (i < height) {
         spaceItem = '';
         starItem = '';
+
         for (let j = 0; j < height - i; j++) {
             spaceItem += ' ';
         }
@@ -24,16 +26,17 @@ function displayChristmasTreeWithoutToys(height) {
 function displayChristmasTreeWithToys(height) {
     let rowWithToys = 1;
     let separateRowOfTree = '';
+
     for (let i = 0; i < height; i++) {
         for (let q = 0; q < height - i - 1; q++) {
             separateRowOfTree += ' ';
         }
         if ((i + 2) % 2 !== 0) {
-            separateRowOfTree += '@'; // start
+            separateRowOfTree += '@';
             for (let y = 0; y < rowWithToys - 2; y++) {
                 separateRowOfTree += '*';
             }
-            separateRowOfTree += '@'; // end
+            separateRowOfTree += '@';
         } else {
             for (let y = 0; y < rowWithToys; y++) {
                 separateRowOfTree += '*';
@@ -69,13 +72,40 @@ function displayChristmasTreeWithToysDesignTree(height) {
     }
 }
 
+function additionalTree(height) {
+    let i = 0;
+    let spaceItem = '';
+    let starItem = '';
+
+    while (i < height) {
+        spaceItem = '';
+        starItem = '';
+
+        for (let j = 0; j < height - i; j++) {
+            spaceItem += ' ';
+        }
+        for (let q = 1; q < i * 2 + 1; q++) {
+            if (q === 1) {
+                starItem += '@';
+            } else {
+                starItem += '*';
+            }
+        }
+        starItem += '@';
+        console.log(spaceItem + starItem);
+        i++;
+    }
+}
 readline.question('Please enter the height of future Christmas tree: ', (treeHeight) => {
     const heightReadLine = Number(treeHeight);
+
     console.log('\nEnjoy your Christmas tree WITHOUT toys');
     displayChristmasTreeWithoutToys(heightReadLine);
     console.log('\nEnjoy your Christmas tree WITH toys');
     displayChristmasTreeWithToys(heightReadLine);
     console.log('\nEnjoy your Christmas tree WITH toys (tree with design)');
     displayChristmasTreeWithToysDesignTree(heightReadLine);
+    console.log('\nEnjoy special additional Christmas tree');
+    additionalTree(heightReadLine);
     readline.close();
 });

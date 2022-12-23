@@ -14,14 +14,17 @@ const matrixTree = [
 ];
 
 matrixTree.forEach((value) => {
-    decodedArray.push(value.reduce((res, el) => {
-        let separateSymbol = el;
-        if (separateSymbol < TARGET_VALUE) {
-            separateSymbol = ' ';
-        } else {
-            separateSymbol = '*';
-        }
-        return res + separateSymbol;
-    }, ''));
+    decodedArray.push(
+        value.reduce((res, el) => {
+            let separateSymbol = el;
+
+            if (separateSymbol < TARGET_VALUE) {
+                separateSymbol = ' ';
+            } else {
+                separateSymbol = '*';
+            }
+            return res + separateSymbol;
+        }, '\n'),
+    );
 });
-console.log(decodedArray);
+console.log(decodedArray.join(''));
