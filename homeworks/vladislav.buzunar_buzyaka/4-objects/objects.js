@@ -5,7 +5,7 @@ const tamagochi = {
     happyLevels: 3,
     foodLevels: 4,
     alive: true,
-    get alive() {
+    get alived() {
         return this.healthLevels > 0 && this.happyLevels > 0 && this.foodLevels > 0;
     },
     get tamagochiStates() {
@@ -17,25 +17,25 @@ const tamagochi = {
         return this;
     },
     eat() {
-        if (!this.alive) {
+        if (!this.alived) {
             this.doGameOver();
             return this;
-        };
+        }
         this.healthLevels += 2;
         this.happyLevels += 2;
         this.foodLevels += 2;
         console.log(`Сьогодні, наший ${this.name}, схопив свою здобич! ${this.tamagochiStates}`);
-        if (!this.alive) {
+        if (!this.alived) {
             this.doGameOver();
             return this;
         }
         return this;
     },
     idol() {
-        if (!this.alive) {
+        if (!this.alived) {
             this.doGameOver();
             return this;
-        };
+        }
         this.healthLevels -= 1;
         this.happyLevels -= 1;
         this.foodLevels -= 1;
@@ -43,15 +43,15 @@ const tamagochi = {
             console.log(`Покорми, ${this.name}, бо вiн скоро вмре... ${this.tamagochiStates}`);
         } else {
             console.log(`Сьогодні ${this.name} нічого не вполював... ${this.tamagochiStates}`);
-        };
-        if (!this.alive) {
+        }
+        if (!this.alived) {
             this.doGameOver();
             return this;
-        };
+        }
         return this;
     },
     play() {
-        if (!this.alive) {
+        if (!this.alived) {
             this.doGameOver();
             return this;
         }
@@ -61,14 +61,14 @@ const tamagochi = {
         if (this.happyLevels > 0) {
             console.log(`Сьогоднi наш ${this.name} погрався з тобою! ${this.tamagochiStates}`);
         }
-        if (!this.alive) {
+        if (!this.alived) {
             this.doGameOver();
             return this;
         }
         return this;
     },
     doExercises() {
-        if (!this.alive) {
+        if (!this.alived) {
             this.doGameOver();
             return this;
         }
@@ -76,7 +76,7 @@ const tamagochi = {
         this.happyLevels -= 1;
         this.foodLevels -= 1;
         console.log(`Сьогоднi ${this.name} нiчого не робив. ${this.tamagochiStates}`);
-        if (!this.alive) {
+        if (!this.alived) {
             this.doGameOver();
             return this;
         }
