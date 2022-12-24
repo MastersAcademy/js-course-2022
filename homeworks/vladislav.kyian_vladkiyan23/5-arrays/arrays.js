@@ -11,20 +11,23 @@ const array = [
     [8, 6, 8, 6, 6, 7, 7, 6, 6, 7, 8, 7, 6, 6, 6, 6, 7, 8, 7],
 ];
 
-let replaceArray = [];
-let stringArray = [];
+const replaceArray = [];
+const stringArray = [];
 
 function replaceArrayItems() {
-    array.forEach(function (item) {
-        replaceArray.push(item.map(function (value) {
-            if (value < 5) return ' ';
-            else return '*';
+    array.forEach(item => {
+        replaceArray.push(item.map(value => {
+            if (value < 5) {
+                return ' ';
+            } else {
+                return '*';
+            }
         }));
-    })
+    });
 }
 
 function createSting() {
-    replaceArray.forEach(function (item) {
+    replaceArray.forEach(item => {
         stringArray.push(item.join(''));
     })
 }
