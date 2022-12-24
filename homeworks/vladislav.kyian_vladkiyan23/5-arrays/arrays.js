@@ -16,7 +16,7 @@ const stringArray = [];
 
 function replaceArrayItems() {
     array.forEach((item) => {
-        replaceArray.push((item).map(value => {
+        replaceArray.push(item.map((value) => {
             if (value < 5) {
                 return ' ';
             }
