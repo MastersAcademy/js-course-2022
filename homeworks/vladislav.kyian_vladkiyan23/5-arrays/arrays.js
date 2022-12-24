@@ -15,11 +15,12 @@ const replaceArray = [];
 const stringArray = [];
 
 function replaceArrayItems() {
-    array.forEach(item => {
-        replaceArray.push(item.map(value => {
+    array.forEach((item) => {
+        replaceArray.push((item).map(value => {
             if (value < 5) {
                 return ' ';
-            } else {
+            }
+            if (value > 5) {
                 return '*';
             }
         }));
@@ -27,9 +28,9 @@ function replaceArrayItems() {
 }
 
 function createSting() {
-    replaceArray.forEach(item => {
+    replaceArray.forEach((item) => {
         stringArray.push(item.join(''));
-    })
+    });
 }
 
 function printChristmasTree(value) {
