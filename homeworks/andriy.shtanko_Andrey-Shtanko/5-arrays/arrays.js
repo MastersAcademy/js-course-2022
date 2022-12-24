@@ -1,15 +1,14 @@
 const printChritsmasTree = (height) => {
-    let raw;
-    for (let i = 1; i <= height; i++) {
-        raw = '';
-        if (i % 2 !== 0) {
-            for (let index = i; index < height + i / 2; index++) {
-                raw += ' ';
+    for (let treeStage = 1; treeStage <= height; treeStage++) {
+        let stage = '';
+        if (treeStage % 2 !== 0) {
+            for (let spaceCount = treeStage; spaceCount < height + treeStage / 2; spaceCount++) {
+                stage += ' ';
             }
-            for (let idx = 0; idx < i; idx++) {
-                raw += '*';
+            for (let starsCount = 1; starsCount <= treeStage; starsCount++) {
+                stage += '*';
             }
-            console.log(raw);
+            console.log(stage);
         }
     }
 };
