@@ -29,7 +29,7 @@ function makeTree(height) {
 function drawTree(tree) {
     let str = '';
     for (let i = 0; i < tree.length; i++) {
-        let treeTemp = tree[i];
+        const treeTemp = tree[i];
         for (let j = 0; j < tree[i].length; j++) {
             str += treeTemp[j].toString();
         }
@@ -114,7 +114,7 @@ function makeFancyTree(height) {
     return fancyTree;
 }
 
-let prettyTreeHeight = 15;
-let prettyChristmasTree = makeFancyTree(prettyTreeHeight);
+const prettyTreeHeight = 15;
+const prettyChristmasTree = makeFancyTree(prettyTreeHeight);
 console.log();
 drawTree(prettyChristmasTree);
