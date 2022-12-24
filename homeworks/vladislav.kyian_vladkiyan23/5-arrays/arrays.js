@@ -17,14 +17,14 @@ const stringArray = [];
 function replaceArrayItems() {
     array.forEach((item) => {
         replaceArray.push(item.map((value) => {
+            let test;
             if (value < 5) {
-                value = ' ';
+                test = ' ';
             }
             if (value > 5) {
-                value = '*';
+                test = '*';
             }
-
-            return value;
+            return test;
         }));
     });
 }
