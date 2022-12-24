@@ -11,22 +11,30 @@ const array = [
     [8, 6, 8, 6, 6, 7, 7, 6, 6, 7, 8, 7, 6, 6, 6, 6, 7, 8, 7],
 ];
 
-let someString = '';
-const spruceArray = [];
+let replaceArray = [];
+let stringArray = [];
 
-function createSpruceArray() {
-    for (let i = 0; i < array.length; i++) {
-        for (let j = 0; j < array[i].length; j++) {
-            if (array[i][j] < 5) {
-                someString += ' ';
-            } else {
-                someString += '*';
-            }
-        }
-        spruceArray.push(someString);
-        someString = '';
-    }
-    return console.log(spruceArray);
+function replaceArrayItems() {
+    array.forEach(function (item) {
+        replaceArray.push(item.map(function (value) {
+            if (value < 5) return ' ';
+            else return '*';
+        }));
+    })
 }
 
-createSpruceArray();
+function createSting() {
+    replaceArray.forEach(function (item) {
+        stringArray.push(item.join(''));
+    })
+}
+
+function printChristmasTree(value) {
+    for (let i = 0; i < value; i++) {
+        console.log(stringArray[i]);
+    }
+}
+
+replaceArrayItems();
+createSting();
+printChristmasTree(10);
