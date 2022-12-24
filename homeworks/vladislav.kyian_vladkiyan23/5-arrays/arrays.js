@@ -18,11 +18,13 @@ function replaceArrayItems() {
     array.forEach((item) => {
         replaceArray.push(item.map((value) => {
             if (value < 5) {
-                return ' ';
+                value = ' ';
             }
             if (value > 5) {
-                return '*';
+                value = '*';
             }
+
+            return value;
         }));
     });
 }
