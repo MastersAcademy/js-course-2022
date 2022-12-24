@@ -18,10 +18,10 @@ function replaceArrayItems() {
     array.forEach((item) => {
         replaceArray.push(item.map((value) => {
             if (value < 5) {
-                return value = ' ';
+                return ' ';
             }
             if (value > 5) {
-                return value = '*';
+                return '*';
             }
         }));
     });
