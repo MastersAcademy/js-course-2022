@@ -1,5 +1,5 @@
 const pineHeight = 10;
-function getPineTree(height) {
+function showPineTree(height) {
     let starAmount = 1;
     const lowRowStarsAmount = height * 2 - 1;
     for (let count = 0; count < pineHeight; count++) {
@@ -18,9 +18,9 @@ function getPineTree(height) {
         console.log(pineArray.join(''));
     }
 }
-getPineTree(pineHeight);
+showPineTree(pineHeight);
 
-const arr = [
+const numberArray = [
     [1, 4, 2, 4, 4, 2, 4, 3, 2, 6, 2, 4, 2, 4, 3, 1, 2, 4, 3],
     [1, 1, 3, 1, 1, 3, 3, 1, 6, 6, 8, 3, 3, 3, 3, 1, 4, 1, 2],
     [1, 2, 1, 4, 1, 1, 4, 7, 8, 8, 7, 7, 1, 1, 4, 3, 1, 1, 2],
@@ -32,8 +32,6 @@ const arr = [
     [1, 6, 6, 6, 6, 8, 8, 7, 6, 6, 7, 8, 7, 8, 8, 7, 6, 7, 1],
     [8, 6, 8, 6, 6, 7, 7, 6, 6, 7, 8, 7, 6, 6, 6, 6, 7, 8, 7],
 ];
-const transformArr = arr.reduce((acc, value) => acc.concat(value));
-transformArr.forEach((element, index) => {
-    transformArr[index] = element > 5 ? '*' : ' ';
-});
-console.log(transformArr.join(''));
+const reducedNumberArray = numberArray.reduce((sumArray, arrayEl) => sumArray.concat(arrayEl));
+const stringArray = reducedNumberArray.map((element) => (element > 5 ? '*' : ''));
+console.log(stringArray.join(' '));
