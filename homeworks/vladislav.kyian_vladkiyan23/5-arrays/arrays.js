@@ -30,7 +30,6 @@ function printChristmasTree(height) {
 printChristmasTree(5);
 console.log(christmasTreeArray);
 
-
 // Second task
 
 const replaceArray = [];
@@ -56,8 +55,6 @@ function createSting() {
         stringArray.push(item.join(''));
     });
 }
-
-
 
 replaceArrayItems();
 createSting();
