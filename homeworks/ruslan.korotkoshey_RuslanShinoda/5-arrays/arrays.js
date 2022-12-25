@@ -2,6 +2,7 @@
 
 function christmasTree(height) {
     let symbol = '';
+    const arr = [];
     for (let i = 1; i <= height; i++) {
         symbol = '';
         for (let a = i; a < height; a++) {
@@ -10,8 +11,10 @@ function christmasTree(height) {
         for (let b = 0; b < (i * 2) - 1; b++) {
             symbol += '*';
         }
-        console.log(symbol);
+        arr.push(symbol);
     }
+    console.log(arr.join('\n'));
+    return arr;
 }
 
 christmasTree(15);
@@ -31,9 +34,6 @@ const arr = [
     [8, 6, 8, 6, 6, 7, 7, 6, 6, 7, 8, 7, 6, 6, 6, 6, 7, 8, 7],
 ];
 
-const convertedArr = function () {
-    const newArr = arr.map((array) => array.map((item) => (item > 5 ? '*' : ' ')).join(''));
-    console.log(newArr);
-};
+const newArr = arr.map((array) => array.map((item) => (item > 5 ? '*' : ' ')).join(''));
 
-convertedArr();
+console.log(newArr.join('\n'));
