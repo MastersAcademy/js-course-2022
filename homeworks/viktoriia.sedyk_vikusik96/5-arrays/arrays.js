@@ -1,4 +1,4 @@
-const defayltArray = [
+const treeArray = [
     [1, 4, 2, 4, 4, 2, 4, 3, 2, 6, 2, 4, 2, 4, 3, 1, 2, 4, 3],
     [1, 1, 3, 1, 1, 3, 3, 1, 6, 6, 8, 3, 3, 3, 3, 1, 4, 1, 2],
     [1, 2, 1, 4, 1, 1, 4, 7, 8, 8, 7, 7, 1, 1, 4, 3, 1, 1, 2],
@@ -15,23 +15,22 @@ function convertStrToStarts(array) {
     return array.map((el) => (el < 5 ? ' ' : '*'));
 }
 
-function hungDecorations(array) {
-    const result = array;
-    const findIndexStar = array.findIndex((el) => el === '*');
+function hungDecorations(branch) {
+    const findIndexStar = branch.findIndex((el) => el === '*');
 
-    result[findIndexStar] = '@';
-    result[result.length - findIndexStar - 1] = '@';
-    return result;
+    branch[findIndexStar] = '@';
+    branch[branch.length - findIndexStar - 1] = '@';
+    return branch;
 }
 
 function makeTreeFromArrays(height) {
-    const getStars = height.map((array) => (convertStrToStarts(array)));
-    getStars.map((array) => hungDecorations(array));
-    const convertArraysInStrings = getStars.map((array) => array.join(''));
+    const stars = height.map((array) => convertStrToStarts(array));
+    stars.map((array, index) => (index % 2 === 0 ? hungDecorations(array) : array));
+    const convertArraysInStrings = stars.map((array) => array.join(''));
 
-    convertArraysInStrings.map((el) => console.log(el));
+    convertArraysInStrings.forEach((el) => console.log(el));
 
     return convertArraysInStrings;
 }
 
-makeTreeFromArrays(defayltArray);
+makeTreeFromArrays(treeArray);
