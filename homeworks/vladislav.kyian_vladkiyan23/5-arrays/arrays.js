@@ -11,20 +11,42 @@ const array = [
     [8, 6, 8, 6, 6, 7, 7, 6, 6, 7, 8, 7, 6, 6, 6, 6, 7, 8, 7],
 ];
 
+// First task
+const christmasTreeArray = [];
+
+function printChristmasTree(height) {
+    for (let i = 0; i < height; i++) {
+        let replaceItem = '';
+        for (let j = 0; j < array[i].length; j++) {
+            if (array[i][j] <= 5) {
+                replaceItem += ' ';
+            } else {
+                replaceItem += '*';
+            }
+        }
+        christmasTreeArray.push(replaceItem);
+    }
+}
+printChristmasTree(5);
+console.log(christmasTreeArray);
+
+
+// Second task
+
 const replaceArray = [];
 const stringArray = [];
 
 function replaceArrayItems() {
     array.forEach((item) => {
         replaceArray.push(item.map((value) => {
-            let test;
+            let replaceItem;
             if (value < 5) {
-                test = ' ';
+                replaceItem = ' ';
             }
             if (value > 5) {
-                test = '*';
+                replaceItem = '*';
             }
-            return test;
+            return replaceItem;
         }));
     });
 }
@@ -35,12 +57,9 @@ function createSting() {
     });
 }
 
-function printChristmasTree(value) {
-    for (let i = 0; i < value; i++) {
-        console.log(stringArray[i]);
-    }
-}
+
 
 replaceArrayItems();
 createSting();
-printChristmasTree(10);
+
+console.log(stringArray);
