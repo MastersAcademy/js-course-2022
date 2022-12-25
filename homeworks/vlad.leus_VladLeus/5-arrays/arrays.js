@@ -27,12 +27,12 @@ function makeTree(height) {
 }
 
 function drawTree(tree) {
-    let str = '';
     for (let i = 0; i < tree.length; i++) {
         const treeTemp = tree[i];
+        let str = '';
         treeTemp.forEach((element) => {
             str += element.toString();
-        })
+        });
         console.log(str);
         str = '';
     }
@@ -64,9 +64,8 @@ const result = myArray.map((subArray) => {
         } else {
             stringResult += ' ';
         }
-    })
-    subArray = stringResult;
-    return subArray;
+    });
+    return stringResult;
 });
 console.log();
 for (let i = 0; i < result.length; i++) {
