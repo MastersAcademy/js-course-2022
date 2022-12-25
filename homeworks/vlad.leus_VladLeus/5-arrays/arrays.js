@@ -30,9 +30,9 @@ function drawTree(tree) {
     let str = '';
     for (let i = 0; i < tree.length; i++) {
         const treeTemp = tree[i];
-        for (let j = 0; j < tree[i].length; j++) {
-            str += treeTemp[j].toString();
-        }
+        treeTemp.forEach((element) => {
+            str += element.toString();
+        })
         console.log(str);
         str = '';
     }
@@ -43,26 +43,6 @@ const christmasTree = makeTree(treeHeight);
 drawTree(christmasTree);
 
 /* Task 2 - array to string array */
-
-function arrayToStringArray(array) {
-    let str = '';
-    const result = [];
-    for (let i = 0; i < array.length; i++) {
-        const tempArray = array[i];
-        for (let j = 0; j < tempArray.length; j++) {
-            if (tempArray[j] < 5) {
-                tempArray[j] = ' ';
-                str += tempArray[j];
-            } else if (tempArray[j] > 5) {
-                tempArray[j] = '*';
-                str += tempArray[j];
-            }
-        }
-        result.push(str);
-        str = '';
-    }
-    return result;
-}
 
 const myArray = [
     [1, 4, 2, 4, 4, 2, 4, 3, 2, 6, 2, 4, 2, 4, 3, 1, 2, 4, 3],
@@ -76,7 +56,18 @@ const myArray = [
     [1, 6, 6, 6, 6, 8, 8, 7, 6, 6, 7, 8, 7, 8, 8, 7, 6, 7, 1],
     [8, 6, 8, 6, 6, 7, 7, 6, 6, 7, 8, 7, 6, 6, 6, 6, 7, 8, 7],
 ];
-const result = arrayToStringArray(myArray);
+const result = myArray.map((subArray) => {
+    let stringResult = '';
+    subArray.forEach((element) => {
+        if (element > 5) {
+            stringResult += '*';
+        } else {
+            stringResult += ' ';
+        }
+    })
+    subArray = stringResult;
+    return subArray;
+});
 console.log();
 for (let i = 0; i < result.length; i++) {
     console.log(result[i]);
