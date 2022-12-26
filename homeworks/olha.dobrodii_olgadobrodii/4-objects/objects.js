@@ -28,14 +28,12 @@ tamagochi.checkLife = function () {
     || (this.happiness) <= 0
     || (this.bellyful) <= 0) {
         return false;
-    } else {
-        return true;
     }
+        return true;
 };
 tamagochi.showMassage = function () {
     if (this.checkLife() === false) {
         return 'happy pet';
-    } else {
-        return 'sorry, you pet died';
     }
+        return 'sorry, you pet died';
 };
