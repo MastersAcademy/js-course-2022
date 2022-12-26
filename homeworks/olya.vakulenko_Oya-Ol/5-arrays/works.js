@@ -1,24 +1,24 @@
 // 3. Task With_Toys
 const newChristmasTreeWithToys = (height = 15) => {
-    let i = 0;
-    let j = 0;
-    while (i < height) {
+    let y = 0;
+    let x = 0;
+    while (y < height) {
         let gap = '';
         let star = '*';
-        for (j = 0; j < height - i + !!(i % 2); j++) {
+        for (x = 0; x < height - y + (y % 2); x++) {
             gap += ' ';
         }
-        for (j = 0; j < 2 * i - !!(i % 2) * 2; j++) {
+        for (x = 0; x < 2 * y - (y % 2) * 2; x++) {
             star += '*';
         }
-        if (i % 2 !== 0) {
+        if (y % 2 !== 0) {
             gap += '@';
             star += '@';
         } else {
             gap += ' ';
         }
         console.log(gap + star);
-        i++;
+        y++;
     }
 };
 

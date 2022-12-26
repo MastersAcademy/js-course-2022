@@ -33,6 +33,6 @@ const arr = [
     [8, 6, 8, 6, 6, 7, 7, 6, 6, 7, 8, 7, 6, 6, 6, 6, 7, 8, 7],
 ];
 
-const myAwesomeArray = arr.flatMap((element) => element.flatMap((el) => (el < 5 ? ' ' : '*')).join(''));
+const myAwesomeArray = arr.map((element) => element.map((el) => (el < 5 ? ' ' : '*')).join(''));
 
 console.log(myAwesomeArray);
