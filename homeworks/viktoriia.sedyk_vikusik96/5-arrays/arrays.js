@@ -26,11 +26,11 @@ function hungDecorations(branch) {
 function makeTreeFromArrays(height) {
     const stars = height.map((array) => convertStrToStarts(array));
     stars.map((array, index) => (index % 2 === 0 ? hungDecorations(array) : array));
-    const convertArraysInStrings = stars.map((array) => array.join(''));
+    const starsStrings = stars.map((array) => array.join(''));
 
-    convertArraysInStrings.forEach((el) => console.log(el));
+    starsStrings.forEach((el) => console.log(el));
 
-    return convertArraysInStrings;
+    return starsStrings;
 }
 
 makeTreeFromArrays(treeArray);
