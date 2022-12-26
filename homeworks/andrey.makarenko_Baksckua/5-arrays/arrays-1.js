@@ -11,7 +11,5 @@ const array = [
     [8, 6, 8, 6, 6, 7, 7, 6, 6, 7, 8, 7, 6, 6, 6, 6, 7, 8, 7],
 ];
 
-const arr = array.map((ofArray) =>
-    ofArray.map((of) => (of > 4 ? '$' : '*')).join('')
-);
+const arr = array.map((ofArray) =>ofArray.map((of) => (of > 4 ? '$' : '*')).join(''));
 console.log(arr);
