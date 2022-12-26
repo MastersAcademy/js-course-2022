@@ -34,10 +34,8 @@ function createTree(height) {
 console.log(createTree(5));
 
 const tree = arrays
-    .map((arr) =>
-        arr.map(value => value > 5 ? '*' : ' ')
-    ).reduce((acc, arr) =>
-        [...acc, '\n', ...arr])
+    .map((arr) => arr.map((value) => value > 5 ? '*' : ' '))
+    .reduce((acc, arr) => [...acc, '\n', ...arr])
     .join('');
 
 console.log(tree);
