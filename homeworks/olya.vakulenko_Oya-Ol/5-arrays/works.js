@@ -23,28 +23,3 @@ const newChristmasTreeWithToys = (height = 15) => {
 };
 
 newChristmasTreeWithToys();
-
-// const newChristmasTreeAllWithToys = (height = 15) => {
-//     let i = 0;
-//     let j = 0;
-//     while (i < height) {
-//         let gap = '';
-//         let star = '*';
-//         for (j = 0; j < height - i; j++) {
-//             gap += ' ';
-//         }
-//         for (j = 1; j < 2 * i; j++) {
-//             if ((j + 1) % 2 === 0) {
-//                 star += '@';
-//             } else {
-//                 star += '*';
-//             }
-//         }
-//         gap += '@';
-//         star += '@';
-//         console.log(gap + star);
-//         i++;
-//     }
-// };
-//
-// newChristmasTreeAllWithToys();
