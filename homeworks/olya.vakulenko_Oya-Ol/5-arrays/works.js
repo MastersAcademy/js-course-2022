@@ -1,25 +1,50 @@
-// // 3. Task With_Toys
+// 3. Task With_Toys
 const newChristmasTreeWithToys = (height = 15) => {
     let i = 0;
     let j = 0;
     while (i < height) {
         let gap = '';
         let star = '*';
-        for (j = 0; j < height - i; j++) {
+        for (j = 0; j < height - i + !!(i % 2); j++) {
             gap += ' ';
         }
-        for (j = 1; j < 2 * i; j++) {
-            if (i === 1) {
-                star += '*';
-            } else {
-                star += '*';
-            }
+        for (j = 0; j < 2 * i - !!(i % 2) * 2; j++) {
+            star += '*';
         }
-        gap += '@';
-        star += '@';
+        if (i % 2 !== 0) {
+            gap += '@';
+            star += '@';
+        } else {
+            gap += ' ';
+        }
         console.log(gap + star);
         i++;
     }
 };
 
 newChristmasTreeWithToys();
+
+// const newChristmasTreeAllWithToys = (height = 15) => {
+//     let i = 0;
+//     let j = 0;
+//     while (i < height) {
+//         let gap = '';
+//         let star = '*';
+//         for (j = 0; j < height - i; j++) {
+//             gap += ' ';
+//         }
+//         for (j = 1; j < 2 * i; j++) {
+//             if ((j + 1) % 2 === 0) {
+//                 star += '@';
+//             } else {
+//                 star += '*';
+//             }
+//         }
+//         gap += '@';
+//         star += '@';
+//         console.log(gap + star);
+//         i++;
+//     }
+// };
+//
+// newChristmasTreeAllWithToys();
