@@ -1,22 +1,18 @@
-let i = 0;
-let x = 0;
-
-let empty = '';
-let star = '';
-
-const christmasTree = (height) => {
-    while (i < height) {
-        empty = '';
-        star = '';
-        for (x = 0; x < height - i; x++) {
+const makeChristmasTree = (height) => {
+    let row = 0;
+    let position = 0;
+    while (row < height) {
+        let empty = '';
+        let star = '';
+        for (position = 0; position < height - row; position++) {
             empty += ' ';
         }
-        for (x = 0; x < 2 * i + 1; x++) {
+        for (position = 0; position < 2 * row + 1; position++) {
             star += '*';
         }
         console.log(empty + star);
-        i++;
+        row++;
     }
 };
 
-christmasTree(10);
+makeChristmasTree(10);
