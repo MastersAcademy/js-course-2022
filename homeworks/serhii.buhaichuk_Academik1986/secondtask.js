@@ -11,20 +11,19 @@ const arr = [
     [8, 6, 8, 6, 6, 7, 7, 6, 6, 7, 8, 7, 6, 6, 6, 6, 7, 8, 7],
 ];
 
-const mapArray = arr.map((element) => {
-    const strArray = element.map((item) => {
-        let str = '';
+const parentArray = arr.map((element) => {
+    const changedParentArray = element.map((item) => {
+        let string = '';
         if (item < 5) {
-            str = ' ';
+            string = ' ';
         }
         if (item > 5) {
-            str = '*';
+            string = '*';
         }
-        return str;
+        return string;
     });
-    return strArray.join('');
+    return changedParentArray.join('');
 });
-
-mapArray.forEach((element) => {
+parentArray.forEach((element) => {
     console.log(element);
 });
