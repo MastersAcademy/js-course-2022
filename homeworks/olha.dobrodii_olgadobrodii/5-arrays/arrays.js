@@ -17,7 +17,7 @@ function writeLeftSide(count) {
     for (let i = 0; i <= count; i++) {
         str += '*';
     }
-    let spaceCount = height - count;
+    const spaceCount = height - count;
     for (let j = 0; j <= spaceCount; j++) {
         str = ' ' + str;
     }
