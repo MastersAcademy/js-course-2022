@@ -29,11 +29,11 @@ tamagochi.checkLife = function () {
     || (this.bellyful) <= 0) {
         return false;
     }
-        return true;
+    return true;
 };
 tamagochi.showMassage = function () {
     if (this.checkLife() === false) {
         return 'happy pet';
     }
-        return 'sorry, you pet died';
+    return 'sorry, you pet died';
 };
