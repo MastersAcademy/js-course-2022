@@ -14,14 +14,16 @@ const arrays = [
 function createTree(height) {
     const result = [];
 
-    for (let i = 0; i < height; i++) {
+    for (let cols = 0; cols < height; cols++) {
         let row = '';
 
-        for (let j = height; j > i - 1; j--) {
+        // count of spaces is proportional to the columns count
+        for (let spaces = height; spaces > cols - 1; spaces--) {
             row += ' ';
         }
 
-        for (let f = 0; f < i * 2 + 1; f++) {
+        // count of dots is inversely proportiona to the spaces
+        for (let dots = 0; dots < cols * 2 + 1; dots++) {
             row += '*';
         }
 
