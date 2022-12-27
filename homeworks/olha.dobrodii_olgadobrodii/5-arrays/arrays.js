@@ -1,10 +1,3 @@
-const height = 15;
-for (let line = 0; line <= height; line++) {
-    let str = ' ';
-    str = writeLeftSide(line);
-    str += writeRightSide(line);
-    console.log(str);
-}
 function writeRightSide(count) {
     let str = '';
     for (let i = 0; i < count; i++) {
@@ -19,7 +12,14 @@ function writeLeftSide(count) {
     }
     const spaceCount = height - count;
     for (let j = 0; j <= spaceCount; j++) {
-        str = ' ' + str;
+        str = ' ' + `${str}`;
     }
     return str;
+}
+const height = 15;
+for (let line = 0; line <= height; line++) {
+    let str = ' ';
+    str = writeLeftSide(line);
+    str += writeRightSide(line);
+    console.log(str);
 }
