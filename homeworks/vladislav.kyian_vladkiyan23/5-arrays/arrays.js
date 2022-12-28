@@ -39,8 +39,7 @@ let stringArray = [];
 function replaceArrayItems() {
     array.forEach((item) => {
         replaceArray.push(item.map((value) => {
-            let replaceItem;
-            return replaceItem = value < 5 ? ' ' : '*';
+            return value < 5 ? ' ' : '*';
         }));
         stringArray = replaceArray.map(item => item.join(''));
     });
