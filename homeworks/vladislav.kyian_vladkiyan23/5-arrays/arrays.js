@@ -1,3 +1,25 @@
+// First task
+
+function printChristmasTree(height) {    
+    let oneSting = 0;
+    while (oneSting < height) {
+        let space = '';
+        let star = '*';
+        for (let i = 0; i < height - oneSting; i++) {
+            space += ' ';
+        }
+        for (let j = 0; j < 2 * oneSting; j++) {
+            star += '*';
+        }
+        console.log(space + star);
+        oneSting++;
+    }
+}
+
+printChristmasTree(6);
+
+// Second task
+
 const array = [
     [1, 4, 2, 4, 4, 2, 4, 3, 2, 6, 2, 4, 2, 4, 3, 1, 2, 4, 3],
     [1, 1, 3, 1, 1, 3, 3, 1, 6, 6, 8, 3, 3, 3, 3, 1, 4, 1, 2],
@@ -11,27 +33,6 @@ const array = [
     [8, 6, 8, 6, 6, 7, 7, 6, 6, 7, 8, 7, 6, 6, 6, 6, 7, 8, 7],
 ];
 
-// First task
-const christmasTreeArray = [];
-
-function printChristmasTree(height) {
-    for (let i = 0; i < height; i++) {
-        let replaceItem = '';
-        for (let j = 0; j < array[i].length; j++) {
-            if (array[i][j] <= 5) {
-                replaceItem += ' ';
-            } else {
-                replaceItem += '*';
-            }
-        }
-        christmasTreeArray.push(replaceItem);
-    }
-}
-printChristmasTree(5);
-console.log(christmasTreeArray);
-
-// Second task
-
 const replaceArray = [];
 const stringArray = [];
 
@@ -39,24 +40,20 @@ function replaceArrayItems() {
     array.forEach((item) => {
         replaceArray.push(item.map((value) => {
             let replaceItem;
-            if (value < 5) {
-                replaceItem = ' ';
-            }
-            if (value > 5) {
-                replaceItem = '*';
-            }
-            return replaceItem;
+            return replaceItem = value < 5 ? ' ' : '*';
         }));
     });
 }
 
-function createSting() {
+function createStingArray() {
     replaceArray.forEach((item) => {
         stringArray.push(item.join(''));
     });
 }
 
-replaceArrayItems();
-createSting();
 
+replaceArrayItems();
+createStingArray();
+
+// console.log(stringArray);
 console.log(stringArray);
