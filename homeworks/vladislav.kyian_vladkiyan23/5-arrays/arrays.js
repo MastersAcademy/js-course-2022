@@ -34,7 +34,7 @@ const array = [
 ];
 
 const replaceArray = [];
-const stringArray = [];
+let stringArray = [];
 
 function replaceArrayItems() {
     array.forEach((item) => {
@@ -42,18 +42,10 @@ function replaceArrayItems() {
             let replaceItem;
             return replaceItem = value < 5 ? ' ' : '*';
         }));
+        stringArray = replaceArray.map(item => item.join(''));
     });
 }
-
-function createStingArray() {
-    replaceArray.forEach((item) => {
-        stringArray.push(item.join(''));
-    });
-}
-
 
 replaceArrayItems();
-createStingArray();
 
-// console.log(stringArray);
 console.log(stringArray);
