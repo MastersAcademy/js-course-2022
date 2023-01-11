@@ -1,18 +1,14 @@
-function elka(height) {
-    let x = 0;
-    let y = 0;
-    let space; let asterics;
-
-    while (x < height) {
-        space = '';
-        asterics = '';
+function createChristmasTree(height) {
+    for (let i = 0, x = 0, y = 0; i < height; i++) {
+        let space = '';
+        let asterics = '';
         for (y = 0; y < height - x; y++) space += ' ';
         for (y = 0; y < 2 * x + 1; y++) asterics += '*';
         console.log(space + asterics);
         x++;
     }
 }
-elka(4);
+createChristmasTree(9);
 
 const arr = [
     [1, 4, 2, 4, 4, 2, 4, 3, 2, 6, 2, 4, 2, 4, 3, 1, 2, 4, 3],
