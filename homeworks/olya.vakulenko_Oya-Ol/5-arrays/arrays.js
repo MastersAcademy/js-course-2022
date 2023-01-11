@@ -1,5 +1,5 @@
 // // 1.Christmas_Tree
-const newChristmasTree = (height = 15) => {
+const printChristmasTree = (height = 15) => {
     let i = 0;
     let j = 0;
     while (i < height) {
@@ -16,7 +16,7 @@ const newChristmasTree = (height = 15) => {
     }
 };
 
-newChristmasTree();
+printChristmasTree();
 
 // // 2.Second_Christmas_Tree
 
@@ -33,6 +33,6 @@ const arr = [
     [8, 6, 8, 6, 6, 7, 7, 6, 6, 7, 8, 7, 6, 6, 6, 6, 7, 8, 7],
 ];
 
-const myAwesomeArray = arr.map((element) => element.map((el) => (el < 5 ? ' ' : '*')).join(''));
+const myAwesomeArray = arr.map((row) => row.map((el) => (el < 5 ? ' ' : '*')).join(''));
 
 console.log(myAwesomeArray);
