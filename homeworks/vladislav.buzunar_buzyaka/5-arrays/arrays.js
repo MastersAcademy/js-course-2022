@@ -1,7 +1,6 @@
-let branchs;
-let needlesOnTree;
-
 function christmasTree(height) {
+    let branchs;
+    let needlesOnTree;
     branchs = '';
     needlesOnTree = 1;
     for (let i = 0; i < height; i++) {
