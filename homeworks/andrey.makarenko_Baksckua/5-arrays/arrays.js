@@ -1,8 +1,8 @@
-function height(tree) {
-    for (let i = 0; i < tree; i++) {
+function updateUser(height) {
+    for (let i = 0; i < height; i++) {
         let snowflake = '*';
         const empty = ' ';
-        const newYear = empty.repeat(tree - i - 1);
+        const newYear = empty.repeat(height - i - 1);
         for (let a = 1; a <= i; a++) {
             snowflake += '**';
         }
@@ -11,4 +11,4 @@ function height(tree) {
     }
 }
 
-height(10);
+updateUser(10);
