@@ -6,7 +6,7 @@ const pokemon = {
     satiety: 10,
 };
 const pokemonProperties = Object.keys(pokemon);
-const interval = 1500;
+const interval = 500;
 let intervalCount = 0;
 let randomFunction;
 function play() {
