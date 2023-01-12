@@ -1,3 +1,9 @@
+let seconds = 0;
+
+const timer = setInterval(() => {
+    seconds++;
+}, 1000);
+
 const tamagotchi = {
     health: 4,
     happiness: 3,
@@ -25,4 +31,4 @@ const tamagotchi = {
     },
 };
 
-console.log(tamagotchi);
+console.log(tamagotchi, seconds, timer);
