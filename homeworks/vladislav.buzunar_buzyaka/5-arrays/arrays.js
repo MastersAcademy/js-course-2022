@@ -1,8 +1,6 @@
-function christmasTree(height) {
-    let branchs;
-    let needlesOnTree;
-    branchs = '';
-    needlesOnTree = 1;
+function creationTree(height) {
+    let branchs = '';
+    let needlesOnTree = 1;
     for (let i = 0; i < height; i++) {
         for (let a = 0; a < height - i - 1; a++) {
             branchs += ' ';
@@ -18,7 +16,7 @@ function christmasTree(height) {
     }
 }
 
-christmasTree(12);
+creationTree(12);
 
 const someArray = [
     [1, 4, 2, 4, 4, 2, 4, 3, 2, 6, 2, 4, 2, 4, 3, 1, 2, 4, 3],
