@@ -9,14 +9,15 @@ const pokemonProperties = Object.keys(pokemon);
 const interval = 500;
 let intervalCount = 0;
 let randomFunction;
+let failedProperty;
 function play() {
     pokemon.health--;
     pokemon.happiness++;
-    pokemon.satiety += 2;
+    pokemon.satiety -= 4;
 }
 function food() {
     pokemon.health += 2;
-    pokemon.happiness++;
+    pokemon.happiness += 2;
     pokemon.satiety++;
 }
 function punish() {
@@ -55,6 +56,11 @@ const changeStateInterval = setInterval(() => {
     if (pokemon.satiety < 1 || pokemon.happiness < 1 || pokemon.health < 1) {
         clearInterval(changeStateInterval);
         console.clear();
-        console.log(`Game Over, ${pokemon.name} lived ${intervalCount * interval} ms`);
+        pokemonProperties.forEach((key) => {
+            if (pokemon[key] < 1) {
+                failedProperty = key;
+            }
+        });
+        console.log(`${failedProperty} is ended, ${pokemon.name} lived ${intervalCount * interval} ms`);
     }
 }, interval);
