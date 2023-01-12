@@ -3,20 +3,22 @@ const tamagochi = {
     healthValue: 5,
     happinessValue: 5,
     satietyValue: 3,
-    getLevelOfIndications() {
-        console.log(`The level of indications:
-            - healthValue: ${this.healthValue},\n
-            - happinessValue: ${this.happinessValue},\n
-            - satietyValue: ${this.satietyValue}\n`);
+    getLevelOfIndications(funcName) {
+        const propTable = {};
+        propTable.health = this.healthValue;
+        propTable.happiness = this.happinessValue;
+        propTable.satiety = this.satietyValue;
+        propTable.function = funcName;
+        console.table(propTable);
     },
     stateAnalyzer() {
         const isAlive = this.healthValue >= 1
             && this.happinessValue >= 1
             && this.satietyValue >= 1;
         if (isAlive) {
-            console.log(`Keep on. ${this.name} is still alive.`);
+            console.log(`\x1b[90m Keep on. ${this.name} is still\x1b[0m \x1b[32m alive.\x1b[0m`);
         } else {
-            console.log(`Unfortunately, ${this.name} died. Game over.`);
+            console.log(`Unfortunately, ${this.name} died.\x1b[31m Game over.\x1b[0m`);
         }
         return isAlive;
     },
@@ -25,57 +27,46 @@ const tamagochi = {
             tamagochi.healthValue += 3;
             tamagochi.happinessValue--;
             tamagochi.satietyValue--;
-            console.log('Function name - healthUp()');
-            tamagochi.getLevelOfIndications();
         },
         happyUp() {
             tamagochi.happinessValue++;
-            console.log('Function name - happyUp()');
-            tamagochi.getLevelOfIndications();
         },
         play() {
             tamagochi.satietyValue--;
             tamagochi.happinessValue--;
             tamagochi.healthValue -= 3;
-            console.log('Function name - play()');
-            tamagochi.getLevelOfIndications();
         },
         feedUp() {
             tamagochi.satietyValue++;
-            console.log('Function name - feedUp()');
-            tamagochi.getLevelOfIndications();
         },
         clean() {
             tamagochi.healthValue++;
-            console.log('Function name - clean()');
-            tamagochi.getLevelOfIndications();
         },
         shopping() {
             tamagochi.happinessValue++;
-            console.log('Function name - shopping()');
-            tamagochi.getLevelOfIndications();
         },
     },
 };
-const SEPARATOR = '*********************************';
-let tamagochiTimeOfLive = 0;
+const SEPARATOR = '\x1b[1;34m ********************************* \x1b[0m';
 let aliveStatus;
 
-function getRandonInt(value) {
-    return Math.floor(Math.random() * Math.floor(value));
-}
+const getRandomInt = (value) => Math.floor(Math.random() * value);
 const methods = Object.keys(tamagochi.actions);
 const methodsCount = methods.length;
-const call = (index) => tamagochi.actions[methods[index]]();
+const call = (index) => {
+    tamagochi.actions[methods[index]]();
+    return index;
+};
 
+console.time('game was during time');
 const randomizeFunction = setInterval(() => {
     console.log(SEPARATOR);
-    call(getRandonInt(methodsCount));
+    const methodNumber = call(getRandomInt(methodsCount));
+    tamagochi.getLevelOfIndications(methods[methodNumber]);
     aliveStatus = tamagochi.stateAnalyzer();
+
     if (!aliveStatus) {
         clearInterval(randomizeFunction);
+        console.timeEnd('game was during time');
     }
-    tamagochiTimeOfLive += 0.5;
-    console.log(`Time during tamagochi ${tamagochi.name} was alive: ${tamagochiTimeOfLive} seconds`);
-    console.log(SEPARATOR);
 }, 500);
