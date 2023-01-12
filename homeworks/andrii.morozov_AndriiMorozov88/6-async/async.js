@@ -57,7 +57,7 @@ const changeStateInterval = setInterval(() => {
         clearInterval(changeStateInterval);
         console.clear();
         pokemonProperties.forEach((key) => {
-            if (pokemon[key] < 1) {
+            if (pokemon[key] < 1 && typeof pokemon[key] === 'number') {
                 failedProperty = key;
             }
         });
