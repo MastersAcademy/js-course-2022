@@ -1,3 +1,4 @@
+const tamagotchiMethods = ['play', 'eat', 'wash'];
 const tamagotchiIndicators = ['health', 'happiness', 'satiety'];
 let seconds = 0;
 
@@ -39,4 +40,15 @@ const tamagotchi = {
     },
 };
 
-console.log(tamagotchi, seconds, timer);
+const tamagotchiInterval = setInterval(() => {
+    const randomNumber = Math.floor(Math.random() * tamagotchiMethods.length);
+
+    tamagotchi[tamagotchiMethods[randomNumber]]();
+    tamagotchiIndicators.forEach((indicator) => {
+        if (tamagotchi[indicator] <= 0) {
+            clearInterval(tamagotchiInterval);
+            clearInterval(timer);
+            console.log(seconds);
+        }
+    });
+}, 500);
