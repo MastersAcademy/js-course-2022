@@ -68,12 +68,12 @@ const methods = Object.keys(tamagochi.actions);
 const methodsCount = methods.length;
 const call = (index) => tamagochi.actions[methods[index]]();
 
-const randFunc = setInterval(() => {
+const randomizeFunction = setInterval(() => {
     console.log(SEPARATOR);
     call(getRandonInt(methodsCount));
     aliveStatus = tamagochi.stateAnalyzer();
     if (!aliveStatus) {
-        clearInterval(randFunc);
+        clearInterval(randomizeFunction);
     }
     tamagochiTimeOfLive += 0.5;
     console.log(`Time during tamagochi ${tamagochi.name} was alive: ${tamagochiTimeOfLive} seconds`);
