@@ -1,3 +1,4 @@
+const tamagotchiIndicators = ['health', 'happiness', 'satiety'];
 let seconds = 0;
 
 const timer = setInterval(() => {
@@ -28,6 +29,13 @@ const tamagotchi = {
         this.happiness--;
 
         this.cheackValues();
+    },
+    cheackValues() {
+        tamagotchiIndicators.forEach((indicator) => {
+            if (tamagotchi[indicator] <= 0) {
+                console.log(`your tamagochi doesn't have enough ${indicator}`);
+            }
+        });
     },
 };
 
