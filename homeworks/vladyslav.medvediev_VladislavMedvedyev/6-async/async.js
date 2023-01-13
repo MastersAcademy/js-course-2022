@@ -195,19 +195,18 @@ const cat = Object.create(pet);
 cat.name = 'Tom';
 cat.sound = 'meow';
 
-let counter = 0;
-
 const promise = new Promise((resolve) => {
+    let counter = 0;
     const timerId = setInterval(() => {
         cat.autoplay();
-        counter += 1;
+        counter += 0.5;
         if (cat.health <= 0 || cat.happiness <= 0 || cat.sleep <= 0 || cat.food <= 0) {
             clearInterval(timerId);
-            resolve();
+            resolve(counter);
         }
     }, 500);
 });
 
-promise.then(() => {
-    console.log(`Your pet lived ${counter / 2} sec`);
+promise.then((counter) => {
+    console.log(`Your pet lived ${counter} sec`);
 });
