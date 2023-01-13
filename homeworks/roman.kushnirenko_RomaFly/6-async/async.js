@@ -49,8 +49,8 @@ new Promise((resolve) => {
                 console.log('Error! Try again');
         }
 
-        const hamsterIsDead = data.healthLevel < 1 || data.happyLevel < 1 || data.foodLevel < 1;
-        if (hamsterIsDead) {
+        const hamsterIsNotOkay = data.healthLevel < 1 || data.happyLevel < 1 || data.foodLevel < 1;
+        if (hamsterIsNotOkay) {
             console.log('\nОдин з показнинків тамагочі нижче 1 !!!');
 
             clearInterval(game);
