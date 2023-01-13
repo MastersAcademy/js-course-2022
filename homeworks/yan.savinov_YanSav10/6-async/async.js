@@ -2,52 +2,58 @@ const tamagochi = {
     healthValue: 5,
     happinessValue: 5,
     satietyValue: 5,
+    checkHealthIndicators() {
+        console.log(`(health: ${this.healthValue}, happiness: ${this.happinessValue}, satiety: ${this.satietyValue})`);
+    },
     play() {
         this.healthValue--;
         this.satietyValue--;
         this.happinessValue++;
-        console.log(`play (health: ${this.healthValue}, happiness: ${this.happinessValue}, satiety: ${this.satietyValue})`);
+        console.log('play');
+        this.checkHealthIndicators();
     },
     eat() {
         this.healthValue--;
         this.satietyValue++;
         this.happinessValue++;
-        console.log(`eat (health: ${this.healthValue}, happiness: ${this.happinessValue}, satiety: ${this.satietyValue})`);
+        console.log('eat');
+        this.checkHealthIndicators();
     },
     sleep() {
         this.healthValue++;
         this.happinessValue++;
         this.satietyValue--;
-        console.log(`sleep (health: ${this.healthValue}, happiness: ${this.happinessValue}, satiety: ${this.satietyValue})`);
+        console.log('sleep');
+        this.checkHealthIndicators();
     },
     training() {
         this.healthValue++;
         this.happinessValue--;
         this.satietyValue--;
-        console.log(`training (health: ${this.healthValue}, happiness: ${this.happinessValue}, satiety: ${this.satietyValue})`);
+        console.log('training');
+        this.checkHealthIndicators();
     },
     relax() {
         this.healthValue--;
         this.happinessValue++;
         this.satietyValue--;
-        console.log(`relax (health: ${this.healthValue}, happiness: ${this.happinessValue}, satiety: ${this.satietyValue})`);
+        console.log('relax');
+        this.checkHealthIndicators();
     },
 };
+const tamagochiMethods = ['play', 'eat', 'sleep', 'training', 'relax'];
 
-const arrayFunc = ['play', 'eat', 'sleep', 'training', 'relax'];
+console.time('Tamagochi live for');
+const randomFunction = setInterval(() => {
+    const randomNumber = Math.floor(Math.random() * tamagochiMethods.length);
+    tamagochi[tamagochiMethods[randomNumber]]();
 
-let timeTamagochiIsAlive = 0;
-
-const randomFunc = setInterval(() => {
-    const randomNumber = Math.floor(Math.random() * arrayFunc.length);
-    tamagochi[arrayFunc[randomNumber]]();
-
-    const isAlive = tamagochi.healthValue <= 0 || tamagochi.happinessValue <= 0
-    || tamagochi.satietyValue <= 0;
+    const isAlive = tamagochi.healthValue <= 1 || tamagochi.happinessValue <= 1
+    || tamagochi.satietyValue <= 1;
 
     if (isAlive) {
-        clearInterval(randomFunc);
-        console.log(`Game over! (health: ${tamagochi.healthValue}, happiness: ${tamagochi.happinessValue}, satiety: ${tamagochi.satietyValue}) \nTamagochi live for ${timeTamagochiIsAlive} seconds`);
+        clearInterval(randomFunction);
+        console.log(`Game over! (health: ${tamagochi.healthValue}, happiness: ${tamagochi.happinessValue}, satiety: ${tamagochi.satietyValue})`);
+        console.timeEnd('Tamagochi live for');
     }
-    timeTamagochiIsAlive += 0.5;
 }, 500);
