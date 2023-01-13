@@ -196,11 +196,18 @@ cat.name = 'Tom';
 cat.sound = 'meow';
 
 let counter = 0;
-const timerId = setInterval(() => {
-    cat.autoplay();
-    if (cat.health <= 0 || cat.happiness <= 0 || cat.sleep <= 0 || cat.food <= 0) {
-        clearInterval(timerId);
-        console.log(`Your pet lived ${counter / 2} sec`);
-    }
-    counter += 1;
-}, 500);
+
+const promise = new Promise((resolve) => {
+    const timerId = setInterval(() => {
+        cat.autoplay();
+        counter += 1;
+        if (cat.health <= 0 || cat.happiness <= 0 || cat.sleep <= 0 || cat.food <= 0) {
+            clearInterval(timerId);
+            resolve();
+        }
+    }, 500);
+});
+
+promise.then(() => {
+    console.log(`Your pet lived ${counter / 2} sec`);
+});
