@@ -80,7 +80,6 @@ const tamagotchi = {
         }
     },
 };
-// eslint-disable-next-line no-unused-vars
 const gameStart = new Promise((resolve) => {
     let lifetime = 0;
     const game = setInterval(() => {
@@ -90,9 +89,12 @@ const gameStart = new Promise((resolve) => {
             || tamagotchi.happiness < 1
             || tamagotchi.satiety < 1
             || tamagotchi.cleanliness < 1) {
-            console.log(`Game over! How long did ${tamagotchi.name} life: ${lifetime} seconds.`);
             clearInterval(game);
             resolve(lifetime);
         }
     }, 500);
+});
+
+gameStart.then((lifetime) => {
+    console.log(`Game over! How long did ${tamagotchi.name} life: ${lifetime} seconds.`);
 });
