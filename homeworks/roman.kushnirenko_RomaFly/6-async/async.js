@@ -9,24 +9,24 @@ new Promise((resolve) => {
             this.happyLevel -= 1;
             this.foodLevel -= 1;
 
-            const stateOfEagle = `\nМетод addHealthLevel \nЗдоров'я - ${this.healthLevel} \nЩастя - ${this.happyLevel} \nСитість - ${this.foodLevel}`;
-            console.log(stateOfEagle);
+            const stateOfHamster = `\nМетод addHealthLevel \nЗдоров'я - ${this.healthLevel} \nЩастя - ${this.happyLevel} \nСитість - ${this.foodLevel}`;
+            console.log(stateOfHamster);
         },
         addHappyLevel() {
             this.healthLevel -= 1;
             this.happyLevel += 3;
             this.foodLevel -= 1;
 
-            const stateOfEagle = `\nМетод addHappyLevel \nЗдоров'я - ${this.healthLevel} \nЩастя - ${this.happyLevel} \nСитість - ${this.foodLevel}`;
-            console.log(stateOfEagle);
+            const stateOfHamster = `\nМетод addHappyLevel \nЗдоров'я - ${this.healthLevel} \nЩастя - ${this.happyLevel} \nСитість - ${this.foodLevel}`;
+            console.log(stateOfHamster);
         },
         addFoodLevel() {
             this.healthLevel -= 1;
             this.happyLevel -= 1;
             this.foodLevel += 3;
 
-            const stateOfEagle = `\nМетод addFoodLevel \nЗдоров'я - ${this.healthLevel} \nЩастя - ${this.happyLevel} \nСитість - ${this.foodLevel}`;
-            console.log(stateOfEagle);
+            const stateOfHamster = `\nМетод addFoodLevel \nЗдоров'я - ${this.healthLevel} \nЩастя - ${this.happyLevel} \nСитість - ${this.foodLevel}`;
+            console.log(stateOfHamster);
         },
     };
     resolve(hamster);
