@@ -7,12 +7,12 @@ const pet = {
 
     param() {
         console.log(`
-        Parameters of ${this.name}:
-        health ${this.health}
-        happiness ${this.happiness}
-        sleep ${this.sleep}
-        food ${this.food}
-        isToiletClean ${this.isToiletClean}
+Parameters of ${this.name}:
+health ${this.health}
+happiness ${this.happiness}
+sleep ${this.sleep}
+food ${this.food}
+isToiletClean ${this.isToiletClean}
         `);
     },
 
@@ -165,8 +165,8 @@ const pet = {
     },
 
     autoplay() {
-        const randNumberMethod = Math.floor(Math.random() * 7);
-        switch (randNumberMethod) {
+        const randMethodNumber = Math.floor(Math.random() * 7);
+        switch (randMethodNumber) {
             case 0:
                 this.feed();
                 break;
@@ -195,8 +195,12 @@ const cat = Object.create(pet);
 cat.name = 'Tom';
 cat.sound = 'meow';
 
+let counter = 0;
 const timerId = setInterval(() => {
     cat.autoplay();
+    if (cat.health <= 0 || cat.happiness <= 0 || cat.sleep <= 0 || cat.food <= 0) {
+        clearInterval(timerId);
+        console.log(`Your pet lived ${counter / 2} sec`);
+    }
+    counter += 1;
 }, 500);
-
-clearInterval(timerId);
