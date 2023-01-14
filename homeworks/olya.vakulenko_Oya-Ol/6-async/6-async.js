@@ -27,31 +27,32 @@ class Pet {
         this.health = this.validateNumber(this.health + getNumber(0, 10));
         this.satiety = this.validateNumber(this.satiety - getNumber(0, 3));
         this.energy = this.validateNumber(this.energy - getNumber(0, 3));
+        console.log('You can heal Pikachu! (used the method HEAL)');
+        this.getStatus();
     }
 
     eat() {
         this.health = this.validateNumber(this.health - getNumber(0, 3));
         this.satiety = this.validateNumber(this.satiety + getNumber(0, 10));
         this.energy = this.validateNumber(this.energy - getNumber(0, 3));
+        console.log('You have to feed Pikachu! (used the method EAT)');
+        this.getStatus();
     }
 
     sleep() {
         this.health = this.validateNumber(this.health - getNumber(0, 3));
         this.satiety = this.validateNumber(this.satiety - getNumber(0, 3));
         this.energy = this.validateNumber(this.energy + getNumber(0, 10));
+        console.log('You can put Pikachu to sleep! (used the method SLEEP)');
+        this.getStatus();
     }
 
     play() {
-        const newHappiness = this.happiness + getNumber(0, 10);
-        this.happiness = newHappiness >= 100 ? 100 : newHappiness;
-        if (getNumber(0, 100) <= 3) {
-            this._die();
-            return;
-        }
-        if (this.energy < 10 || this.satiety < 10) {
-            console.log(`Сannot be played with ${this.name}! Your pet need to sleep!`);
-            this.getStatus();
-        }
+        this.happiness = this.validateNumber(this.health + getNumber(0, 10));
+        this.satiety = this.validateNumber(this.satiety - getNumber(0, 3));
+        this.energy = this.validateNumber(this.energy - getNumber(0, 3));
+        console.log('You can to play Pikachu! (used the method PLAY)');
+        this.getStatus();
     }
 
     getStatus() {
@@ -95,6 +96,10 @@ const myPet = new Pet('Pikachu');
 
 const startGame = new Promise((resolve) => {
     let duration = 0;
+    myPet.heal();
+    myPet.eat();
+    myPet.sleep();
+    myPet.play();
     const lifeInterval = setInterval(() => {
         duration += 0.5;
         if (!myPet._checkIsAlive()) {
