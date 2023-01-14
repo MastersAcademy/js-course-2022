@@ -2,9 +2,9 @@ function CreateObject(name) {
     return {
         name,
         helthNumber: 100,
-        start: undefined,
+        start: null,
         counter: 0,
-        timer: undefined,
+        timer: null,
         helthStr: 'Good',
         helthIndicators: {
             sleep: 100,
@@ -64,19 +64,20 @@ function CreateObject(name) {
                 return Math.round((total / maxTotal) * 100);
             };
             const calculateHelthStr = () => {
-                if (this.helthCount > 80) return 'Perfect';
-                if (this.helthCount > 40) return 'Good';
-                if (this.helthCount > 0) return 'Bad';
+                if (this.helthNumber > 80) return 'Perfect';
+                if (this.helthNumber > 40) return 'Good';
+                if (this.helthNumber > 0) return 'Bad';
                 return 'Dead';
             };
             this.helthNumber = calculateHelthNumber();
             this.helthStr = calculateHelthStr();
         },
-        doMetod() {
+        doMethod() {
             const metods = [this.play, this.drink, this.eat, this.rest, this.sleep];
             const index = Math.round(Math.random() * (metods.length - 1));
-            const duration = Math.round(Math.random() * 100);
+            const duration = Math.round(Math.random() * 20);
             metods[index].call(this, duration);
+            console.log(metods[index], this.helthIndicators, this.helthNumber, this.helthStr);
             this.checkHelth();
         },
         stop(message) {
@@ -88,16 +89,15 @@ function CreateObject(name) {
         },
         toLive() {
             this.counter++;
-            if (this.start === undefined) {
+            if (!this.start) {
                 this.start = new Date().getTime();
             }
-            console.log(this.helthNumber);
             if (this.counter === 100) {
-                this.stop.call(this, 'Timet overflow');
+                this.stop('Timet overflow');
             } else if (this.helthNumber <= 0) {
-                this.stop.call(this, 'Dead');
+                this.stop('Dead');
             } else {
-                this.doMetod();
+                this.doMethod();
                 this.timer = setTimeout(this.toLive.bind(this), 500);
             }
         },
