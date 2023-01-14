@@ -50,7 +50,7 @@ const allMethods = ['eat', 'play', 'sleep'];
 let lifetime = 0;
 
 cat.launchingRandomMethod = function () {
-    if (cat.energy > 8 || cat.energy < 1 || cat.mood < 1) {
+    if (cat.energy > 8 || cat.energy < 1 || cat.mood < 1 || cat.health < 1) {
         return console.log(`Game over 
         lifetime = ${lifetime} seconds`);
     }
