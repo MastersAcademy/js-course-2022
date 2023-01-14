@@ -35,10 +35,6 @@ class Pet {
         this.energy = this.validateNumber(this.energy - getNumber(0, 3));
     }
 
-    validateNumber(number) {
-        return Math.max(0, Math.min(100, number));
-    }
-
     sleep() {
         this.health = this.validateNumber(this.health - getNumber(0, 3));
         this.satiety = this.validateNumber(this.satiety - getNumber(0, 3));
@@ -66,6 +62,10 @@ class Pet {
             Energy: ${this.energy}`;
 
         console.log(status);
+    }
+
+    validateNumber(number) {
+        return Math.max(0, Math.min(100, number));
     }
 
     _die() {
