@@ -96,15 +96,15 @@ const myPet = new Pet('Pikachu');
 const startGame = new Promise((resolve) => {
     let duration = 0;
     const lifeInterval = setInterval(() => {
-        duration += 1;
+        duration += 0.5;
         if (!myPet._checkIsAlive()) {
             clearInterval(lifeInterval);
-            this._die();
+            myPet._die();
             resolve(duration);
         }
     }, 500);
 });
 
 startGame.then((duration) => {
-    console.log(`Game over! Your tamagochi ${this.name} lived for ${duration} seconds.`);
+    console.log(`Game over! Your tamagochi ${myPet.name} lived for ${duration} seconds.`);
 });
