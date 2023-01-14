@@ -42,11 +42,18 @@ const tamagochi = {
     },
 };
 const tamagochiMethods = ['play', 'eat', 'sleep', 'training', 'relax'];
+const methods = {};
+
+for (let i = 0; i < tamagochiMethods.length; i++) {
+    const method = tamagochiMethods[i];
+    methods[method] = tamagochi[method].bind(tamagochi);
+}
 
 console.time('Tamagochi live for');
 const randomFunction = setInterval(() => {
-    const randomNumber = Math.floor(Math.random() * tamagochiMethods.length);
-    tamagochi[tamagochiMethods[randomNumber]]();
+    const methodNames = Object.keys(methods);
+    const randomMethod = methodNames[Math.floor(Math.random() * methodNames.length)];
+    methods[randomMethod]();
 
     const isAlive = tamagochi.healthValue <= 1 || tamagochi.happinessValue <= 1
     || tamagochi.satietyValue <= 1;
