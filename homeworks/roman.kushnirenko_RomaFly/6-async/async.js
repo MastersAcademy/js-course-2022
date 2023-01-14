@@ -61,4 +61,6 @@ new Promise((resolve) => {
             console.log(`Тамагочі ${data.name} прожив: ${calculateSeconds} секунд`);
         }
     }, 500);
-}).catch((error) => console.error('Error: ', error)).finally(() => console.log('Дякую за гру!'));
+})
+    .catch((error) => console.error('Error: ', error))
+    .finally(() => console.log('Дякую за гру!'));
