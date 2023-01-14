@@ -77,17 +77,21 @@ class Pet {
         return this.health > 1 && this.happiness > 1 && this.energy > 1 && this.satiety > 1;
     }
 
-    _getWin() {
-        if (
-            this.health >= 100
-            && this.happiness >= 100
-            && this.satiety >= 100
-            && this.energy >= 100
-        ) {
-            console.log(`Your tamagochi ${this.name} win! Congratulations!`);
-            this.getStatus();
-        } else {
-            this._die();
+    randomMethod() {
+        const callRandomMethod = Math.floor(Math.random() * 5);
+        switch (callRandomMethod) {
+            case 0:
+                this.heal();
+                break;
+            case 1:
+                this.eat();
+                break;
+            case 2:
+                this.sleep();
+                break;
+            default:
+                this.play();
+                break;
         }
     }
 }
@@ -96,11 +100,8 @@ const myPet = new Pet('Pikachu');
 
 const startGame = new Promise((resolve) => {
     let duration = 0;
-    myPet.heal();
-    myPet.eat();
-    myPet.sleep();
-    myPet.play();
     const lifeInterval = setInterval(() => {
+        myPet.randomMethod();
         duration += 0.5;
         if (!myPet._checkIsAlive()) {
             clearInterval(lifeInterval);
