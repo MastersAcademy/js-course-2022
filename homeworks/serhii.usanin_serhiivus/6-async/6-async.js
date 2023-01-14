@@ -57,10 +57,17 @@ function CreateObject(name) {
                 let maxTotal = 0;
                 let total = 0;
                 const keys = Object.keys(this.helthIndicators);
+                let isDisease = false;
                 keys.forEach((key) => {
                     maxTotal += 100;
+                    if (this.helthIndicators[key] < 0) {
+                        isDisease = true;
+                    }
                     total += this.helthIndicators[key];
                 });
+                if (isDisease) {
+                    return -1;
+                }
                 return Math.round((total / maxTotal) * 100);
             };
             const calculateHelthStr = () => {
