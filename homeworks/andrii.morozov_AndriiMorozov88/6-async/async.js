@@ -8,12 +8,10 @@ const pokemon = {
 const pokemonProperties = Object.keys(pokemon);
 const interval = 500;
 let intervalCount = 0;
-let randomFunction;
-let failedProperty;
 function play() {
     pokemon.health--;
     pokemon.happiness++;
-    pokemon.satiety -= 4;
+    pokemon.satiety -= 1;
 }
 function food() {
     pokemon.health += 2;
@@ -21,38 +19,35 @@ function food() {
     pokemon.satiety++;
 }
 function punish() {
-    pokemon.health -= 2;
+    pokemon.health -= 4;
     pokemon.happiness--;
     pokemon.satiety -= 2;
 }
 function getRandom() {
     return Math.floor(Math.random() * 3);
 }
-function showPokemon(random = 'Game Start') {
+function showPokemon() {
     console.clear();
     pokemonProperties.forEach((key) => console.log(`${key}: ${pokemon[key]}`));
-    console.log(random);
 }
 showPokemon();
 const changeStateInterval = setInterval(() => {
+    let failedProperty;
     switch (getRandom()) {
         case 0:
             play();
-            randomFunction = 'PLAY';
             break;
         case 1:
             food();
-            randomFunction = 'FOOD';
             break;
         case 2:
             punish();
-            randomFunction = 'PUNISH';
             break;
         default:
             break;
     }
     intervalCount++;
-    showPokemon(randomFunction);
+    showPokemon();
     if (pokemon.satiety < 1 || pokemon.happiness < 1 || pokemon.health < 1) {
         clearInterval(changeStateInterval);
         console.clear();
