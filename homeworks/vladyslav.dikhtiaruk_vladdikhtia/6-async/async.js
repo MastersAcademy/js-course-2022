@@ -120,4 +120,3 @@ start.then((life) => {
     console.log(`${tamagotchi.name} was alive: ${life} seconds`);
 });
 
-
