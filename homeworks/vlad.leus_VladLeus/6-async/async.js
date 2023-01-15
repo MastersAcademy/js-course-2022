@@ -19,13 +19,6 @@ const tamagotchi = {
                 this.happiness++;
                 console.log('Yeah, I wanna play with ya!!!');
             }
-        } else {
-            if (this.health === 0) {
-                console.log('Ur tamagotchi was too hungry, so he is dead. R.I.P.');
-            }
-            if (this.happiness === 0) {
-                console.log('Ur tamagotchi died been too fat and in depression. R.I.P.');
-            }
         }
     },
     feed() {
@@ -40,13 +33,6 @@ const tamagotchi = {
                 this.satiety++;
                 this.happiness--;
                 console.log('MMMMMM, so yummy!!!');
-            }
-        } else {
-            if (this.health === 0) {
-                console.log('Ur tamagotchi was too hungry, so he is dead. R.I.P.');
-            }
-            if (this.happiness === 0) {
-                console.log('Ur tamagotchi died been too fat and in depression. R.I.P.');
             }
         }
     },
