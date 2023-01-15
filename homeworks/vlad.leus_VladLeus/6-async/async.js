@@ -43,16 +43,11 @@ function getRandomAction() {
     randomInt === 0 ? tamagotchi.play() : tamagotchi.feed();
 }
 
-function actionsWithTamagotchi() {
+const interval = setInterval(() => {
     if (tamagotchi.isDead()) {
         console.log(`Your tamagotchi is dead, his lifetime is ${tamagotchi.timeOfLife} seconds`);
-        return;
+        clearInterval(interval);
     }
     tamagotchi.timeOfLife += 0.5;
     getRandomAction();
-    return setTimeout(() => {
-        actionsWithTamagotchi();
-    }, 500);
-}
-
-actionsWithTamagotchi();
+}, 500);
