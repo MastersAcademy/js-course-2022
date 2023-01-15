@@ -6,7 +6,7 @@ const tamagochiDefault = {
 };
 const arrPlaying = ['eat', 'sport', 'play'];
 
-const random = (hero) => {
+const setRandomFunction = (hero) => {
     setTimeout(() => {
         hero[arrPlaying[Math.floor(Math.random() * arrPlaying.length)]]();
     }, 500);
@@ -20,7 +20,7 @@ const tamagochiPlays = {
             console.log(`The ${lifeIndicator} is over !!!! ${this.name}, R.I.P.`);
         } else {
             console.log(` ${action} (satiety: ${this.satiety}, happiness: ${this.happiness}, health: ${this.health})`);
-            random(this);
+            setRandomFunction(this);
         }
     },
     eat() {
@@ -47,4 +47,4 @@ const cat = Object.create(tamagochiPlays, {});
 Object.assign(cat, { ...tamagochiDefault });
 cat.name = 'Barsik';
 
-random(cat);
+setRandomFunction(cat);
