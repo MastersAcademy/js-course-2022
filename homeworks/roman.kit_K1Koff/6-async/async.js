@@ -6,6 +6,7 @@ const ben = {
     happiness: 5,
     satiety: 5,
     agile: 5,
+
     play() {
         this.happiness += 0.5 * this.metabolism;
         this.agile += this.metabolism;
@@ -29,10 +30,12 @@ const ben = {
     },
     isDead() {
         const mainParams = [this.health, this.happiness, this.satiety, this.agile];
+
         return mainParams.some((val) => val <= 0);
     },
     isWin() {
         const mainParams = [this.health, this.happiness, this.satiety, this.agile];
+
         return mainParams.every((val) => val >= 10);
     },
     showStats() {
@@ -57,13 +60,17 @@ agile: ${this.agile}
 
 function getRandomFunction() {
     const randomNumber = Math.floor(Math.random() * 3);
+
     switch (randomNumber) {
         case 0:
-            return (ben.play(), console.log('Played'));
+            console.log('Played');
+            return ben.play();
         case 1:
-            return (ben.feed(), console.log('Fed'));
+            console.log('Fed');
+            return ben.feed();
         case 2:
-            return (ben.heal(), console.log('Healed'));
+            console.log('Healed');
+            return ben.heal();
         default:
             return null;
     }
@@ -71,18 +78,19 @@ function getRandomFunction() {
 
 function runGame() {
     const timeAtStart = Date.now();
-    const damageInterval = setInterval(() => {
-        ben.damage();
-    }, 2.5 * 1000);
+    const damageInterval = setInterval(() => { ben.damage(); }, 2.5 * 1000);
     const playInterval = setInterval(() => {
         console.clear();
         ben.showStats();
         getRandomFunction();
+
         if (ben.isDead() || ben.isWin()) {
             const playTime = Math.floor((Date.now() - timeAtStart) / 100) / 10;
+
             console.clear();
             clearInterval(damageInterval);
             clearInterval(playInterval);
+
             if (ben.isDead()) { console.log(`YOU LOST in ${playTime} seconds!`); }
             if (ben.isWin()) { console.log(`YOU WON in ${playTime} seconds!`); }
         }
