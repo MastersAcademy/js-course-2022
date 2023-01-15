@@ -11,28 +11,38 @@ const tamagotchi = {
         this.health--;
         this.satiety--;
 
-        this.cheackValues();
+        this.showMessageIfTamagochiDied();
     },
     eat() {
         this.satiety++;
         this.happiness++;
         this.health++;
 
-        this.cheackValues();
+        this.showMessageIfTamagochiDied();
     },
     wash() {
         this.satiety--;
         this.health++;
         this.happiness--;
 
-        this.cheackValues();
+        this.showMessageIfTamagochiDied();
     },
-    cheackValues() {
+    checkValues() {
+        let result = false;
         tamagotchiIndicators.forEach((indicator) => {
             if (tamagotchi[indicator] <= 0) {
-                console.log(`your tamagochi doesn't have enough ${indicator}`);
+                result = indicator;
             }
         });
+
+        return result;
+    },
+
+    showMessageIfTamagochiDied() {
+        const valueWithZerpPoints = this.checkValues();
+        if (valueWithZerpPoints) {
+            console.log(`your tamagochi doesn't have enough ${valueWithZerpPoints}`);
+        }
     },
 };
 
@@ -40,11 +50,17 @@ const tamagotchiInterval = setInterval(() => {
     const randomNumber = Math.floor(Math.random() * tamagotchiMethods.length);
 
     tamagotchi[tamagotchiMethods[randomNumber]]();
-    tamagotchiIndicators.forEach((indicator) => {
-        if (tamagotchi[indicator] <= 0) {
-            const stopTimer = Math.round((new Date() - startTimer) / 1000);
-            clearInterval(tamagotchiInterval);
-            console.log(`your tamagochi died after ${stopTimer} seconds`);
-        }
-    });
+    // tamagotchiIndicators.forEach((indicator) => {
+    //     if (tamagotchi[indicator] <= 0) {
+    //         const stopTimer = Math.round((new Date() - startTimer) / 1000);
+    //         clearInterval(tamagotchiInterval);
+    //         console.log(`your tamagochi died after ${stopTimer} seconds`);
+    //     }
+    // });
+
+    if (tamagotchi.checkValues()) {
+        const stopTimer = Math.round((new Date() - startTimer) / 1000);
+        clearInterval(tamagotchiInterval);
+        console.log(`your tamagochi died after ${stopTimer} seconds`);
+    }
 }, 500);
