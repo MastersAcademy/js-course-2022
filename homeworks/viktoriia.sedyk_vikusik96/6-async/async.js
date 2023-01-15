@@ -5,7 +5,7 @@ const startTimer = new Date();
 const tamagotchi = {
     health: 4,
     happiness: 3,
-    satiety: 3,
+    satiety: 10,
     play() {
         this.happiness++;
         this.health--;
@@ -28,35 +28,19 @@ const tamagotchi = {
         this.showMessageIfTamagochiDied();
     },
     checkValues() {
-        let result = false;
-        tamagotchiIndicators.forEach((indicator) => {
-            if (tamagotchi[indicator] <= 0) {
-                result = indicator;
-            }
-        });
-
-        return result;
+        return tamagotchiIndicators.find((indicator) => (tamagotchi[indicator] <= 0));
     },
-
     showMessageIfTamagochiDied() {
-        const valueWithZerpPoints = this.checkValues();
-        if (valueWithZerpPoints) {
-            console.log(`your tamagochi doesn't have enough ${valueWithZerpPoints}`);
+        const valueWithZeroPoints = this.checkValues();
+        if (valueWithZeroPoints) {
+            console.log(`your tamagochi doesn't have enough ${valueWithZeroPoints}`);
         }
     },
 };
 
 const tamagotchiInterval = setInterval(() => {
     const randomNumber = Math.floor(Math.random() * tamagotchiMethods.length);
-
     tamagotchi[tamagotchiMethods[randomNumber]]();
-    // tamagotchiIndicators.forEach((indicator) => {
-    //     if (tamagotchi[indicator] <= 0) {
-    //         const stopTimer = Math.round((new Date() - startTimer) / 1000);
-    //         clearInterval(tamagotchiInterval);
-    //         console.log(`your tamagochi died after ${stopTimer} seconds`);
-    //     }
-    // });
 
     if (tamagotchi.checkValues()) {
         const stopTimer = Math.round((new Date() - startTimer) / 1000);
