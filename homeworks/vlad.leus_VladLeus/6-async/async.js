@@ -45,7 +45,7 @@ function getRandomAction() {
 
 function actionsWithTamagotchi() {
     if (tamagotchi.isDead()) {
-        console.log(`Your tamagotchi is dead, his lifetime is ${tamagotchi.timeOfLife}`);
+        console.log(`Your tamagotchi is dead, his lifetime is ${tamagotchi.timeOfLife} seconds`);
         return;
     }
     tamagotchi.timeOfLife += 0.5;
