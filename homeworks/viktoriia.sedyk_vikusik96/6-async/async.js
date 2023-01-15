@@ -1,10 +1,6 @@
 const tamagotchiMethods = ['play', 'eat', 'wash'];
 const tamagotchiIndicators = ['health', 'happiness', 'satiety'];
-let seconds = 0;
-
-const timer = setInterval(() => {
-    seconds++;
-}, 1000);
+const startTimer = new Date();
 
 const tamagotchi = {
     health: 4,
@@ -46,9 +42,9 @@ const tamagotchiInterval = setInterval(() => {
     tamagotchi[tamagotchiMethods[randomNumber]]();
     tamagotchiIndicators.forEach((indicator) => {
         if (tamagotchi[indicator] <= 0) {
+            const stopTimer = Math.round((new Date() - startTimer) / 1000);
             clearInterval(tamagotchiInterval);
-            clearInterval(timer);
-            console.log(seconds);
+            console.log(`your tamagochi died after ${stopTimer} seconds`);
         }
     });
 }, 500);
