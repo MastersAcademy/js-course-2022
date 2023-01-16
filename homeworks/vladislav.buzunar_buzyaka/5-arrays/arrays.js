@@ -1,4 +1,4 @@
-function creationTree(height) {
+function printTree(height) {
     let needlesOnTree = 1;
     for (let i = 0; i < height; i++) {
         let branchs = '';
@@ -16,7 +16,7 @@ function creationTree(height) {
     }
 }
 
-creationTree(12);
+printTree(12);
 
 const someArray = [
     [1, 4, 2, 4, 4, 2, 4, 3, 2, 6, 2, 4, 2, 4, 3, 1, 2, 4, 3],
