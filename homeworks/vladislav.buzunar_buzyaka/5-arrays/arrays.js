@@ -1,7 +1,7 @@
 function creationTree(height) {
-    let branchs = '';
     let needlesOnTree = 1;
     for (let i = 0; i < height; i++) {
+        let branchs = '';
         for (let a = 0; a < height - i - 1; a++) {
             branchs += ' ';
         }
