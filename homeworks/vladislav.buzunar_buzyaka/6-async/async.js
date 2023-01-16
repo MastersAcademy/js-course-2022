@@ -129,7 +129,7 @@ const promise = new Promise((resolve) => {
             clearInterval(timerId);
             resolve(counter);
         }
-    }, 1000);
+    }, 500);
 });
 
 promise.then((counter) => {
