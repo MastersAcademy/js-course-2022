@@ -23,10 +23,23 @@ const tamagochi = {
     console.log("Function name = feedIt(). Tamagochi stats are:");
     console.log("health: "+this.health,";enjoy: "+this.enjoy,";food: "+ this.food);
   },
+   getRandomAction() {
+    let randomInt = Math.floor(Math.random() * 3);
+    switch (randomInt) {
+      case 0:
+          return this.playIt();
+      case 1:
+          return this.feedIt();
+      case 2:
+          return this.healIt();
+      default:
+          return null;
+  }
+  },
   startGame(){
     let timeTamagochiAlive = 0;
     const playInterval = setInterval(() => {
-      getRandomAction();
+      this.getRandomAction();
       if ( this.health  === 0) {
         clearInterval(playInterval);
     }
@@ -39,18 +52,5 @@ const tamagochi = {
     timeTamagochiAlive += 0.5;
      console.log("Time tamagochi is alive = " +timeTamagochiAlive+" sec")
   },500)}
-};
-function getRandomAction() {
-  let randomInt = Math.floor(Math.random() * 3);
-  switch (randomInt) {
-    case 0:
-        return tamagochi.playIt();
-    case 1:
-        return tamagochi.feedIt();
-    case 2:
-        return tamagochi.healIt();
-    default:
-        return null;
-}
 };
 tamagochi.startGame();
