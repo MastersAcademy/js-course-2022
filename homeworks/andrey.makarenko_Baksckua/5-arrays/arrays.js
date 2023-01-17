@@ -1,4 +1,4 @@
-function updateUser(height) {
+function fetchHeight(height) {
     for (let i = 0; i < height; i++) {
         let snowflake = '*';
         const empty = ' ';
@@ -11,4 +11,4 @@ function updateUser(height) {
     }
 }
 
-updateUser(10);
+fetchHeight(10);
