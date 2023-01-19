@@ -1,8 +1,7 @@
-import { CarEngine } from './car-engine.js';
-import { CarWheel } from './car-wheel.js';
-import { CarSize } from './car-size.js';
-// ,
-// "type": "module"
+const { CarEngine } = require('./car-engine.js');
+const { CarWheel } = require('./car-wheel.js');
+const { CarSize } = require('./car-size.js');
+
 class Car {
     constructor(option) {
         this.engine = option.engine;
