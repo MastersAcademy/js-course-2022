@@ -40,6 +40,7 @@ module.exports = {
                 'no-underscore-dangle': 'off',
                 'class-methods-use-this': 'off',
                 'no-param-reassign': ['error', { props: false }],
+                'max-classes-per-file': 'off',
 
                 'no-jquery/no-other-methods': 'error',
                 'no-jquery/no-other-utils': 'error',
