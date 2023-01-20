@@ -1,18 +1,18 @@
-class FetchData {
+const https = require('https');
+
+class Request {
     constructor(url) {
         this.url = url;
     }
 
-    async fetchData() {
-        try {
-            const response = await fetch(this.url);
-            const data = await response.json();
-            console.log(data);
-        } catch (error) {
-            console.log(error);
-        }
+    makeRequest() {
+        https.get(this.url, (res) => {
+            res.on('data', (data) => {
+                console.log(JSON.parse(data));
+            });
+        });
     }
 }
 
-const fetchData = new FetchData(process.argv[2]);
-fetchData.fetchData();
+const fetch = new Request(process.argv[2]);
+fetch.makeRequest();

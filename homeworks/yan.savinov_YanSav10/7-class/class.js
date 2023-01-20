@@ -1,27 +1,40 @@
 class Car {
-    constructor(engine, wheels, type, size, weight, engineVolume, enginePower,
-        wheelsRadius, wheelsWidth, sizeHeight, sizeWidth, sizeLength) {
-        this.car = {
-            engine,
-            wheels,
-            type,
-            size,
-            weight,
-        };
-        this.engine = {
-            volume: engineVolume,
-            power: enginePower,
-        };
-        this.wheels = {
-            radius: wheelsRadius,
-            width: wheelsWidth,
-        };
-        this.size = {
-            height: sizeHeight,
-            width: sizeWidth,
-            length: sizeLength,
-        };
+    constructor(engine, arrayOfWheels, type, size, weight) {
+        this.engine = engine;
+        this.arrayOfWheels = arrayOfWheels;
+        this.type = type;
+        this.size = size;
+        this.weight = weight;
     }
 }
-const myCar = new Car('gasoline', '4 wheels', 'Sedan', 'Mid-size car', '2000 kg', '4.0L', '450hp', '18inch', '8inch', '180cm', '200cm', '300cm');
+
+class Engine {
+    constructor(volume, power) {
+        this.volume = volume;
+        this.power = power;
+    }
+}
+
+class Wheel {
+    constructor(radius, width) {
+        this.radius = radius;
+        this.width = width;
+    }
+}
+
+class Size {
+    constructor(height, width, length) {
+        this.height = height;
+        this.width = width;
+        this.length = length;
+    }
+}
+
+const myEngine = new Engine('4,0 L', '450 HP');
+const myWheel1 = new Wheel('18 inch', '7 inch');
+const myWheel2 = new Wheel('18 inch', '7 inch');
+const myWheel3 = new Wheel('18 inch', '7 inch');
+const myWheel4 = new Wheel('18 inch', '7 inch');
+const mySize = new Size('150 cm', '200 cm', '350 cm');
+const myCar = new Car(myEngine, [myWheel1, myWheel2, myWheel3, myWheel4], 'Sedan', mySize, '2000 kg');
 console.log(myCar);
