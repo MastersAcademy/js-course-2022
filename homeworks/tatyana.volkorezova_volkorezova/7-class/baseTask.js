@@ -18,14 +18,14 @@ class Motor {
     }
 }
 
-class CarWheel {
+class Wheel {
     constructor(radius, width) {
         this.radius = radius;
         this.width = width;
     }
 }
 
-class CarSize {
+class Size {
     constructor(height, width, length) {
         this.height = height;
         this.width = width;
@@ -34,10 +34,10 @@ class CarSize {
 }
 
 for (let i = 0; i <= WHEEL_AMOUNT - 1; i++) {
-    wheelsPackForVolvo[i] = new CarWheel('16 duyms', '200 mm');
+    wheelsPackForVolvo[i] = new Wheel('16 duyms', '200 mm');
 }
 
 const motorForVolvo = new Motor('4 liters', '300 horse power');
-const sizeVolvo = new CarSize('200 sm', '100 sm', '700 sm');
+const sizeVolvo = new Size('200 sm', '100 sm', '700 sm');
 const customVolvo = new Car(motorForVolvo, wheelsPackForVolvo, 'Kupe', sizeVolvo, '4 tons');
 console.log(customVolvo);
