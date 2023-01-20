@@ -19,21 +19,21 @@ class Motor {
 }
 
 class CarWheel {
-    constructor(radius, wheelWidth) {
+    constructor(radius, width) {
         this.radius = radius;
-        this.wheelWidth = wheelWidth;
+        this.width = width;
     }
 }
 
 class CarSize {
-    constructor(height, width, carLength) {
+    constructor(height, width, length) {
         this.height = height;
         this.width = width;
-        this.carLength = carLength;
+        this.length = length;
     }
 }
 
-for (let i = 1; i <= WHEEL_AMOUNT; i++) {
+for (let i = 0; i <= WHEEL_AMOUNT - 1; i++) {
     wheelsPackForVolvo[i] = new CarWheel('16 duyms', '200 mm');
 }
 
