@@ -5,7 +5,7 @@ class HttpClient {
         this.url = url;
     }
 
-    async makeRequest() {
+    makeRequest() {
         return new Promise((resolve, reject) => {
             http.get(this.url, (res) => {
                 let data = '';
