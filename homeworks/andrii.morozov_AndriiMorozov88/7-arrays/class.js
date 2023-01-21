@@ -65,7 +65,7 @@ const daf430Size = new Size('8620 mm', '2500 mm', '3700 mm');
 const daf430 = {
     name: 'DAF',
     engine: { volume: daf430Engine.engineVolume, power: daf430Engine.power },
-    tire: { radius: daf430Tire.tireRadius, width: daf430Tire.width },
+    tire: { radius: daf430Tire.tireRadius, width: daf430Tire.tireWidth },
     size: { length: daf430Size.sizeL, width: daf430Size.sizeW, height: daf430Size.sizeH },
 };
 
