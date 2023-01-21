@@ -8,7 +8,7 @@ class Car {
         this.weight = weight;
     }
 
-    myCar() {
+    displayStatus() {
         const status = `Name: ${this.name}\n`
             + `Engine: ${this.engine}\n`
             + `Wheels: ${this.wheels}\n`
@@ -53,12 +53,12 @@ class Size {
     }
 }
 
-const newEngine = new Engine(8.9, 340);
+const newEngine = new Engine(3, 340);
 const newWheels = new Wheels(235, 65);
 const newSize = new Size(4878, 1984, 1717);
 const newCar = new Car('Volkswagen', newEngine, newWheels, 'SUV', newSize, 3436);
 
-newCar.myCar();
+newCar.displayStatus();
 newEngine.toString();
 newWheels.toString();
 newSize.toString();
