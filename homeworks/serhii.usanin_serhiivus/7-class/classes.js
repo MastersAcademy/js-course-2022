@@ -1,37 +1,3 @@
-class Car {
-    constructor(options) {
-        this.regNumber = options.regNumber;
-        this.engine = options.engine;
-        this.wheelArray = [];
-        this.bodyType = options.bodyType;
-        this.size = options.size;
-        this.weights = options.weights;
-    }
-
-    addWheel(wheel) {
-        this.wheelArray.push(wheel);
-    }
-
-    get sizeInfo() {
-        return this.size.info;
-    }
-
-    get engineInfo() {
-        return this.engine.info;
-    }
-
-    get weightsInfo() {
-        return this.weights.info;
-    }
-
-    get wheelsInfo() {
-        if (!this.wheelArray) {
-            return '';
-        }
-        return this.wheelArray.reduce((result, item) => `${result + item.info}\n`, '');
-    }
-}
-
 class Engine {
     constructor(options) {
         this.capacity = options.capacity;
@@ -78,15 +44,61 @@ class Weights {
     }
 }
 
+class Car {
+    constructor(options) {
+        this.regNumber = options.regNumber;
+        this.engine = options.engine;
+        this.wheelArray = [];
+        this.bodyType = options.bodyType;
+        this.size = options.size;
+        this.weights = options.weights;
+    }
+
+    addWheel(options) {
+        this.wheelArray.push(new Wheel(options));
+    }
+
+    set sizeInfo(options) {
+        this.size = new Size(options);
+    }
+
+    get sizeInfo() {
+        return this.size.info;
+    }
+
+    set engineInfo(options) {
+        this.engine = new Engine(options);
+    }
+
+    get engineInfo() {
+        return this.engine.info;
+    }
+
+    set weightsInfo(options) {
+        this.weights = new Weights(options);
+    }
+
+    get weightsInfo() {
+        return this.weights.info;
+    }
+
+    get wheelsInfo() {
+        if (!this.wheelArray) {
+            return '';
+        }
+        return this.wheelArray.reduce((result, item) => `${result + item.info}\n`, '');
+    }
+}
+
 const car = new Car({ regNumber: '177-12-15' });
-car.engine = new Engine({ capacity: 2, power: 150 });
+car.engineInfo = { capacity: 2, power: 150 };
 car.bodyType = 'Coupe';
-car.addWheel(new Wheel({ radius: 16, width: 185, profile: 50 }));
-car.addWheel(new Wheel({ radius: 16, width: 185, profile: 50 }));
-car.addWheel(new Wheel({ radius: 16, width: 200, profile: 55 }));
-car.addWheel(new Wheel({ radius: 16, width: 200, profile: 55 }));
-car.size = new Size({ length: 4, height: 1.2, width: 2 });
-car.weights = new Weights({ curbWeight: 2000, maxWeight: 2500 });
+car.addWheel({ radius: 16, width: 185, profile: 50 });
+car.addWheel({ radius: 16, width: 185, profile: 50 });
+car.addWheel({ radius: 16, width: 200, profile: 55 });
+car.addWheel({ radius: 16, width: 200, profile: 55 });
+car.sizeInfo = { length: 4, height: 1.2, width: 2 };
+car.weightsInfo = { curbWeight: 2000, maxWeight: 2500 };
 
 console.log(car.sizeInfo);
 
