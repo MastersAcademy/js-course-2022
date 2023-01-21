@@ -4,9 +4,12 @@ class Wheel {
     }
 
     setWheel(radius, width) {
-        const wheel = `${radius}, ${width}`;
-        const wheelArray = [0, 0, 0, 0];
-        this.wheelArray = wheelArray.fill(wheel, 0, 4);
+        const wheel = `${radius} ${width}`;
+        this.wheelArray = [wheel, wheel, wheel, wheel];
+    }
+
+    toString() {
+        return `allWheel(inches mm): ${this.wheelArray}`;
     }
 }
 

@@ -1,20 +1,14 @@
 class Dimensions {
     constructor(height, width, length) {
-        this.setHeigth(height);
-        this.setwidth(width);
-        this.setLength(length);
-    }
-
-    setHeigth(height) {
         this.height = height;
-    }
-
-    setwidth(width) {
         this.width = width;
+        this.length = length;
     }
 
-    setLength(length) {
-        this.length = length;
+    toString() {
+        return (`height: ${this.height} mm
+                 width: ${this.width} mm
+                 length: ${this.length} mm`);
     }
 }
 

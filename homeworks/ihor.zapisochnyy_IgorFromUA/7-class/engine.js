@@ -1,15 +1,13 @@
 class Engine {
     constructor(volume, power) {
-        this.setVolume(volume);
-        this.setPower(power);
-    }
-
-    setVolume(volume) {
         this.volume = volume;
+        this.power = power;
     }
 
-    setPower(power) {
-        this.power = power;
+    toString() {
+        return (`
+                 volume: ${this.volume} L
+                 power:${this.power} hp`);
     }
 }
 
