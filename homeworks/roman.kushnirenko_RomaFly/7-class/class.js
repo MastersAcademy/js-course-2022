@@ -68,7 +68,6 @@ const weightAuto = 1800;
 const volkswagenPassat = new Auto(dieselEngine, wheels, typeAuto, sizeAuto, weightAuto);
 
 volkswagenPassat.showInfo();
-console.log(volkswagenPassat);
 
 class NodeRequest {
     constructor() {
