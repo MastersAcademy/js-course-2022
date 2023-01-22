@@ -1,24 +1,37 @@
 const Car = require('./class.js');
 
 class Fetch {
-    constructor(url) {
+    #fetchUrl;
+    #whichCarToShow;
+
+    constructor() {
+        this.#fetchUrl = process.argv[2];
+        this.#whichCarToShow = process.argv[3];
         this.data;
-        this.fetchData(url);
+        this.fetchData();
         
     }
 
-    async fetchData(url) {
-        const response = await fetch(url);
+    async fetchData() {
+        const response = await fetch(this.#fetchUrl);
         const data = await response.json();
-        this.data = data;
-        this.getRandomCar();
 
+        this.data = data;
+        (this.#whichCarToShow === undefined)? this.showCarsList(): this.showCertainCar();
     }
 
-    getRandomCar() {
-        const randomNumber = Math.floor(Math.random() * 6);
+    showCertainCar() {
+        console.log(`Car ${this.#whichCarToShow} shown`);
+        const certainCar = new Car(this.data[+this.#whichCarToShow - 1]);
+        console.log(certainCar.myCar);
+    }
 
-        console.log(new Car(this.data[randomNumber]));
+    showCarsList() {
+        this.data.forEach((carInfo, index) => {
+            console.log(`Car ${index + 1}:`);
+            const nextCar = new Car(carInfo);
+            console.log(nextCar.myCar);
+        });
     }
 }
-new Fetch('https://my-json-server.typicode.com/K1Koff/JSON-server/cars');
+new Fetch();

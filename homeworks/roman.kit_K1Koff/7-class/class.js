@@ -6,8 +6,8 @@ class Name {
 
 class Engine {
     constructor(engineParameters) {
-        this.volume = engineParameters.volume;
-        this.power = engineParameters.power;
+        this.engineVolume = engineParameters.volume;
+        this.enginePower = engineParameters.power;
     }
 }
 
@@ -18,16 +18,19 @@ class Wheels {
 
     getWheelsArray(wheelParameters) {
         const array = []; 
+        
         while (array.length < 4) {
             array.push(wheelParameters);     
         }
+
         return array;
     }
 }
 
 class Body {
-    constructor(bodyType) {
-        this.type = bodyType;
+    constructor(bodyParameters) {
+        this.type = bodyParameters.type;
+        this.weight = bodyParameters.weight;
     }
 }
 
@@ -39,19 +42,12 @@ class BodySize {
     }
 }
 
-class BodyWeight {
-    constructor(weightParameter) {
-        this.weight = weightParameter;
-    }
-}
-
 class Car{
     #name;
     #engine;
     #wheels;
     #body;
     #size;
-    #weight;
 
     constructor(data) {
         this.#name = new Name(data.name);
@@ -59,27 +55,27 @@ class Car{
         this.#wheels = new Wheels(data.wheels);
         this.#body = new Body(data.body);
         this.#size = new BodySize(data.size);
-        this.#weight = new BodyWeight(data.weight);
-        this.myCar = this.processData();
+        this.myCar = this.saveCarData();
     } 
+    
+    saveCarData() {
+        const carParameters = [this.#name, this.#engine, this.#wheels, this.#body, this.#size];
+        const data = carParameters.reduce((accumulator, carParameter) => {
 
-    formatData(carParameter, accum) {
-        for(let [key, value] of Object.entries(carParameter)){
-            const isNamesEqual = (carParameter.constructor.name.toLowerCase() == key);
-            if (isNamesEqual){
-                accum[`${key[0].toUpperCase()}${key.slice(1)} `] = value;
-            } else { accum[`${carParameter.constructor.name} ${key}`] = value; }
-        }
-        return accum;
-    }
-
-    processData() {
-        const carParameters = [this.#name, this.#engine, this.#wheels, this.#body, this.#size, this.#weight];
-        const data = carParameters.reduce((accum, carParameter) => {
-            return this.formatData(carParameter, accum, carParameter.constructor.name);
+            return this.formatCarParameters(carParameter, accumulator);
         }, {});
+
         return data;
     }
+
+    formatCarParameters(carParameter, result) {
+        for(let [key, value] of Object.entries(carParameter)){
+            result[`${key[0].toUpperCase()}${key.slice(1)} `] = value;
+        }
+
+        return result;
+    }
+
 }
 
 module.exports = Car;
