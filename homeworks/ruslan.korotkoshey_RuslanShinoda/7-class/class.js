@@ -30,12 +30,6 @@ class Car {
     }
 }
 
-const engineR8 = new Engine('5,204 cc (5.2 L) DOHC FSI V10', '610 PS');
-const wheelR8 = new Wheel(20, '18x10.5');
-const sizeR8 = new Dimensions(1252, 1930, 4435);
 const audiR8 = new Car('5,204 cc (5.2 L) DOHC FSI V10', '610 PS', 20, '18x10.5', '2-door coupe', 1252, 1930, 4435, 1825);
 
-console.log(engineR8);
-console.log(wheelR8);
-console.log(sizeR8);
 console.log(audiR8);
