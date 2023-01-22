@@ -1,9 +1,9 @@
 class Avto {
-    constructor (engine, wheel_array, body_type, dimensions, weight) {
+    constructor (engine, wheel_array, body_type, size, weight) {
         this.engine = engine;
         this.wheel_array = wheel_array;
         this.body_type = body_type;
-        this.dimensions = dimensions;
+        this.size = size;
         this.weight = weight;
     }
 }
@@ -30,8 +30,14 @@ class Size {
     }
 }
 
-let car = [
-    new Car('avto','engine'),
-    new Car('avto','engine','wheel_array')
+const engine = new Engine(50, 100);
+const wheels =  [   
+        new Wheel(2, 20),
+        new Wheel(2, 20),
+        new Wheel(2, 20),
+        new Wheel(2, 20)
 ];
-console.log(Avto);
+const carSize = new Size(130, 130, 240);
+const car = new Avto(engine, wheels, 'hatchback', carSize, 1250);
+
+console.log(car);
