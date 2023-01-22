@@ -1,13 +1,3 @@
-class Car {
-    constructor(engine, wheelArray, bodyStyle, dimensions, weight) {
-        this.engine = engine;
-        this.wheelArray = wheelArray;
-        this.bodyStyle = bodyStyle;
-        this.dimensions = dimensions;
-        this.weight = weight;
-    }
-}
-
 class Engine {
     constructor(capacity, power) {
         this.capacity = capacity;
@@ -16,9 +6,9 @@ class Engine {
 }
 
 class Wheel {
-    constructor(radius, width) {
+    constructor(radius, diameter) {
         this.radius = radius;
-        this.width = width;
+        this.diameter = diameter;
     }
 }
 
@@ -30,10 +20,20 @@ class Dimensions {
     }
 }
 
+class Car {
+    constructor(capacity, power, radius, diameter, bodyStyle, height, width, length, weight) {
+        this.engine = new Engine(capacity, power);
+        this.wheelArray = new Wheel(radius, diameter);
+        this.bodyStyle = bodyStyle;
+        this.dimensions = new Dimensions(height, width, length);
+        this.weight = weight;
+    }
+}
+
 const engineR8 = new Engine('5,204 cc (5.2 L) DOHC FSI V10', '610 PS');
 const wheelR8 = new Wheel(20, '18x10.5');
 const sizeR8 = new Dimensions(1252, 1930, 4435);
-const audiR8 = new Car(engineR8, wheelR8, '2-door coupe', sizeR8, 1825);
+const audiR8 = new Car('5,204 cc (5.2 L) DOHC FSI V10', '610 PS', 20, '18x10.5', '2-door coupe', 1252, 1930, 4435, 1825);
 
 console.log(engineR8);
 console.log(wheelR8);
