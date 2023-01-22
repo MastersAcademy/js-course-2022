@@ -9,7 +9,6 @@ class Fetch {
         this.#whichCarToShow = process.argv[3];
         this.data;
         this.fetchData();
-        
     }
 
     async fetchData() {
