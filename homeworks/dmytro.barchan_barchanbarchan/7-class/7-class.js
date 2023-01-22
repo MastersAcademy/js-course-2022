@@ -11,15 +11,15 @@ class Auto {
         this.weight = weight;
     }
 }
-const engine = new EngineSize(2, 235);
+const engineCar = new EngineSize(2, 345);
 const wheel1 = new Wheel(19, 100);
 const wheel2 = new Wheel(19, 100);
 const wheel3 = new Wheel(19, 110);
 const wheel4 = new Wheel(19, 110);
 const arrayOfWheels = [wheel1, wheel2, wheel3, wheel4];
 const body = 'passenger';
-const size = new Dimensions(1443, 1741, 4694);
-const weight = 1745;
-const myCar = new Auto(engine, arrayOfWheels, body, size, weight);
+const sizeCar = new Dimensions(1443, 1741, 4694);
+const weightCar = 1745;
+const myCar = new Auto(engineCar, arrayOfWheels, body, sizeCar, weightCar);
 
-console.log(myCar.size);
+console.log(myCar);
