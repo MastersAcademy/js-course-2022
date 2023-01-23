@@ -8,11 +8,11 @@ class Auto {
     }
 
     showInfo() {
-        const autoData = `Engine: ${this.engine}
-Wheels: ${this.wheels}
-BodyType: ${this.bodyType}
-Size: ${this.size}
-Weight: ${this.weight}`;
+        const autoData = `Engine: ${this.engine}`
+                    + `\nWheels: ${this.wheels}`
+                    + `\nBodyType: ${this.bodyType}`
+                    + `\nSize: ${this.size}`
+                    + `\nWeight: ${this.weight}`;
 
         return console.log(autoData);
     }
