@@ -28,6 +28,7 @@ class Car {
 const bmwM4G82 = new Car();
 
 bmwM4G82.car = {
+    name: 'BMW M4-G82',
     engine: 'disel [S55 TT I6]',
     wheels: {
         radius: 275,
@@ -57,11 +58,12 @@ bmwM4G82.size = {
 const mercedesC63S = new Car();
 
 mercedesC63S.car = {
+    name: 'Mercedes C63S',
     engine: 'petrol [V8]',
-    wheels: [{
+    wheels: {
         radius: 265,
         width: 35,
-    }],
+    },
     bodyType: 'sedan',
     dimensions: 'long',
     weight: 2180,
