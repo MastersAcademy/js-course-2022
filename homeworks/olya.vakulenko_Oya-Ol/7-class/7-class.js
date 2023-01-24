@@ -53,13 +53,12 @@ class Size {
     }
 }
 
-const arrayWheels = [new Wheels(235, 65),
+const newWheels = [new Wheels(235, 65),
     new Wheels(235, 65),
     new Wheels(235, 65),
     new Wheels(235, 65)];
 
 const newEngine = new Engine(3, 340);
-const newWheels = arrayWheels;
 const newSize = new Size(4878, 1984, 1717);
 const newCar = new Car('Volkswagen', newEngine, newWheels, 'SUV', newSize, 3436);
 
