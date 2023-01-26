@@ -1,12 +1,17 @@
 class Auto {
-    constructor(plate, autoParams) {
+    constructor(plate, name, engine, tire, size) {
         this.plate = plate;
-        this.autoParams = autoParams;
+        this.name = name;
+        this.engine = engine;
+        this.tire = tire;
+        this.size = size;
     }
 
     show() {
-        console.log(this.plate);
-        console.log(this.autoParams);
+        console.log(this.name, this.plate);
+        console.log(this.engine);
+        console.log(this.tire);
+        console.log(this.size);
     }
 }
 
@@ -69,5 +74,5 @@ const daf430 = {
     size: { length: daf430Size.sizeL, width: daf430Size.sizeW, height: daf430Size.sizeH },
 };
 
-const ca8644ca = new Auto('CA8644CA', daf430);
+const ca8644ca = new Auto('CA8644CA', daf430.name, daf430.engine, daf430.tire, daf430.size);
 ca8644ca.show();
