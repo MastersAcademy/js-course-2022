@@ -26,6 +26,11 @@ const engineHonda = new Engine({
     power: '300 hp',
 });
 
+const engineInfiniti = new Engine({
+    volume: '4.5 L',
+    power: '300 hp',
+});
+
 class Tires {
     constructor(options) {
         this.radius = options.radius;
@@ -40,6 +45,11 @@ const tiresToyota = new Tires({
 
 const tiresHonda = new Tires({
     radius: 'R 18',
+    width: 185,
+});
+
+const tiresInfiniti = new Tires({
+    radius: 'R 22',
     width: 185,
 });
 
@@ -63,6 +73,12 @@ const sizeHonda = new Size({
     extent: '3000mm',
 });
 
+const sizeInfiniti = new Size({
+    heigth: '2000mm',
+    width: '2500mm',
+    extent: '3000mm',
+});
+
 const Toyota = new Car({
     engine: engineToyota,
     wheels: [1, 2, 3, 4],
@@ -81,5 +97,16 @@ const Honda = new Car({
     weight: '2000 kg',
 });
 
+const Infiniti = new Car({
+    engine: engineInfiniti,
+    wheels: [1, 2, 3, 4],
+    tires: tiresInfiniti,
+    type: 'Sedan',
+    size: sizeInfiniti,
+    weight: '5000 kg',
+});
+
 console.log(Toyota);
 console.log(Honda);
+console.log(Infiniti);
+
