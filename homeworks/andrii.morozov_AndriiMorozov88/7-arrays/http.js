@@ -8,7 +8,7 @@ class HTTP {
     }
 
     async getData() {
-        https.get(myUrl, (res) => {
+        https.get(this.url, (res) => {
             let body = '';
             res.on('data', (data) => {
                 body += data;
