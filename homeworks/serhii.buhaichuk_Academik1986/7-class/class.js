@@ -1,6 +1,7 @@
 class Car {
     constructor(options) {
         this.engine = options.engine;
+        this.wheels = options.wheels;
         this.tires = options.tires;
         this.type = options.type;
         this.size = options.size;
@@ -8,81 +9,77 @@ class Car {
     }
 }
 
-const toyota = new Car({
-    engine: 'gasoline',
-    tires: [1, 2, 3, 4],
-    type: 'sedan',
-    size: 'XL',
-    weight: '1000 kg',
-});
-
-const honda = new Car({
-    engine: 'diesel',
-    tires: [1, 2, 3, 4],
-    type: 'sedan',
-    size: 'XXL',
-    weight: '1500 kg',
-});
-
-console.log(honda);
-console.log(toyota);
-
 class Engine {
     constructor(options) {
-        this.value = options.value;
+        this.volume = options.volume;
         this.power = options.power;
     }
 }
-const diesel = new Engine({
-    value: '2.5 L',
-    power: '175 HP',
+
+const engineToyota = new Engine({
+    volume: '3.5 L',
+    power: '289 hp',
 });
-const gas = new Engine({
-    value: '2.2 L',
-    power: '150 HP',
+
+const engineHonda = new Engine({
+    volume: '2.5 L',
+    power: '300 hp',
 });
-console.log(diesel);
-console.log(gas);
 
 class Tires {
     constructor(options) {
         this.radius = options.radius;
-        this.width = options.weight;
+        this.width = options.width;
     }
 }
 
-const tire = new Tires({
+const tiresToyota = new Tires({
     radius: 'R 14',
     width: 185,
 });
-console.log(tire);
+
+const tiresHonda = new Tires({
+    radius: 'R 18',
+    width: 185,
+});
 
 class Size {
     constructor(options) {
-        this.height = options.height;
+        this.heigth = options.heigth;
         this.width = options.width;
         this.extent = options.extent;
     }
 }
 
-const sedan = new Size({
-    height: '2000 mm',
-    width: '1800 mm',
-    extent: '3000 mm',
+const sizeToyota = new Size({
+    heigth: '3000mm',
+    width: '2500mm',
+    extent: '4000mm',
 });
 
-const coupe = new Size({
-    height: '2000 mm',
-    width: '1500 mm',
-    extent: '2500 mm',
+const sizeHonda = new Size({
+    heigth: '2000mm',
+    width: '2500mm',
+    extent: '3000mm',
 });
 
-const liftback = new Size({
-    height: '2500 mm',
-    width: '1800 mm',
-    extent: '4000 mm',
+const Toyota = new Car({
+    engine: engineToyota,
+    wheels: [1, 2, 3, 4],
+    tires: tiresToyota,
+    type: 'Cupe',
+    size: sizeToyota,
+    weight: '1000 kg',
 });
 
-console.log(sedan);
-console.log(coupe);
-console.log(liftback);
+const Honda = new Car({
+    engine: engineHonda,
+    wheels: [1, 2, 3, 4],
+    tires: tiresHonda,
+    type: 'Sedan',
+    size: sizeHonda,
+    weight: '2000 kg',
+});
+
+console.log(Toyota);
+console.log(Honda);
