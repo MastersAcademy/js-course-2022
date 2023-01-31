@@ -20,7 +20,6 @@ class HTTP {
 
     createContent(data) {
         body += data;
-        return body;
     }
 
     showContent(content) {
