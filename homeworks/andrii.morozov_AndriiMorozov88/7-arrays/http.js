@@ -1,6 +1,8 @@
 // const myUrl = 'https://jsonplaceholder.typicode.com/posts';
 const https = require('https');
 
+let body = '';
+
 const myUrl = process.argv[2];
 class HTTP {
     constructor(url) {
@@ -8,13 +10,21 @@ class HTTP {
     }
 
     async getData() {
-        https.get(this.url, (res) => {
-            let body = '';
-            res.on('data', (data) => {
-                body += data;
-            });
-            res.on('end', () => console.log(body));
-        });
+        https.get(this.url, (res) => this.fetchContent(res));
+    }
+
+    fetchContent(res) {
+        res.on('data', (data) => this.createContent(data));
+        res.on('end', () => this.showContent(body));
+    }
+
+    createContent(data) {
+        body += data;
+        return body;
+    }
+
+    showContent(content) {
+        console.log(content);
     }
 }
 const json = new HTTP(myUrl);
