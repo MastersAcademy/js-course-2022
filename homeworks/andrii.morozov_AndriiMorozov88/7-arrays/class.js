@@ -15,18 +15,18 @@ class Engine {
     }
 }
 
-class Tire {
-    constructor(radius, width) {
-        this.radius = radius;
-        this.width = width;
-    }
-}
-
 class Size {
     constructor(length, width, height) {
         this.length = length;
         this.width = width;
         this.height = height;
+    }
+}
+
+class Tire {
+    constructor(radius, width) {
+        this.radius = radius;
+        this.width = width;
     }
 }
 const daf430 = {
